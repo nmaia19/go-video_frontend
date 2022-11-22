@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
-import { AppMaterialModule } from './shared/app-material/app-material.module';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { AppMaterialModule } from './shared/app-material/app-material.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    AppMaterialModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
