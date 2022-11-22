@@ -1,0 +1,57 @@
+mat-toolbar {
+  background-color: #1b1b1b;
+}
+
+.place-items-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 14px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo, .perfil {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 2.6rem;
+}
+
+.menu {
+  display: flex;
+  text-align: center;
+}
+
+.menu button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.perfil > button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+.perfil img {
+  height: 2rem;
+}
+
+
+

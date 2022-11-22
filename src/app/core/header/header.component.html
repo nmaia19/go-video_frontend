@@ -1,0 +1,44 @@
+<mat-toolbar>
+  <div class="header">
+    <div class="logo"><img src="../../../assets/img-header/Logo Branco.png" alt="Logotipo escrito Go Video"></div>
+    <div class="menu">
+      <div class="menu__item">
+        <button mat-button>
+          HOME
+        </button>
+      </div>
+      <div class="menu__item">
+        <button mat-button [matMenuTriggerFor]="equipamentos">
+          EQUIPAMENTOS
+        </button>
+        <mat-menu #equipamentos="matMenu">
+          <button class="btn place-items-center" mat-menu-item>CADASTRAR</button>
+          <button class="btn place-items-center" mat-menu-item>LISTAR</button>
+        </mat-menu>
+      </div>
+      <div class="menu__item">
+        <button mat-button [matMenuTriggerFor]="colaboradores">
+          COLABORADORES
+        </button>
+        <mat-menu #colaboradores="matMenu">
+          <button class="btn place-items-center" mat-menu-item>CADASTRAR</button>
+          <button class="btn place-items-center" mat-menu-item>LISTAR</button>
+        </mat-menu>
+      </div>
+      <div class="menu__item">
+        <button mat-button>
+          EMPRÉSTIMOS
+        </button>
+      </div>
+    </div>
+    <div class="perfil">
+      <button mat-button [matMenuTriggerFor]="perfil">
+        <img src="../../../assets/img-header/Perfil.png" alt="Botão que abre o menu do perfil">
+      </button>
+      <mat-menu #perfil="matMenu">
+        <button class="btn place-items-center" mat-menu-item>MINHA ÁREA</button>
+        <button class="btn place-items-center" mat-menu-item>DESLOGAR</button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>
