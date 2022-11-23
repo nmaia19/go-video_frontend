@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 23.8rem;
+  margin-top: 21rem;
 
 }
 
@@ -22,4 +22,52 @@
   font-size: var(--font-size-sm);
   font-weight: 500;
   font-family: sa;
+}
+
+/* Inputs */
+.equipamento__cadastro__input, .equipamento__cadastro__select{
+  height: 5rem;
+  border: 1px solid var(--stoke-gray);
+  border-radius: 13px;
+  font-size:var(--font-size-sm);
+  margin-bottom: 3rem;
+  margin-top: 0.3rem;
+}
+
+/* Select */
+.equipamento__cadastro__select{
+  width: 25%;
+}
+
+/* Botões */
+.equipamento__cadastro__botoes{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20rem;
+  margin-top: 10rem;
+}
+
+.equipamento__cadastro__botoes button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  color: white;
+  height: 5rem;
+  width: 16rem;
+}
+
+.equipamento__cadastro__limpar{
+  background-color: var(--primary-red);
+}
+
+.equipamento__cadastro__cadastrar{
+  background-color: var(--primary-dark-color);
+  margin-left: 3rem;
+}
+
+.equipamento__cadastro__limpar:hover{
+  background-color: var(--secondary-red);
+}
+
+.equipamento__cadastro__cadastrar:hover{
+  background-color: var(--stoke-gray);
 }
