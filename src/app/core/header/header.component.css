@@ -16,6 +16,7 @@
   align-items: center;
   font-size: 1.6rem;
   padding: 2rem;
+  z-index: 10;
 }
 
 .logo img {
