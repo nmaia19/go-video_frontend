@@ -43,7 +43,6 @@
 .equipamento__cadastro__botoes{
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20rem;
   margin-top: 10rem;
 }
 
@@ -64,6 +63,7 @@
   margin-left: 3rem;
 }
 
+/*TODO: Trocar cor*/
 .equipamento__cadastro__limpar:hover{
   background-color: var(--secondary-red);
 }
