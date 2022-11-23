@@ -1,68 +1,85 @@
 <!-- HEADER -->
 
 <header class="header" id="header">
-  <nav class="navbar container">
-    <a href="#">
-      <h2 class="logo">
-        <img src="../../../assets/img-header/Logo Branco.png" alt="Logotipo escrito Go Video">
-      </h2>
-    </a>
+  <div class="logo">
+    <img
+      src="../../../assets/img-header/Logo Branco.png"
+      alt="Logotipo escrito Go Video"
+    />
+  </div>
 
-    <!-- <div class="menu" id="menu">
-      <ul class="list">
-        <li class="list__item">
-          <a href="#" class="list__link screen-lg-hidden current">Home</a>
-        </li>
-        <li class="list__item">
-          <a href="#" class="list__link screen-lg-hidden">Equipamentos</a>
-        </li>
-        <li class="list__item">
-          <a href="#" class="list__link screen-lg-hidden">Colaboradores</a>
-        </li>
-        <li class="list__item">
-          <a href="#" class="list__link screen-lg-hidden">Empréstimos</a>
-        </li>
-      </ul>
-    </div> -->
-
-    <div class="menu" id="menu">
-      <ul class="list">
-        <li class="list__item">
-          <a href="#" class="list__link">Home</a>
-        </li>
-        <li class="list__item">
-          <a href="#" class="list__link">Equipamentos</a>
-        </li>
-        <li class="list__item">
-          <a href="#" class="list__link">Colaboradores</a>
-        </li>
-        <li class="list__item">
-          <a href="#" class="list__link">Empréstimos</a>
-        </li>
-      </ul>
-    </div>
-
-    <a href="#">
-      <h2 class="perfil">
-        <img src="../../../assets/img-header/Perfil.png" alt="Logotipo escrito Go Video">
-      </h2>
-    </a>
-
-
-    <!-- <div class="list list-right">
-      <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
-        <i class="ri-menu-3-line open-menu-icon"></i>
-        <i class="ri-close-line close-menu-icon"></i>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler btn"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
       </button>
-    </div> -->
-
-
-    <!-- <a href="#" class="list-link screen-sm-hidden btn sign-up-btn fancy-border">
-      <span>Log Out</span>
-    </a>
-    <a href="#" class="list-link screen-sm-hidden">Login</a>
-    <a href="#" class="list-link screen-sm-hidden btn sign-up-btn fancy-border">
-      <span>Sign Up</span>
-    </a> -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle active"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              EQUIPAMENTOS
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item menu__item" href="#">CADASTRAR</a>
+              </li>
+              <li><a class="dropdown-item menu__item" href="#">LISTAR</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle active"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              COLABORADORES
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item menu__item" href="#">CADASTRAR</a>
+              </li>
+              <li><a class="dropdown-item menu__item" href="#">LISTAR</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active">EMPRÉSTIMOS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
+
+  <div class="perfil">
+    <div class="nav-link" data-bs-toggle="dropdown">
+      <img
+        src="../../../assets/img-header/Perfil.png"
+        alt="Logotipo escrito Go Video"
+      />
+    </div>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item menu__item" href="#">MINHA AREA</a>
+      </li>
+      <li><a class="dropdown-item menu__item" href="#">DESLOGAR</a></li>
+    </ul>
+  </div>
 </header>
