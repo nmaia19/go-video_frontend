@@ -22,6 +22,7 @@ import { EquipamentosComponent } from './area-logada/usuario/equipamentos/equipa
 import { DetalharEquipamentosComponent } from './area-logada/detalhar-equipamentos/detalhar-equipamentos.component';
 import { AlterarSenhaComponent } from './area-logada/usuario/alterar-senha/alterar-senha.component';
 import { MeusEmprestimosComponent } from './area-logada/usuario/meus-emprestimos/meus-emprestimos.component';
+import { HeaderBrancoComponent } from './core/header-branco/header-branco.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MeusEmprestimosComponent } from './area-logada/usuario/meus-emprestimos
     EquipamentosComponent,
     DetalharEquipamentosComponent,
     AlterarSenhaComponent,
-    MeusEmprestimosComponent
+    MeusEmprestimosComponent,
+    HeaderBrancoComponent
   ],
   imports: [
     BrowserModule,
