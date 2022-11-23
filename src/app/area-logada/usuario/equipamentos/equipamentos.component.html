@@ -2,32 +2,50 @@
   <h1 class="equipamentos__title">Equipamentos</h1>
 
   <div class="equipamentos__busca">
-    <input class="equipamentos__input" type="text" placeholder="Digite sua busca">
+    <input class="form-control bg-light equipamentos__input" type="text" placeholder="Digite sua busca">
     <button class="btn-buscar">Buscar</button>
   </div>
 
   <div class="select-group">
-    <select class="select" name="categorias">
-        <option value="1">Todas as Categorias</option>
-        <option value="2">Câmeras</option>
-        <option value="3">Filmadoras</option>
-        <option value="4">Lentes</option>
-        <option value="5">Iluminação</option>
-        <option value="6">Acessórios</option>
+    <select class="select form-select" name="categorias">
+      <option value="1">Todas as Categorias</option>
+      <option value="2">Câmeras</option>
+      <option value="3">Filmadoras</option>
+      <option value="4">Lentes</option>
+      <option value="5">Iluminação</option>
+      <option value="6">Acessórios</option>
     </select>
-    <select class="select" name="marcas">
+    <select class="select form-select" name="marcas">
       <option value="1">Todas as Marcas</option>
       <option value="2">Cânon</option>
       <option value="3">Nikon</option>
       <option value="4">Sony</option>
       <option value="5">Manfrotto</option>
-  </select>
-  <select class="select" name="status">
-    <option value="1">Todos os Status</option>
-    <option value="2">Disponível</option>
-    <option value="3">Indisponível</option>
-    <option value="4">Inativo</option>
-</select>
-</div>
+    </select>
+    <select class="select form-select" name="status">
+      <option value="1">Todos os Status</option>
+      <option value="2">Disponível</option>
+      <option value="3">Indisponível</option>
+      <option value="4">Inativo</option>
+    </select>
+  </div>
+
+
+  <div class="display-equipamentos">
+    <div class="cards">
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+      <app-card-equipamento></app-card-equipamento>
+    </div>
+  </div>
 
 </section>

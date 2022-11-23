@@ -27,6 +27,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
 import { PoliticaPrivacidadeComponent } from './core/politica-privacidade/politica-privacidade.component';
 import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condicoes.component';
+import { CardEquipamentoComponent } from './area-logada/usuario/equipamentos/card-equipamento/card-equipamento.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condico
     DetalharEquipamentosComponent,
     AlterarSenhaComponent,
     MeusEmprestimosComponent,
-    CadastrarEquipamentosComponent
+    CadastrarEquipamentosComponent,
+    CardEquipamentoComponent
   ],
   imports: [
     BrowserModule,
