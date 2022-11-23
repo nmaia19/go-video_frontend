@@ -61,7 +61,7 @@ html {
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-sm);
-  color: var(--light-color-alt);
+  color: var(--primary-dark-color);
   background-color: var(--primary-background-color);
   letter-spacing: 1px;
   transition: background-color 0.25s, color 0.25s;
