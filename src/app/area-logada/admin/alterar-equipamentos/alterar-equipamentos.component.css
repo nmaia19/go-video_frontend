@@ -1,0 +1,73 @@
+.equipamento__alteracao__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 21rem;
+
+}
+
+/* Título da página */
+
+.equipamento__alteracao__titulo {
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.05em;
+  font-family: inherit;
+}
+
+.equipamento__alteracao__form{
+  margin-top: 7.7rem;
+  width: 70%;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  font-family: sa;
+}
+
+/* Inputs */
+.equipamento__alteracao__input, .equipamento__alteracao__select{
+  height: 5rem;
+  border: 1px solid var(--stoke-gray);
+  border-radius: 13px;
+  font-size:var(--font-size-sm);
+  margin-bottom: 3rem;
+  margin-top: 0.3rem;
+}
+
+/* Select */
+.equipamento__alteracao__select{
+  width: 25%;
+}
+
+/* Botões */
+.equipamento__alteracao__botoes{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10rem;
+}
+
+.equipamento__alteracao__botoes button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  color: white;
+  height: 5rem;
+  width: 16rem;
+}
+
+.equipamento__alteracao__limpar{
+  background-color: var(--primary-red);
+}
+
+.equipamento__alteracao__alterar{
+  background-color: var(--primary-dark-color);
+  margin-left: 3rem;
+}
+
+/*TODO: Trocar cor*/
+.equipamento__alteracao__limpar:hover{
+  background-color: var(--secondary-red);
+}
+
+.equipamento__alteracao__alterar:hover{
+  background-color: var(--stoke-gray);
+}
