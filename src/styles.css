@@ -61,8 +61,8 @@ html {
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-sm);
-  color: var(--light-color-alt);
-  background-color: var(--primary-background-color);
+  color: var(--primary-dark-color);
+  background-color: var(--light-color);
   letter-spacing: 1px;
   transition: background-color 0.25s, color 0.25s;
   scroll-behavior: smooth;
