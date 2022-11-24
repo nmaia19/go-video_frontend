@@ -3,6 +3,7 @@
 }
 
 .home__sessao {
+  color: var(--light-color);
   display: flex;
   align-items: center;
   width: 100%;
@@ -12,9 +13,11 @@
 
 .home__texto {
   margin-left: 9.7rem;
+  font-family: inherit;
 }
 
 .home__texto-h2 {
+  font-family: inherit;
   font-weight: 700;
   font-size: var(--font-size-xl);
 }
@@ -33,12 +36,18 @@
 
 .home__sessao-1 {
   background-image: url('src/assets/img-home/home-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home__sessao-2 {
   background-image: url('src/assets/img-home/home-2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home__sessao-3 {
   background-image: url('src/assets/img-home/home-3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
