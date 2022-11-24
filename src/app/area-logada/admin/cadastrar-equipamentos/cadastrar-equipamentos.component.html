@@ -1,1 +1,47 @@
-<p>cadastrar-equipamentos works!</p>
+<app-header></app-header>
+
+<section class="equipamento__cadastro__container">
+  <h1 class="equipamento__cadastro__titulo">CADASTRAR EQUIPAMENTO</h1>
+
+  <form class="equipamento__cadastro__form">
+    <div>
+      <label for="equipamento-cadastro-categoria" class="form-label">CATEGORIA*</label>
+      <select id="equipamento-cadastro-categoria" class="form-select  equipamento__cadastro__select bg-light">
+        <option selected>Selecione a categoria</option>
+        <option value="1">Câmeras</option>
+        <option value="2">Filmadoras</option>
+        <option value="3">Lentes</option>
+        <option value="4">Iluminação</option>
+        <option value="5">Assessórios</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="form-label" for="equipamento-cadastro-descricao">DESCRIÇÃO DO EQUIPAMENTO</label>
+      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-descricao" />
+    </div>
+
+    <div>
+      <label class="form-label" for="equipamento-cadastro-marca">MARCA*</label>
+      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-marca" required />
+    </div>
+
+    <div>
+      <label class="form-label" for="equipamento-cadastro-modelo">MODELO*</label>
+      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-modelo" required />
+    </div>
+
+    <div>
+      <label class="form-label" for="equipamento-cadastro-url-imagem">URL DA IMAGEM*</label>
+      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-url-imagem" required />
+    </div>
+
+    <div class="equipamento__cadastro__botoes">
+      <button class="equipamento__cadastro__limpar" type="reset">LIMPAR</button>
+      <button class="equipamento__cadastro__cadastrar">CADASTRAR</button>
+    </div>
+  </form>
+
+</section>
+
+<!-- <app-footer></app-footer> -->
