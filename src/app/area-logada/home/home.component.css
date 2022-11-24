@@ -1,0 +1,44 @@
+.home__container {
+  margin-top: 9.4rem;
+}
+
+.home__sessao {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40rem;
+  margin-bottom: 4rem;
+}
+
+.home__texto {
+  margin-left: 9.7rem;
+}
+
+.home__texto-h2 {
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+}
+
+.home__texto-a {
+  font-weight: 400;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+}
+
+.home__texto-a:hover {
+  color: var(--light-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.home__sessao-1 {
+  background-image: url('src/assets/img-home/home-1.png');
+}
+
+.home__sessao-2 {
+  background-image: url('src/assets/img-home/home-2.png');
+}
+
+.home__sessao-3 {
+  background-image: url('src/assets/img-home/home-3.png');
+}

@@ -5,7 +5,7 @@
 }
 
 .header {
-  background-color: var(--secondary-dark-color);
+  background-color: var(--light-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -56,6 +56,7 @@
 
 .perfil img {
   cursor: pointer;
+  filter: invert(100%);
 }
 
 
