@@ -29,6 +29,7 @@ import { HeaderBrancoComponent } from './core/header-branco/header-branco.compon
 import { HeaderComponent } from './core/header/header.component';
 import { PoliticaPrivacidadeComponent } from './core/politica-privacidade/politica-privacidade.component';
 import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condicoes.component';
+import { CardGerenciarEquipamentosComponent } from './area-logada/admin/gerenciar-equipamentos/card-gerenciar-equipamentos/card-gerenciar-equipamentos.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condico
     MeusEmprestimosComponent,
     CadastrarEquipamentosComponent,
     CardEquipamentoComponent,
-    HeaderBrancoComponent
+    HeaderBrancoComponent,
+    CardGerenciarEquipamentosComponent
   ],
   imports: [
     BrowserModule,
