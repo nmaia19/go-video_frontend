@@ -20,9 +20,9 @@ const routes: Routes = [
   { path: 'politica-privacidade', component: PoliticaPrivacidadeComponent },
   { path: 'gerenciar-equipamentos', component: GerenciarEquipamentosComponent },
   { path: 'cadastrar-equipamentos', component: CadastrarEquipamentosComponent },
-  { path: 'alterar-equipamentos', component: AlterarEquipamentosComponent },
+  { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent },
   { path: 'equipamentos', component: EquipamentosComponent },
-  { path: 'detalhar-equipamentos', component: DetalharEquipamentosComponent },
+  { path: 'detalhar-equipamentos/:id', component: DetalharEquipamentosComponent },
 
   { path: 'gerenciar-colaboradores', component: GerenciarColaboradoresComponent },
   { path: 'cadastrar-colaboradores', component: CadastrarColaboradoresComponent },

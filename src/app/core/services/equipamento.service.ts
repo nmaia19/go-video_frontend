@@ -10,12 +10,20 @@ export class EquipamentoService {
 
   constructor(private http:HttpClient) { }
 
-  cadastrar(data:any) {
+  consultar() {
+    return this.http.get(url)
+  }
+
+  consultarPorId(id: number) {
+    return this.http.get(`${url}/${id}`)
+  }
+
+  cadastrar(data: any) {
     return this.http.post(url, data)
   }
 
-  consultar() {
-    return this.http.get(url)
+  alterar(id: number, data: any) {
+    return this.http.put(`${url}/${id}`, data)
   }
 
   excluir(id: number) {
