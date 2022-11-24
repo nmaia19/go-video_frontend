@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<section class="equipamento__alteracao__container">
+  <h1 class="equipamento__alteracao__titulo">ALTERAR EQUIPAMENTO</h1>
+
+  <form class="equipamento__alteracao__form">
+    <div>
+      <label for="equipamento-alteracao-categoria" class="form-label">CATEGORIA*</label>
+      <select id="equipamento-alteracao-categoria" class="form-select  equipamento__alteracao__select bg-light">
+        <option selected>Selecione a categoria</option>
+        <option value="1">Câmeras</option>
+        <option value="2">Filmadoras</option>
+        <option value="3">Lentes</option>
+        <option value="4">Iluminação</option>
+        <option value="5">Assessórios</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="form-label" for="equipamento-alteracao-descricao">DESCRIÇÃO DO EQUIPAMENTO</label>
+      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-descricao" />
+    </div>
+
+    <div>
+      <label class="form-label" for="equipamento-alteracao-marca">MARCA*</label>
+      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-marca" required />
+    </div>
+
+    <div>
+      <label class="form-label" for="equipamento-alteracao-modelo">MODELO*</label>
+      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-modelo" required />
+    </div>
+
+    <div>
+      <label class="form-label" for="equipamento-alteracao-url-imagem">URL DA IMAGEM*</label>
+      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-url-imagem" required />
+    </div>
+
+    <div class="equipamento__alteracao__botoes">
+      <button class="equipamento__alteracao__alterar">ALTERAR</button>
+    </div>
+  </form>
+
+</section>
+
+<!-- <app-footer></app-footer> -->
