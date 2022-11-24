@@ -6,12 +6,8 @@
   <form class="equipamento__alteracao__form" #f="ngForm" (ngSubmit)="alterar(equipamento.id, f.value)">
     <div>
       <label for="equipamento-alteracao-categoria" class="form-label">CATEGORIA*</label>
-      <select id="equipamento-alteracao-categoria" class="form-select  equipamento__alteracao__select bg-light" [(ngModel)]="equipamento.categoria" name="categoria">
-        <option value="cameras">Câmeras</option>
-        <option value="filmadoras">Filmadoras</option>
-        <option value="lentes">Lentes</option>
-        <option value="iluminação">Iluminação</option>
-        <option value="acessorios">Acessórios</option>
+      <select id="equipamento-alteracao-categoria" class="form-select equipamento__alteracao__select bg-light" [(ngModel)]="equipamento.categoria" name="categoria">
+        <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
       </select>
     </div>
 

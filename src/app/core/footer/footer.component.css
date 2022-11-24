@@ -12,8 +12,8 @@
 }
 
 .link__Footer {
-  width: 50rem;
   margin-top: 40px;
+  width: 50rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -27,16 +27,17 @@
 .logo__footer {
   height: 4.5rem;
   width: 100%;
+  left: 0;
+  bottom: 0;
   background-color: var(--primary-dark-color);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logo__footer a, img {
+.logo__footer p, img {
   color: white;
   font-size: 16px;
   font-weight: 500;
   margin: 4px;
 }
-
