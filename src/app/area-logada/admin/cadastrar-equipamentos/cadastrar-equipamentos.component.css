@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 21rem;
-
+  margin-bottom: 7.2rem;
 }
 
 /* Título da página */
@@ -36,7 +36,7 @@
 
 /* Select */
 .equipamento__cadastro__select{
-  width: 25%;
+  width: 50%;
 }
 
 /* Botões */
