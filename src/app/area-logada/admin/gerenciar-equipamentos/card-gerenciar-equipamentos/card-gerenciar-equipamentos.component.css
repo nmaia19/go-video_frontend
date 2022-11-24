@@ -1,0 +1,62 @@
+.gerenciar__equipamento__card__container{
+  display: grid;
+  grid-template-columns: 20rem auto auto;
+  gap: 5rem;
+  margin-bottom: 4rem;
+}
+
+.gerenciar__equipamento__card__container:hover{
+  box-shadow: 4px 20px 40px hsl(0 4% 15% / 30%);
+  transition: 0.3s;
+}
+
+.gerenciar__equipamento__card__img{
+  width: 20rem;
+  height: 20rem;
+}
+
+.gerenciar__equipamento__card__detalhamento{
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gerenciar__equipamento__card__status{
+  font-weight: 300;
+  font-size: var(--font-size-sm);
+  color: var(--secondary-dark-color);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--margin-sm);
+}
+
+.gerenciar__equipamento__card__descricao{
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary-dark-color);
+}
+
+.gerenciar__equipamento__card__a{
+  font-weight: 400;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.1em;
+  color: var(--primary-red);
+  margin-top: var(--margin-sm);
+}
+
+.gerenciar__equipamento__card__a:hover{
+  text-decoration: underline;
+}
+
+.gerenciar__equipamento__card__acoes{
+  max-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.gerenciar__equipamento__card__acoes img{
+  height: 3.3rem;
+}
