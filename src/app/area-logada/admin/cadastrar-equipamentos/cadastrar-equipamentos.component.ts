@@ -13,5 +13,6 @@ export class CadastrarEquipamentosComponent {
 
   cadastrar(dados: any) {
     this.service.cadastrar(dados).subscribe()
+    window.location.reload()
   }
 }
