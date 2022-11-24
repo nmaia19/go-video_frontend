@@ -5,10 +5,10 @@
   <div class="gerenciar__equipamento__card__detalhamento">
     <p class="gerenciar__equipamento__card__status">STATUS: <span>{{ equipamento.status }}</span></p>
     <p class="gerenciar__equipamento__card__modelo">{{ equipamento.modelo }}</p>
-    <a class="gerenciar__equipamento__card__a" href="">Ver mais informações</a>
+    <a class="gerenciar__equipamento__card__a" [routerLink]="['/detalhar-equipamentos', equipamento.id]">Ver mais informações</a>
   </div>
   <div class="gerenciar__equipamento__card__acoes">
-    <a href=""><img src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar Equipamento"></a>
+    <a [routerLink]="['/alterar-equipamentos', equipamento.id]"><img src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar Equipamento"></a>
     <button (click)="excluir(equipamento.id)"><img src="../../../../../assets/icones-gerenciamento/excluir.png" alt="Excluir Equipamento"></button>
   </div>
 </div>

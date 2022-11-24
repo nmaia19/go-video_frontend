@@ -27,8 +27,6 @@
 .logo__footer {
   height: 4.5rem;
   width: 100%;
-  left: 0;
-  bottom: 0;
   background-color: var(--primary-dark-color);
   display: flex;
   justify-content: center;
