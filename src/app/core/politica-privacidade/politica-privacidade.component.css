@@ -1,0 +1,33 @@
+.container_politica_privacidade{
+  margin: 23.8rem auto 0 auto;
+  padding: 0 6rem;
+  width: 1146px;
+  height: auto;
+}
+
+ol .lista_com_numero{
+  list-style: circle   ;
+}
+
+ul .lista_sem_numero{
+  list-style: none;
+}
+
+.container_politica_privacidade h1{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  text-align: center;
+}
+
+.container_politica_privacidade p, .container_politica_privacidade h3, .container_politica_privacidade ol li, .container_politica_privacidade ul li {
+  font-family: inherit;
+  padding: 0.5rem;
+  text-align: justify;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+}
