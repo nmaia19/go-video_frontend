@@ -1,3 +1,4 @@
+import { EquipamentoService } from './../../../core/services/equipamento.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./equipamentos.component.css']
 })
 export class EquipamentosComponent {
+  equipamentos: any = []
+
+  constructor(private service: EquipamentoService) {
+    this.consultar()
+  }
+
+  consultar() {
+    this.service.consultar().subscribe(data => this.equipamentos = data)
+  }
 
 }
