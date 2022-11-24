@@ -10,6 +10,8 @@ import { EquipamentoService } from 'src/app/core/services/equipamento.service';
 export class AlterarEquipamentosComponent {
   equipamento: any = []
 
+  categorias: string[] = ["Câmeras", "Filmadoras", "Lentes", "Iluminação", "Acessórios"]
+
   constructor(private service: EquipamentoService, private route: ActivatedRoute, private router: Router) {
     var routeParams = this.route.snapshot.paramMap
     let id = parseInt(routeParams.get('id') || '')
