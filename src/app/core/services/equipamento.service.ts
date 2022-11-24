@@ -13,4 +13,20 @@ export class EquipamentoService {
   consultar() {
     return this.http.get(url)
   }
+
+  consultarPorId(id: number) {
+    return this.http.get(`${url}/${id}`)
+  }
+
+  cadastrar(data: any) {
+    return this.http.post(url, data)
+  }
+
+  alterar(id: number, data: any) {
+    return this.http.put(`${url}/${id}`, data)
+  }
+
+  excluir(id: number) {
+    return this.http.delete(`${url}/${id}`)
+  }
 }

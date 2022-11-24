@@ -1,40 +1,36 @@
+<app-header></app-header>
+
 <div class="container_equipamento_especifico">
 
   <div class="img_equipamento">
-    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" alt="">
+    <img src="{{ equipamento.urlFoto }}" alt="Imagem do equipamento">
   </div>
 
   <div class="nome_equipamento">
-    <h2>Nome equipamento</h2>
-    <h5>Status: Algum status</h5>
+    <h2>{{ equipamento.modelo }}</h2>
+    <h5>Status: <span class="{{ equipamento.status }}">{{ equipamento.status }}</span></h5>
   </div>
 
   <div class="btn_reserva">
-    <button>Reservar</button>
+    <button [routerLink]="['/alterar-equipamentos', equipamento.id]">Alterar</button>
   </div>
 
-  <div class="ficha_tecnica">
+  <div class="ficha_tecnica container">
     <h3>FICHA TECNICA</h3>
     <div class="box_ficha_tecnica">
       <h5>Descrição</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit eos totam ea animi corrupti facere recusandae sunt corporis quae dignissimos?</p>
+      <p>{{ equipamento.descricao }}</p>
     </div>
 
     <div class="box_ficha_tecnica">
       <h5>Marca</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit eos totam ea animi corrupti facere recusandae sunt corporis quae dignissimos?</p>
+      <p>{{ equipamento.marca }}</p>
     </div>
 
     <div class="box_ficha_tecnica">
       <h5>Categoria</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit eos totam ea animi corrupti facere recusandae sunt corporis quae dignissimos?</p>
+      <p>{{ equipamento.categoria }}</p>
     </div>
-
-    <div class="box_ficha_tecnica">
-      <h5>Cuidados</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit eos totam ea animi corrupti facere recusandae sunt corporis quae dignissimos?</p>
-    </div>
-
   </div>
 
 

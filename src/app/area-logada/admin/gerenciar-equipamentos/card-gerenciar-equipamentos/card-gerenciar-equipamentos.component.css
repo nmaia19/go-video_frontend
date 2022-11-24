@@ -30,7 +30,7 @@
   margin-bottom: var(--margin-sm);
 }
 
-.gerenciar__equipamento__card__descricao{
+.gerenciar__equipamento__card__modelo{
   font-weight: 700;
   font-size: var(--font-size-sm);
   letter-spacing: 0.05em;
