@@ -1,6 +1,8 @@
 .container_termos_condicoes{
-  margin-top: 23.8rem;
+  margin: 23.8rem auto 0 auto;
   padding: 0 6rem;
+  width: 1146px;
+  height: auto;
 }
 
 ol .lista_com_numero{
@@ -11,14 +13,21 @@ ul .lista_sem_numero{
   list-style: none;
 }
 
-h1, h3{
-  font-weight: bold;
-  padding: 0.5rem;
-  margin: 0;
+.container_termos_condicoes h1{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  text-align: center;
 }
 
-p{
-  margin: 0;
+.container_termos_condicoes p, .container_termos_condicoes h3, .container_termos_condicoes ol li, .container_termos_condicoes ul li {
+  font-family: inherit;
   padding: 0.5rem;
   text-align: justify;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
 }
