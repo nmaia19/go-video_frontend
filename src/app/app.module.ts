@@ -21,14 +21,14 @@ import { HistoricoEmprestimosComponent } from './area-logada/admin/historico-emp
 import { DetalharEquipamentosComponent } from './area-logada/detalhar-equipamentos/detalhar-equipamentos.component';
 import { HomeComponent } from './area-logada/home/home.component';
 import { AlterarSenhaComponent } from './area-logada/usuario/alterar-senha/alterar-senha.component';
+import { CardEquipamentoComponent } from './area-logada/usuario/equipamentos/card-equipamento/card-equipamento.component';
 import { EquipamentosComponent } from './area-logada/usuario/equipamentos/equipamentos.component';
 import { MeusEmprestimosComponent } from './area-logada/usuario/meus-emprestimos/meus-emprestimos.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { HeaderBrancoComponent } from './core/header-branco/header-branco.component';
 import { HeaderComponent } from './core/header/header.component';
 import { PoliticaPrivacidadeComponent } from './core/politica-privacidade/politica-privacidade.component';
 import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condicoes.component';
-import { CardEquipamentoComponent } from './area-logada/usuario/equipamentos/card-equipamento/card-equipamento.component';
-import { HeaderBrancoComponent } from './core/header-branco/header-branco.component';
 
 @NgModule({
   declarations: [
