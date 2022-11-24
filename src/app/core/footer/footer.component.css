@@ -7,12 +7,13 @@
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .link__Footer {
   width: 50rem;
+  margin-top: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -34,7 +35,7 @@
   align-items: center;
 }
 
-.logo__footer p, img {
+.logo__footer a, img {
   color: white;
   font-size: 16px;
   font-weight: 500;
