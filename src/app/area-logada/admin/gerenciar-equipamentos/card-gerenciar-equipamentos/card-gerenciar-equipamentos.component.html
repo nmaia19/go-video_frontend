@@ -1,14 +1,14 @@
 <div class="gerenciar__equipamento__card__container">
   <div>
-    <img class="gerenciar__equipamento__card__img" src="../../../../../assets/equipamentos/x-t30-Fuji.jpg" alt="Imagem do equipamento">
+    <img class="gerenciar__equipamento__card__img" src="{{ equipamento.urlFoto }}" alt="Imagem do equipamento">
   </div>
   <div class="gerenciar__equipamento__card__detalhamento">
-    <p class="gerenciar__equipamento__card__status">STATUS: <span>Inativo</span></p>
-    <p class="gerenciar__equipamento__card__descricao">ESSE modelo PODE SER MAIS COMPRIDA ENTÃO ESCREVER MAIS</p>
+    <p class="gerenciar__equipamento__card__status">STATUS: <span>{{ equipamento.status }}</span></p>
+    <p class="gerenciar__equipamento__card__modelo">{{ equipamento.modelo }}</p>
     <a class="gerenciar__equipamento__card__a" href="">Ver mais informações</a>
   </div>
   <div class="gerenciar__equipamento__card__acoes">
     <a href=""><img src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar Equipamento"></a>
-    <button href=""><img src="../../../../../assets/icones-gerenciamento/excluir.png" alt="Excluir Equipamento"></button>
+    <button (click)="excluir(equipamento.id)"><img src="../../../../../assets/icones-gerenciamento/excluir.png" alt="Excluir Equipamento"></button>
   </div>
 </div>

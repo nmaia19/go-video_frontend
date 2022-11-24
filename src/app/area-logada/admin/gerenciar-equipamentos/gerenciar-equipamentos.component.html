@@ -30,16 +30,13 @@
     </select>
   </div>
 
-  <div class="gerenciar__equipamento__display">
-    <app-card-gerenciar-equipamentos></app-card-gerenciar-equipamentos>
-    <app-card-gerenciar-equipamentos></app-card-gerenciar-equipamentos>
-    <app-card-gerenciar-equipamentos></app-card-gerenciar-equipamentos>
-    <app-card-gerenciar-equipamentos></app-card-gerenciar-equipamentos>
+  <div class="gerenciar__equipamento__display" *ngFor="let equipamento of equipamentos.content">
+    <app-card-gerenciar-equipamentos [equipamento]="equipamento"></app-card-gerenciar-equipamentos>
   </div>
 
-  <div class="gerenciar__equipamento__paginacao">
+  <!-- <div class="gerenciar__equipamento__paginacao">
     <button><</button>
     <p class="gerenciar__equipamento__paginacao__p">Página <span>1</span> de <span>2</span></p>
     <button>></button>
-  </div>
+  </div> -->
 </section>

@@ -16,6 +16,9 @@ import { CadastrarEquipamentosComponent } from './area-logada/admin/cadastrar-eq
 import {
   GerenciarColaboradoresComponent,
 } from './area-logada/admin/gerenciar-colaboradores/gerenciar-colaboradores.component';
+import {
+  CardGerenciarEquipamentosComponent,
+} from './area-logada/admin/gerenciar-equipamentos/card-gerenciar-equipamentos/card-gerenciar-equipamentos.component';
 import { GerenciarEquipamentosComponent } from './area-logada/admin/gerenciar-equipamentos/gerenciar-equipamentos.component';
 import { HistoricoEmprestimosComponent } from './area-logada/admin/historico-emprestimos/historico-emprestimos.component';
 import { DetalharEquipamentosComponent } from './area-logada/detalhar-equipamentos/detalhar-equipamentos.component';
@@ -29,7 +32,6 @@ import { HeaderBrancoComponent } from './core/header-branco/header-branco.compon
 import { HeaderComponent } from './core/header/header.component';
 import { PoliticaPrivacidadeComponent } from './core/politica-privacidade/politica-privacidade.component';
 import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condicoes.component';
-import { CardGerenciarEquipamentosComponent } from './area-logada/admin/gerenciar-equipamentos/card-gerenciar-equipamentos/card-gerenciar-equipamentos.component';
 
 @NgModule({
   declarations: [

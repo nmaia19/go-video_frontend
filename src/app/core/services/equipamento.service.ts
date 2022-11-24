@@ -11,11 +11,14 @@ export class EquipamentoService {
   constructor(private http:HttpClient) { }
 
   cadastrar(data:any) {
-    console.log(data)
     return this.http.post(url, data)
   }
 
   consultar() {
     return this.http.get(url)
+  }
+
+  excluir(id: number) {
+    return this.http.delete(`${url}/${id}`)
   }
 }
