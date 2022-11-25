@@ -27,6 +27,9 @@ export class CadastrarEquipamentosComponent{
       event.stopPropagation();
     }
     else{
+      if(dados.urlFoto==""){
+        dados.urlFoto = "https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image"
+      }
       this.cadastrar(dados)
     }
     form.classList.add('was-validated');

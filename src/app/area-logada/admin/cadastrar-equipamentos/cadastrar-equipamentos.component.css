@@ -34,6 +34,10 @@
   margin-top: 0.3rem;
 }
 
+.equipamento__cadastro__input__obrigatorio{
+  color: var(--primary-red);
+}
+
 /* Erros */
 .equipamento__cadastro__erro{
   color: var(--primary-red);
