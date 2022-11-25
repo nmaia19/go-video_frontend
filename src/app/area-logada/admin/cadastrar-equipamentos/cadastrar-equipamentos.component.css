@@ -34,6 +34,13 @@
   margin-top: 0.3rem;
 }
 
+/* Erros */
+.equipamento__cadastro__erro{
+  color: var(--primary-red);
+  margin-bottom: 3rem;
+  margin-top: -2.8rem;
+}
+
 /* Select */
 .equipamento__cadastro__select{
   width: 50%;
