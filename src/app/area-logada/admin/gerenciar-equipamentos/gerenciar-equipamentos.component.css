@@ -67,6 +67,9 @@
 
 .gerenciar__equipamento__display{
   margin-top: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gerenciar__equipamento__paginacao{
