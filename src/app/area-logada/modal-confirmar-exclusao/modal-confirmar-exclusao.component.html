@@ -1,0 +1,6 @@
+<h2 mat-dialog-title>Confirmação de exclusão</h2>
+<mat-dialog-content>Tem certeza que deseja excluir esse {{data.nome}}?</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="cancel_button_ge" mat-dialog-close>Cancel</button>
+  <button class="excluir_button_ge" [mat-dialog-close]="true">Delete</button>
+</mat-dialog-actions>

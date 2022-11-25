@@ -32,6 +32,8 @@ import { HeaderBrancoComponent } from './core/header-branco/header-branco.compon
 import { HeaderComponent } from './core/header/header.component';
 import { PoliticaPrivacidadeComponent } from './core/politica-privacidade/politica-privacidade.component';
 import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condicoes.component';
+import { ModalConfirmarExclusaoComponent } from './area-logada/modal-confirmar-exclusao/modal-confirmar-exclusao.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condico
     CadastrarEquipamentosComponent,
     CardEquipamentoComponent,
     HeaderBrancoComponent,
-    CardGerenciarEquipamentosComponent
+    CardGerenciarEquipamentosComponent,
+    ModalConfirmarExclusaoComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condico
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
