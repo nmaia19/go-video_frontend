@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <section class="equipamentos container">
   <h1 class="equipamentos__title">Equipamentos</h1>
 
@@ -30,21 +32,9 @@
     </select>
   </div>
 
-
-  <div class="display-equipamentos">
-    <div class="cards">
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
-      <app-card-equipamento></app-card-equipamento>
+  <div id="display" class="display-equipamentos">
+    <div class="cards" *ngFor="let equipamento of equipamentos.content">
+      <app-card-equipamento [equipamento]="equipamento"></app-card-equipamento>
     </div>
   </div>
 

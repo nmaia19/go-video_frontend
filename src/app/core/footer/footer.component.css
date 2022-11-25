@@ -7,11 +7,12 @@
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .link__Footer {
+  margin-top: 40px;
   width: 50rem;
   display: flex;
   justify-content: space-around;
@@ -40,4 +41,3 @@
   font-weight: 500;
   margin: 4px;
 }
-

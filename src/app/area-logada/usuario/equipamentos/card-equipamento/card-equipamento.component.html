@@ -1,10 +1,10 @@
-<div class="card">
-  <img src="../../../../../assets/equipamentos/x-t30-Fuji.jpg" alt="" class="item__img" />
+<div id="card">
+  <img src="{{ equipamento.urlFoto }}" alt="" class="item__img" />
   <div class="card__info">
-    <div class="card-info__title">
-      <h3 class="modelo-equipamento">Fuji X-T30</h3>
-      <h4 class="status-equipamento">Disponível</h4>
+    <div id="card-info__title">
+      <h3 class="modelo-equipamento">{{ equipamento.modelo }}</h3>
+      <h4 class="status-equipamento">{{ equipamento.status }}</h4>
     </div>
-    <p class="descricao-equipamento">Descrição mais comprida com mais detalhes do equipamento.</p>
+    <p class="descricao-equipamento">{{ equipamento.descricao }}</p>
   </div>
 </div>

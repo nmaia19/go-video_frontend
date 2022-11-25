@@ -1,14 +1,32 @@
 <div class="gerenciar__equipamento__card__container">
   <div>
-    <img class="gerenciar__equipamento__card__img" src="../../../../../assets/equipamentos/x-t30-Fuji.jpg" alt="Imagem do equipamento">
+    <img class="gerenciar__equipamento__card__img" src="{{ equipamento.urlFoto }}" alt="Imagem do equipamento">
   </div>
   <div class="gerenciar__equipamento__card__detalhamento">
-    <p class="gerenciar__equipamento__card__status">STATUS: <span>Inativo</span></p>
-    <p class="gerenciar__equipamento__card__descricao">ESSE modelo PODE SER MAIS COMPRIDA ENTÃO ESCREVER MAIS</p>
-    <a class="gerenciar__equipamento__card__a" href="">Ver mais informações</a>
+    <p class="gerenciar__equipamento__card__status">STATUS: <span>{{ equipamento.status }}</span></p>
+    <p class="gerenciar__equipamento__card__modelo">{{ equipamento.modelo }}</p>
+    <a class="gerenciar__equipamento__card__a" [routerLink]="['/detalhar-equipamentos', equipamento.id]">Ver mais informações</a>
   </div>
   <div class="gerenciar__equipamento__card__acoes">
-    <a href=""><img src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar Equipamento"></a>
-    <button href=""><img src="../../../../../assets/icones-gerenciamento/excluir.png" alt="Excluir Equipamento"></button>
+    <a [routerLink]="['/alterar-equipamentos', equipamento.id]"><img src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar Equipamento"></a>
+    <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" ><img src="../../../../../assets/icones-gerenciamento/excluir.png" alt="Excluir Equipamento"></button>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Confirmação de exclusão</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Tem certeza que deseja excluir esse equipamento?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="cancel_button_ge" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="excluir_button_ge" (click)="excluir(equipamento.id)">Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

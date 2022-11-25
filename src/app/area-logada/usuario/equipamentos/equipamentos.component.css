@@ -1,3 +1,9 @@
+#display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  gap: 5rem;
+}
+
 .container {
   max-width: 106.8rem;
   margin: 21rem auto;

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { EquipamentoService } from './../../../../core/services/equipamento.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-gerenciar-equipamentos',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-gerenciar-equipamentos.component.css']
 })
 export class CardGerenciarEquipamentosComponent {
+  @Input() equipamento: any
 
+  constructor(private service: EquipamentoService) {}
+
+  excluir(id: number) {
+    this.service.excluir(id).subscribe()
+    window.location.reload()
+  }
 }

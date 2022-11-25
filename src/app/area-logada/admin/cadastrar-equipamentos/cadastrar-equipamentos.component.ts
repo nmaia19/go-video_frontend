@@ -1,3 +1,4 @@
+import { EquipamentoService } from './../../../core/services/equipamento.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./cadastrar-equipamentos.component.css']
 })
 export class CadastrarEquipamentosComponent {
+  constructor(private service: EquipamentoService) { }
 
+  dados: any = []
+
+  cadastrar(dados: any) {
+    this.service.cadastrar(dados).subscribe()
+    window.location.reload()
+  }
 }

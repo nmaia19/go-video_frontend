@@ -1,7 +1,7 @@
 <!-- HEADER -->
 
 <header class="header h-auto d-flex" id="header">
-  <div class="logo">
+  <div class="logo" routerLink="">
     <img
       src="../../../assets/img-header/Logo Preto.png"
       alt="Logotipo escrito Go Video"
@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item menu__item">
-            <a class="nav-link active" aria-current="page" href="#">HOME</a>
+            <a class="nav-link active" aria-current="page" routerLink="">HOME</a>
           </li>
           <li class="nav-item dropdown menu__item">
             <a
@@ -38,9 +38,9 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item submenu__item" href="#">CADASTRAR</a>
+                <a class="dropdown-item submenu__item" routerLink="/cadastrar-equipamentos">CADASTRAR</a>
               </li>
-              <li><a class="dropdown-item submenu__item" href="#">LISTAR</a></li>
+              <li><a class="dropdown-item submenu__item" routerLink="/gerenciar-equipamentos">LISTAR</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown menu__item">
@@ -55,9 +55,9 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item submenu__item" href="#">CADASTRAR</a>
+                <a class="dropdown-item submenu__item" routerLink="/cadastrar-colaboradores">CADASTRAR</a>
               </li>
-              <li><a class="dropdown-item submenu__item" href="#">LISTAR</a></li>
+              <li><a class="dropdown-item submenu__item" routerLink="/gerenciar-colaboradores">LISTAR</a></li>
             </ul>
           </li>
           <li class="nav-item menu__item">
@@ -75,7 +75,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item submenu__item" href="#">MINHA AREA</a>
+                <a class="dropdown-item submenu__item" href="#">MINHA ÁREA</a>
               </li>
               <li><a class="dropdown-item submenu__item" href="#">DESLOGAR</a></li>
             </ul>
