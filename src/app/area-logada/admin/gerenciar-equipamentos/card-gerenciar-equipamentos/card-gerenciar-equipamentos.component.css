@@ -98,10 +98,6 @@
   align-items: center;
 }
 
-.col-md-4 img{
-  margin: 0 auto;
-}
-
 .card-body{
   font-family: inherit;
   display: flex;
