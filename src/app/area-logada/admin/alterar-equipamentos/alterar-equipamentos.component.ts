@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EquipamentoService } from 'src/app/core/services/equipamento.service';
+import { EquipamentoService } from 'src/app/core/services/equipamento/equipamento.service';
 
 @Component({
   selector: 'app-alterar-equipamentos',

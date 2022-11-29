@@ -1,4 +1,4 @@
-import { EquipamentoService } from './../../core/services/equipamento.service';
+import { EquipamentoService } from '../../core/services/equipamento/equipamento.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

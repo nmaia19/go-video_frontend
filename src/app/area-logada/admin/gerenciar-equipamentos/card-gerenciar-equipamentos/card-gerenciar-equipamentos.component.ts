@@ -1,4 +1,4 @@
-import { EquipamentoService } from './../../../../core/services/equipamento.service';
+import { EquipamentoService } from '../../../../core/services/equipamento/equipamento.service';
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmarExclusaoComponent } from 'src/app/area-logada/modal-confirmar-exclusao/modal-confirmar-exclusao.component';
