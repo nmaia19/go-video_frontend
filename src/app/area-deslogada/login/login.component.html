@@ -1,1 +1,34 @@
-<p>login works!</p>
+<div id="container" class="container-fluid">
+  <!-- <img src="../../../assets/login/login-bg-img.jpg" class="img-fluid img-bg" alt="..."> -->
+
+  <div id="login-box" class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="login-wrap p-0">
+        <h3 class="mb-4 text-center">Login</h3>
+
+        <form action="#" class="signin-form">
+          <div class="form-group">
+            <input [(ngModel)]="loginObj.email" type="text" name="email" class="form-control" placeholder="E-mail" required="">
+          </div>
+
+          <div class="form-group">
+            <input [(ngModel)]="loginObj.password" id="password-field" name="password" type="password" class="form-control" placeholder="Password"
+              required="">
+            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+          </div>
+
+          <div class="form-group">
+            <button (click)="onLogin()" type="submit" class="form-control btn btn-primary submit px-3">Entrar</button>
+          </div>
+
+          <div class="form-group d-md-flex">
+            <div id="esqueceu-senha" class="">
+              <a href="#" style="color: #fff">Esqueceu a senha?</a>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
