@@ -34,6 +34,7 @@ import { PoliticaPrivacidadeComponent } from './core/politica-privacidade/politi
 import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condicoes.component';
 import { ModalConfirmarExclusaoComponent } from './area-logada/modal-confirmar-exclusao/modal-confirmar-exclusao.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 import { CardHistoricoEmprestimosComponent } from './area-logada/admin/historico-emprestimos/card-historico-emprestimos/card-historico-emprestimos.component';
 
 @NgModule({
@@ -69,7 +70,8 @@ import { CardHistoricoEmprestimosComponent } from './area-logada/admin/historico
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,16 +4,16 @@
   <h1 class="historico__emprestimos__title">Histórico de empréstimos</h1>
 
   <div class="select-group">
-    <select class="select form-select" name="categorias">
+    <select class="select form-select" name="status" (change)="filtrarPorStatus($event)">
       <option value="">Todos os status</option>
       <option value="Em Andamento">Em andamento</option>
       <option value="Finalizado">Finalizado</option>
     </select>
-    <select class="select form-select" name="marcas">
+    <select class="select form-select" name="modelos" (change)="filtrarPorModelo($event)">
       <option value="">Todas os modelos</option>
-      <option *ngFor="let emprestimo of emprestimos.content">{{ emprestimo.equipamento.modelo }}</option>
+      <option *ngFor="let emprestimo of emprestimos.content" >{{ emprestimo.equipamento.modelo }}</option>
     </select>
-    <select class="select form-select" name="status">
+    <select class="select form-select" name="usuarios" (change)="filtrarPorUsuario($event)">
       <option value="">Todas os usuários</option>
       <option *ngFor="let emprestimo of emprestimos.content">{{ emprestimo.usuario.nome }}</option>
     </select>
