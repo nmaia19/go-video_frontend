@@ -10,12 +10,12 @@
       <option value="Finalizado">Finalizado</option>
     </select>
     <select class="select form-select" name="modelos" (change)="filtrarPorModelo($event)">
-      <option value="">Todas os modelos</option>
-      <option *ngFor="let emprestimo of emprestimos.content" >{{ emprestimo.equipamento.modelo }}</option>
+      <option value="">Todos os modelos</option>
+      <option *ngFor="let modelo of modeloFiltro" >{{ modelo }}</option>
     </select>
     <select class="select form-select" name="usuarios" (change)="filtrarPorUsuario($event)">
       <option value="">Todas os usuários</option>
-      <option *ngFor="let emprestimo of emprestimos.content">{{ emprestimo.usuario.nome }}</option>
+      <option *ngFor="let usuario of usuarioFiltro">{{ usuario }}</option>
     </select>
   </div>
 
@@ -23,7 +23,7 @@
     <app-card-historico-emprestimos [emprestimo]="emprestimo"></app-card-historico-emprestimos>
   </div>
 
-  <div class="historico__emprestimos__paginacao">
+  <div class="historico__emprestimos__paginacao" *ngIf="paginado">
     <button (click)="irParaPaginaAnterior()" [disabled]="page==0"><</button>
     <p class="historico__emprestimos__paginacao__p">Página <span>{{ page + 1 }}</span> de <span>{{ emprestimos.totalPages }}</span></p>
     <button (click)="irParaProximaPagina()" [disabled]="page+1==emprestimos.totalPages">></button>

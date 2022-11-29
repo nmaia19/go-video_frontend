@@ -39,11 +39,7 @@ export class GerenciarEquipamentosComponent {
       this.categoriaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.categoria))
       this.marcaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.marca))
       this.statusFiltro = new Set(this.equipamentos.content.map((e:any)=>e.status))
-      this.consultarOriginal()
     })
-  }
-
-  consultarOriginal(){
     this.service.consultarPaginado(0, 100).subscribe(data => {this.equipamentosOriginal = data})
   }
 

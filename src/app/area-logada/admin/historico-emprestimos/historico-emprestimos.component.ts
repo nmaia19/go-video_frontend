@@ -12,23 +12,33 @@ export class HistoricoEmprestimosComponent {
   emprestimos: any = []
   emprestimosOriginal: any = []
   page: number = 0
+  size: number = 5
+  modeloFiltro: Set<string> = new Set<string>()
+  usuarioFiltro: Set<string> = new Set<string>()
+  paginado: boolean = true
   status: string = ''
   modelo: string = ''
   usuario: string = ''
-  listStatus: any = []
 
   constructor(private service: EmprestimoService, private route: ActivatedRoute, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     var routeParams = this.route.snapshot.paramMap
-    this.page = parseInt(routeParams.get('page') || '')
-    this.consultar(this.page)
+    if(routeParams.get('page')!=null){
+      this.page = parseInt(routeParams.get('page') || '')
+    }
+    if(routeParams.get('size')!=null){
+      this.size = parseInt(routeParams.get('size') || '')
+    }
+    this.consultar()
   }
 
-  consultar(page: number) {
-    this.service.consultar(page).subscribe(data => {
+  consultar() {
+    this.service.consultar(this.page, this.size).subscribe(data => {
       this.emprestimos = data;
-      this.emprestimosOriginal = data;
+      this.modeloFiltro = new Set(this.emprestimos.content.map((e:any)=>e.equipamento.modelo))
+      this.usuarioFiltro = new Set(this.emprestimos.content.map((e:any)=>e.usuario.nome))
     })
+    this.service.consultar(this.page, this.size).subscribe(data => {this.emprestimosOriginal = data;})
   }
 
   filtrarPorStatus(event:any){
@@ -47,55 +57,50 @@ export class HistoricoEmprestimosComponent {
   }
 
   filtrar(){
-    this.listStatus = []
-    this.emprestimos = this.emprestimosOriginal
+    let listaModeloFiltrado = []
+    let listaUsuario: any[] = []
+    let listaStatusFiltrado: any[] = []
 
-    if(this.status=="Em Andamento"){
-      this.emprestimosOriginal.content.forEach((element: any) => {
-        if(element.dataFim==null){
-          this.listStatus.push(element)
-          this.emprestimos.content = this.listStatus;
-        }
-      });
-    }
-    else if(this.status=="Finalizado"){
-      this.emprestimosOriginal.content.forEach((element: any) => {
-        if(element.dataFim!=null){
-          this.listStatus.push(element)
-          this.emprestimos.content = this.listStatus;
-        }
-      });
+    if(this.modelo == '' && this.usuario == '' && this.status == ''){
+      window.location.reload()
     }
     else{
-      this.listStatus = this.emprestimosOriginal.content
-      this.emprestimos.content = this.listStatus;
+      this.paginado = false
+      if(this.usuario!=''){
+        listaUsuario = this.emprestimosOriginal.content.filter((e: any)=>e.usuario.nome==this.usuario)
+      }
+      if(this.modelo!=''){
+        listaModeloFiltrado = this.emprestimosOriginal.content.filter((e: any)=>e.equipamento.modelo==this.modelo)
+      }
+      else{
+        listaModeloFiltrado = this.emprestimosOriginal.content
+      }
+      if(this.status!=''){
+        if(this.status=="Em Andamento"){
+          listaStatusFiltrado = this.emprestimosOriginal.content.filter((e: any)=>e.dataFim==null)
+        }
+        else if(this.status=="Finalizado"){
+          listaStatusFiltrado = this.emprestimosOriginal.content.filter((e: any)=>e.dataFim!=null)
+        }
+      }
+
+      this.emprestimos.content = listaModeloFiltrado.filter((e:any)=>{
+        if(listaUsuario.length==0 || listaUsuario.includes(e)){
+          if(listaStatusFiltrado.length==0 || listaStatusFiltrado.includes(e)){
+            return e;
+          }
+        }
+      })
+
     }
-    console.log(this.listStatus)
   }
 
-  // filtrar(){
-  //   if(this.status==="Em Andamento"){
-  //     this.listStatus = this.emprestimos.content.filter((e:any)=>e.dataFim == null)
-  //   }
-
-  //   else if(this.status==="Finalizado"){
-  //     this.listStatus.push(this.emprestimosOriginal.content)
-  //     this.listStatus = this.emprestimos.content.filter((e:any)=>e.dataFim != null)
-  //   }
-  //   else{
-  //     this.listStatus.push(this.emprestimosOriginal.content)
-  //   }
-
-  //   this.emprestimos.content = this.listStatus;
-
-  // }
-
   irParaProximaPagina(){
-    this.router.navigate(['/historico-emprestimos', this.page+1])
+    this.router.navigate(['/historico-emprestimos', this.page+1, this.size])
   }
 
   irParaPaginaAnterior(){
-    this.router.navigate(['/historico-emprestimos', this.page-1])
+    this.router.navigate(['/historico-emprestimos', this.page-1, this.size])
   }
 
 }
