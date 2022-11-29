@@ -22,4 +22,20 @@ export class AlterarEquipamentosComponent {
     this.service.alterar(id, dados).subscribe()
     this.router.navigate(['/detalhar-equipamentos/', id])
   }
+
+  validate(event:Event, id:number, dados: any){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    else{
+      if(dados.urlFoto==""){
+        dados.urlFoto = "https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image"
+      }
+      this.alterar(id, dados)
+    }
+    form.classList.add('was-validated');
+
+  }
 }
