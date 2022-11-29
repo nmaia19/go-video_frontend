@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent },
   { path: 'equipamentos', component: EquipamentosComponent },
   { path: 'detalhar-equipamentos/:id', component: DetalharEquipamentosComponent },
-  { path: 'gerenciar-colaboradores', component: GerenciarColaboradoresComponent },
+  { path: 'gerenciar-colaboradores/:page', component: GerenciarColaboradoresComponent },
   { path: 'cadastrar-colaboradores', component: CadastrarColaboradoresComponent },
   { path: 'alterar-colaboradores', component: AlterarColaboradoresComponent },
   { path: 'historico-emprestimos/:page', component: HistoricoEmprestimosComponent},

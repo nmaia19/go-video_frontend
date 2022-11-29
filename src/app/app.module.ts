@@ -35,6 +35,7 @@ import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condico
 import { ModalConfirmarExclusaoComponent } from './area-logada/modal-confirmar-exclusao/modal-confirmar-exclusao.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CardHistoricoEmprestimosComponent } from './area-logada/admin/historico-emprestimos/card-historico-emprestimos/card-historico-emprestimos.component';
+import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenciar-colaboradores/card-gerenciar-colaboradores/card-gerenciar-colaboradores.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { CardHistoricoEmprestimosComponent } from './area-logada/admin/historico
     HeaderBrancoComponent,
     CardGerenciarEquipamentosComponent,
     ModalConfirmarExclusaoComponent,
-    CardHistoricoEmprestimosComponent
+    CardHistoricoEmprestimosComponent,
+    CardGerenciarColaboradoresComponent
   ],
   imports: [
     BrowserModule,
