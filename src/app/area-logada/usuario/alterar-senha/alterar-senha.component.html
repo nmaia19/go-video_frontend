@@ -1,2 +1,27 @@
 <app-header></app-header>
-<p>alterar-senha works!</p>
+<div class="container containerAlterarSenha">
+  <h1>ALTERAR SENHA</h1>
+  <div class="formAlterarSenha">
+    <form class="altera__senha__form" #f="ngForm" (ngSubmit)="alterarSenha(1, f.value)">   <!-- Pegar ID do usuario logado -->
+      <div>
+        <label class="form-label" for="senha-anterior">SENHA ANTERIOR</label>
+        <input class="form-control bg-light altera__senha__input" type="password" id="senha-anterior" ngModel name="senhaAntiga"/>
+      </div>
+
+      <div>
+        <label class="form-label" for="nova-senha">NOVA SENHA</label>
+        <input class="form-control bg-light altera__senha__input" type="password" id="nova-senha" required ngModel name="novaSenha" />
+      </div>
+
+      <div>
+        <label class="form-label" for="confirmar-nova-senha">CONFIRME A NOVA SENHA</label>
+        <input class="form-control bg-light altera__senha__input" type="password" id="confirmar-nova-senha" required ngModel name="confirmaNovaSenha" />
+      </div>
+
+      <div class="alterar__senha__botoes">
+        <button class="alterar__senha__cadastrar" type="submit">ALTERAR</button>
+      </div>
+    </form>
+  </div>
+
+</div>
