@@ -82,6 +82,9 @@ export class GerenciarEquipamentosComponent {
       if(this.categoria!=''){
         listaCategoriaFiltrada = this.equipamentosOriginal.content.filter((e: any)=>e.categoria==this.categoria)
       }
+      else{
+        listaCategoriaFiltrada = this.equipamentosOriginal.content
+      }
       if(this.marca!=''){
         listaMarcaFiltrada = this.equipamentosOriginal.content.filter((e: any)=>e.marca==this.marca)
       }
