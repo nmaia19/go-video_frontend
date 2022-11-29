@@ -3,8 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 100%;
-  min-height: 100vh;
-  padding-bottom: 12.9rem;
+  min-height: calc(100vh - 12.9rem);
 }
 .img-bg {
   position: absolute;
@@ -44,6 +43,8 @@
   border-radius: 13px;
   font-size:var(--font-size-sm);
   margin-bottom: 3rem;
+
+  color: #fff;
 }
 
 .form-control::-webkit-input-placeholder {

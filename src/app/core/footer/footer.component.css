@@ -1,5 +1,4 @@
 .footer {
-  position: absolute;
   left: 0;
   bottom: 0rem;
   width: 100%;
@@ -10,6 +9,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .link__Footer {
