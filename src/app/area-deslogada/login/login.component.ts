@@ -14,6 +14,7 @@ export class LoginComponent {
   };
   constructor(private router: Router) { }
 
+  //TODO: implementar os metodos
   onLogin(){
     //way 1
     // if(this.loginObj.userName == 'user123' && this.loginObj.password =='user@123') {
