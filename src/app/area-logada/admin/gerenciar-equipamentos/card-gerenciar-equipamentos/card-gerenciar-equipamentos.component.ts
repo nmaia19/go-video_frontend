@@ -1,3 +1,4 @@
+import { EquipamentoService } from './../../../../core/services/equipamento/equipamento.service';
 
 import { EquipamentoService } from 'src/app/core/services/equipamento/equipamento.service';
 import { Component, Input } from '@angular/core';

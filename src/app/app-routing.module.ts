@@ -1,3 +1,4 @@
+import { LoginComponent } from './area-deslogada/login/login.component';
 import { PerfilComponent } from './area-logada/usuario/perfil/perfil/perfil.component';
 import { HistoricoEmprestimosComponent } from './area-logada/admin/historico-emprestimos/historico-emprestimos.component';
 import { NgModule } from '@angular/core';
@@ -16,8 +17,8 @@ import { CadastrarColaboradoresComponent } from './area-logada/admin/cadastrar-c
 import { AlterarColaboradoresComponent } from './area-logada/admin/alterar-colaboradores/alterar-colaboradores.component';
 
 const routes: Routes = [
-  // { path: '', component: LoginComponent },
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
+  { path: 'inicio', component: HomeComponent },
   { path: 'termos-condicoes', component: TermosCondicoesComponent },
   { path: 'politica-privacidade', component: PoliticaPrivacidadeComponent },
   { path: 'gerenciar-equipamentos', component: GerenciarEquipamentosComponent },
