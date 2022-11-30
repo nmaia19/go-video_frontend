@@ -1,3 +1,23 @@
 <app-header></app-header>
+<div class="container container__cadastro">
+  <h1>ALTERAR COLABORADOR</h1>
+  <div class="altera__colaborador__form">
+    <form #f="ngForm" (ngSubmit)="alterarNomeColaborador(1, f.value)">   <!-- Pegar ID do usuario logado -->
+      <div>
+        <label class="form-label" for="email">EMAIL*</label>
+        <input class="form-control bg-light altera__nome__input" type="email" id="email" readonly ngModel name="email" />
+      </div>
 
-<p>alterar-colaboradores works!</p>
+      <div>
+        <label class="form-label" for="nome">NOME*</label>
+        <input class="form-control bg-light altera__nome__input" type="text" id="nome" ngModel name="nome"/>
+      </div>
+
+      <div class="altera__colaborador__botoes">
+        <button class="btn__reset__senha" type="submit">RESETAR SENHA</button>
+        <button class="btn__alterar" type="submit">ALTERAR</button>
+      </div>
+    </form>
+  </div>
+
+</div>

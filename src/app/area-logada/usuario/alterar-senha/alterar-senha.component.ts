@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlterarSenhaService } from './../../../core/services/alterar-senha.service';
+import { UsuarioService } from '../../../core/services/usuario.service';
 
 
 @Component({
@@ -8,10 +8,10 @@ import { AlterarSenhaService } from './../../../core/services/alterar-senha.serv
   styleUrls: ['./alterar-senha.component.css']
 })
 export class AlterarSenhaComponent {
-  constructor(private service: AlterarSenhaService) { }
+  constructor(private service: UsuarioService) { }
 
   alterarSenha(id:number, dados: any) {
-    // this.service.alterar(id, dados).subscribe()
+    // this.service.alterarSenha(id, dados).subscribe()
     console.log(dados)
   }
 

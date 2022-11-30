@@ -1,3 +1,27 @@
 <app-header></app-header>
+<div class="container container__cadastro">
+  <h1>CADASTRAR COLABORADOR</h1>
+  <div class="cadastra__colaborador__form">
+    <form #f="ngForm" (ngSubmit)="cadastrarColaborador(1, f.value)">   <!-- Pegar ID do usuario logado -->
+      <div>
+        <label class="form-label" for="nome">NOME*</label>
+        <input class="form-control bg-light cadastra__nome__input" type="text" id="nome" ngModel name="nome"/>
+      </div>
 
-<p>cadastrar-colaboradores works!</p>
+      <div>
+        <label class="form-label" for="email">EMAIL*</label>
+        <input class="form-control bg-light cadastra__nome__input" type="email" id="email" required ngModel name="email" />
+      </div>
+
+      <div>
+        <label class="form-label" for="confirmar-nova-senha">SENHA*</label>
+        <input class="form-control bg-light cadastra__nome__input" type="password" id="confirmar-nova-senha" required ngModel name="senha" />
+      </div>
+
+      <div class="cadastra__colaborador__botoes">
+        <button class="btn__cadastrar" type="submit">CADASTRAR</button>
+      </div>
+    </form>
+  </div>
+
+</div>
