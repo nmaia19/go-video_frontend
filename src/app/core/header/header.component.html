@@ -1,7 +1,7 @@
 <!-- HEADER -->
 
 <header class="header h-auto d-flex" id="header">
-  <div class="logo" routerLink="">
+  <div class="logo" routerLink="/inicio">
     <img
       src="../../../assets/img-header/Logo Branco.png"
       alt="Logotipo escrito Go Video"
@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item menu__item">
-            <a class="nav-link active" aria-current="page" routerLink="">HOME</a>
+            <a class="nav-link active" aria-current="page" routerLink="/inicio">HOME</a>
           </li>
           <li class="nav-item dropdown menu__item">
             <a
@@ -75,9 +75,9 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item submenu__item" href="#">MINHA ÁREA</a>
+                <a class="dropdown-item submenu__item" [routerLink]="['/perfil',0]">MINHA ÁREA</a>
               </li>
-              <li><a class="dropdown-item submenu__item" href="#">DESLOGAR</a></li>
+              <li><a class="dropdown-item submenu__item" routerLink="">DESLOGAR</a></li>
             </ul>
           </li>
         </ul>
@@ -94,9 +94,9 @@
     </div>
     <ul class="dropdown-menu">
       <li>
-        <a class="dropdown-item submenu__item" href="#">MINHA AREA</a>
+        <a class="dropdown-item submenu__item" [routerLink]="['/perfil',0]">MINHA AREA</a>
       </li>
-      <li><a class="dropdown-item submenu__item" href="#">DESLOGAR</a></li>
+      <li><a class="dropdown-item submenu__item" routerLink="">DESLOGAR</a></li>
     </ul>
   </div>
 </header>
