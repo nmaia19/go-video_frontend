@@ -34,6 +34,7 @@ import { PoliticaPrivacidadeComponent } from './core/politica-privacidade/politi
 import { TermosCondicoesComponent } from './core/termos-condicoes/termos-condicoes.component';
 import { ModalConfirmarExclusaoComponent } from './area-logada/modal-confirmar-exclusao/modal-confirmar-exclusao.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CardMeusEmprestimosComponent } from './area-logada/usuario/meus-emprestimos/card-meus-emprestimos/card-meus-emprestimos.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CardEquipamentoComponent,
     HeaderBrancoComponent,
     CardGerenciarEquipamentosComponent,
-    ModalConfirmarExclusaoComponent
+    ModalConfirmarExclusaoComponent,
+    CardMeusEmprestimosComponent
   ],
   imports: [
     BrowserModule,
