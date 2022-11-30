@@ -11,7 +11,7 @@ export class EmprestimoService {
 
   constructor(private http:HttpClient) { }
 
-  consultar(page: number) {
-    return this.http.get(`${url}?page=${page}`)
+  consultar(page: number, size: number) {
+    return this.http.get(`${url}?page=${page}?size=${size}`)
   }
 }

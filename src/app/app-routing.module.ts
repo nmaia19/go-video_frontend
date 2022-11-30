@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'termos-condicoes', component: TermosCondicoesComponent },
   { path: 'politica-privacidade', component: PoliticaPrivacidadeComponent },
   { path: 'gerenciar-equipamentos', component: GerenciarEquipamentosComponent },
+  { path: 'gerenciar-equipamentos/:page/:size', component: GerenciarEquipamentosComponent },
   { path: 'cadastrar-equipamentos', component: CadastrarEquipamentosComponent },
   { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent },
   { path: 'equipamentos', component: EquipamentosComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'gerenciar-colaboradores/:page', component: GerenciarColaboradoresComponent },
   { path: 'cadastrar-colaboradores', component: CadastrarColaboradoresComponent },
   { path: 'alterar-colaboradores', component: AlterarColaboradoresComponent },
-  { path: 'historico-emprestimos/:page', component: HistoricoEmprestimosComponent},
+  { path: 'historico-emprestimos', component: HistoricoEmprestimosComponent},
+  { path: 'historico-emprestimos/:page/:size', component: HistoricoEmprestimosComponent},
   { path: 'perfil/:id', component: PerfilComponent},
 ];
 

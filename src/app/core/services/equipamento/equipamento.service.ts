@@ -14,6 +14,10 @@ export class EquipamentoService {
     return this.http.get(url)
   }
 
+  consultarPaginado(page:number, size: number) {
+    return this.http.get(`${url}?page=${page}&size=${size}`)
+  }
+
   consultarPorId(id: number) {
     return this.http.get(`${url}/${id}`)
   }
