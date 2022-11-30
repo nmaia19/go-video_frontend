@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsuarioService } from 'src/app/core/services/usuario.service';
 
 @Component({
   selector: 'app-cadastrar-colaboradores',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cadastrar-colaboradores.component.css']
 })
 export class CadastrarColaboradoresComponent {
+  constructor(private service: UsuarioService) { }
 
+  cadastrarColaborador(id:number, dados: any) {
+    // this.service.cadastrar(dados).subscribe()
+    console.log(dados)
+  }
 }
