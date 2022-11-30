@@ -1,3 +1,31 @@
 <app-header></app-header>
 
-<p>historico-emprestimos works!</p>
+<section class="historico__emprestimos_container">
+  <h1 class="historico__emprestimos__title">Histórico de empréstimos</h1>
+
+  <div class="select-group">
+    <select class="select form-select" name="categorias">
+      <option value="">Todos os status</option>
+      <option value="Em Andamento">Em andamento</option>
+      <option value="Finalizado">Finalizado</option>
+    </select>
+    <select class="select form-select" name="marcas">
+      <option value="">Todas os modelos</option>
+      <option *ngFor="let emprestimo of emprestimos.content">{{ emprestimo.equipamento.modelo }}</option>
+    </select>
+    <select class="select form-select" name="status">
+      <option value="">Todas os usuários</option>
+      <option *ngFor="let emprestimo of emprestimos.content">{{ emprestimo.usuario.nome }}</option>
+    </select>
+  </div>
+
+  <div class="historico__emprestimos__display" *ngFor="let emprestimo of emprestimos.content">
+    <app-card-historico-emprestimos [emprestimo]="emprestimo"></app-card-historico-emprestimos>
+  </div>
+
+  <div class="historico__emprestimos__paginacao">
+    <button (click)="irParaPaginaAnterior()" [disabled]="page==0"><</button>
+    <p class="historico__emprestimos__paginacao__p">Página <span>{{ page + 1 }}</span> de <span>{{ emprestimos.totalPages }}</span></p>
+    <button (click)="irParaProximaPagina()" [disabled]="page+1==emprestimos.totalPages">></button>
+  </div>
+</section>
