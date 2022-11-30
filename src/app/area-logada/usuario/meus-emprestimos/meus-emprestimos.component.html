@@ -3,8 +3,8 @@
 <section class="meu__emprestimo__container">
   <h1 class="meus__emprestimos__title">MEUS EMPRÉSTIMOS</h1>
 
-  <div class="meu__emprestimo__display" *ngFor="let equipamento of equipamentos.content">
-    <app-card-meus-emprestimos [equipamento]="equipamento"></app-card-meus-emprestimos>
+  <div class="meu__emprestimo__display" *ngFor="let emprestimo of emprestimos.content">
+    <app-card-meus-emprestimos [emprestimo]="emprestimo"></app-card-meus-emprestimos>
   </div>
 
 </section>

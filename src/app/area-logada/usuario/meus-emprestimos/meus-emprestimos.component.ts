@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EquipamentoService } from 'src/app/core/services/equipamento/equipamento.service';
+import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.service';
 
 @Component({
   selector: 'app-meus-emprestimos',
@@ -7,13 +7,13 @@ import { EquipamentoService } from 'src/app/core/services/equipamento/equipament
   styleUrls: ['./meus-emprestimos.component.css']
 })
 export class MeusEmprestimosComponent {
-  equipamentos: any = []
+  emprestimos: any = []
 
-  constructor(private service: EquipamentoService) {
-    this.consultar()
+  constructor(private service: EmprestimoService) {
+    this.consultarVigentePorUsuario()
   }
 
-  consultar() {
-    this.service.consultar().subscribe(data => this.equipamentos = data)
+  consultarVigentePorUsuario() {
+    this.service.consultarVigentePorUsuario(1).subscribe(data => this.emprestimos = data)
   }
 }

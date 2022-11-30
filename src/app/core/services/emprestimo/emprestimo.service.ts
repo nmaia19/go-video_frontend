@@ -14,4 +14,13 @@ export class EmprestimoService {
   consultar(page: number, size: number) {
     return this.http.get(`${url}?page=${page}?size=${size}`)
   }
+
+  consultarVigentePorUsuario(id: number) {
+    return this.http.get(`${url}/vigentes/usuario/${id}`)
+  }
+
+  devolver(id: number) {
+    return this.http.put(`${url}/encerrar/${id}`,{})
+  }
+
 }
