@@ -37,6 +37,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CardMeusEmprestimosComponent } from './area-logada/usuario/meus-emprestimos/card-meus-emprestimos/card-meus-emprestimos.component';
 import { CardHistoricoEmprestimosComponent } from './area-logada/admin/historico-emprestimos/card-historico-emprestimos/card-historico-emprestimos.component';
 import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenciar-colaboradores/card-gerenciar-colaboradores/card-gerenciar-colaboradores.component';
+import { ModalConfirmarDevolucaoComponent } from './area-logada/modal-confirmar-devolucao/modal-confirmar-devolucao.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenci
     ModalConfirmarExclusaoComponent,
     CardMeusEmprestimosComponent,
     CardHistoricoEmprestimosComponent,
-    CardGerenciarColaboradoresComponent
+    CardGerenciarColaboradoresComponent,
+    ModalConfirmarDevolucaoComponent
   ],
   imports: [
     BrowserModule,

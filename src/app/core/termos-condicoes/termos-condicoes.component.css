@@ -1,8 +1,9 @@
 .termos__container{
   margin-top: 21rem;
   margin-inline: auto;
-  width: 90%;
   margin-bottom: 7rem;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
 }
 
 .termos__container h1{
