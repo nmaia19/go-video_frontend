@@ -74,7 +74,6 @@ import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenci
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
