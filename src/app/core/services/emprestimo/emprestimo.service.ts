@@ -15,8 +15,8 @@ export class EmprestimoService {
     return this.http.get(`${url}?page=${page}?size=${size}`)
   }
 
-  consultarVigentePorUsuario(id: number) {
-    return this.http.get(`${url}/vigentes/usuario/${id}`)
+  consultarVigentePorUsuario(id: number, page: number) {
+    return this.http.get(`${url}/vigentes/usuario/${id}?page=${page}`)
   }
 
   devolver(id: number) {

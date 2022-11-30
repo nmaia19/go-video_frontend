@@ -72,16 +72,17 @@
   justify-content: center;
 }
 
-.meu__emprestimo__paginacao{
+.meus__emprestimos__paginacao{
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
 }
 
-.meu__emprestimo__paginacao button{
+.meus__emprestimos__paginacao button{
   margin-block: 0;
 }
 
-.meu__emprestimo__paginacao__p{
+.meus__emprestimos__paginacao__p{
   margin-inline: var(--margin-sm);
   margin-bottom: 0;
 }

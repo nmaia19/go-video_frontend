@@ -16,6 +16,7 @@ import { GerenciarEquipamentosComponent } from './area-logada/admin/gerenciar-eq
 import { GerenciarColaboradoresComponent } from './area-logada/admin/gerenciar-colaboradores/gerenciar-colaboradores.component';
 import { CadastrarColaboradoresComponent } from './area-logada/admin/cadastrar-colaboradores/cadastrar-colaboradores.component';
 import { AlterarColaboradoresComponent } from './area-logada/admin/alterar-colaboradores/alterar-colaboradores.component';
+import { MeusEmprestimosComponent } from './area-logada/usuario/meus-emprestimos/meus-emprestimos.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -35,6 +36,8 @@ const routes: Routes = [
   { path: 'historico-emprestimos', component: HistoricoEmprestimosComponent},
   { path: 'historico-emprestimos/:page/:size', component: HistoricoEmprestimosComponent},
   { path: 'perfil/:id', component: PerfilComponent},
+  { path: 'meus-emprestimos', component: MeusEmprestimosComponent},
+  { path: 'meus-emprestimos/:page', component: MeusEmprestimosComponent},
 ];
 
 @NgModule({

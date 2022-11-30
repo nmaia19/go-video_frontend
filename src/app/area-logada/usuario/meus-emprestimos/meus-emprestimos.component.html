@@ -7,4 +7,10 @@
     <app-card-meus-emprestimos [emprestimo]="emprestimo"></app-card-meus-emprestimos>
   </div>
 
+  <div class="meus__emprestimos__paginacao">
+    <button (click)="irParaPaginaAnterior()" [disabled]="page==0"><</button>
+    <p class="meus__emprestimos__paginacao__p">Página <span>{{ page + 1 }}</span> de <span>{{ emprestimos.totalPages }}</span></p>
+    <button (click)="irParaProximaPagina()" [disabled]="page+1==emprestimos.totalPages">></button>
+  </div>
+
 </section>
