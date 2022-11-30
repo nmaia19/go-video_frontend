@@ -1,5 +1,5 @@
-import { EquipamentoService } from './../../../core/services/equipamento.service';
 import { Component } from '@angular/core';
+import { EquipamentoService } from 'src/app/core/services/equipamento/equipamento.service';
 
 @Component({
   selector: 'app-meus-emprestimos',
