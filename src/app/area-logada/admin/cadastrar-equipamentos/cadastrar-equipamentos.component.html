@@ -3,41 +3,56 @@
 <section class="equipamento__cadastro__container">
   <h1 class="equipamento__cadastro__titulo">CADASTRAR EQUIPAMENTO</h1>
 
-  <form class="equipamento__cadastro__form" #f="ngForm" (ngSubmit)="cadastrar(f.value)">
+  <form class="equipamento__cadastro__form needs-validation" #f="ngForm" #form novalidate>
     <div>
-      <label for="equipamento-cadastro-categoria" class="form-label">CATEGORIA*</label>
-      <select id="equipamento-cadastro-categoria" class="form-select  equipamento__cadastro__select bg-light" ngModel name="categoria">
+      <label for="equipamento-cadastro-categoria" class="form-label">CATEGORIA <span class="equipamento__cadastro__input__obrigatorio">*</span></label>
+      <select id="equipamento-cadastro-categoria" class="form-select  equipamento__cadastro__select bg-light" ngModel name="categoria" required>
         <option value="Câmeras">Câmeras</option>
         <option value="Filmadoras">Filmadoras</option>
         <option value="Lentes">Lentes</option>
         <option value="Iluminação">Iluminação</option>
         <option value="Acessórios">Acessórios</option>
       </select>
+      <div class="invalid-feedback equipamento__cadastro__erro">
+        <p>Categoria obrigatória</p>
+      </div>
     </div>
 
     <div>
-      <label class="form-label" for="equipamento-cadastro-descricao">DESCRIÇÃO DO EQUIPAMENTO</label>
-      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-descricao" ngModel name="descricao"/>
+      <label class="form-label" for="equipamento-cadastro-descricao">DESCRIÇÃO DO EQUIPAMENTO <span class="equipamento__cadastro__input__obrigatorio">*</span></label>
+      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-descricao" ngModel name="descricao" required/>
+      <div class="invalid-feedback equipamento__cadastro__erro">
+        <p>Descrição obrigatória</p>
+      </div>
     </div>
 
     <div>
-      <label class="form-label" for="equipamento-cadastro-marca">MARCA*</label>
-      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-marca" required ngModel name="marca" />
+      <label class="form-label" for="equipamento-cadastro-marca">MARCA <span class="equipamento__cadastro__input__obrigatorio">*</span></label>
+      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-marca" required ngModel name="marca"/>
+      <div class="invalid-feedback equipamento__cadastro__erro">
+        <p>Marca obrigatória</p>
+      </div>
     </div>
 
     <div>
-      <label class="form-label" for="equipamento-cadastro-modelo">MODELO*</label>
-      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-modelo" required ngModel name="modelo" />
+      <label class="form-label" for="equipamento-cadastro-modelo">MODELO <span class="equipamento__cadastro__input__obrigatorio">*</span></label>
+      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-modelo" required ngModel name="modelo"/>
+      <div class="invalid-feedback equipamento__cadastro__erro">
+        <p>Modelo obrigatório</p>
+      </div>
     </div>
 
     <div>
-      <label class="form-label" for="equipamento-cadastro-url-imagem">URL DA IMAGEM*</label>
-      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-url-imagem" required ngModel name="urlFoto" />
+      <label class="form-label" for="equipamento-cadastro-url-imagem">URL DA IMAGEM</label>
+      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-url-imagem" ngModel name="urlFoto" maxlength="255"/>
+      <div class="invalid-feedback equipamento__cadastro__erro">
+        <p>Esse link é muito comprido. Tente um outro</p>
+      </div>
     </div>
 
     <div class="equipamento__cadastro__botoes">
       <button class="equipamento__cadastro__limpar" type="reset">LIMPAR</button>
-      <button class="equipamento__cadastro__cadastrar" type="submit">CADASTRAR</button>
+      <button class="equipamento__cadastro__cadastrar" type="submit" (click)="validate($event, f.value)">CADASTRAR</button>
     </div>
   </form>
 </section>
