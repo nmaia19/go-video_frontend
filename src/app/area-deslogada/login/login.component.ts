@@ -16,6 +16,7 @@ export class LoginComponent {
 
   //TODO: implementar os metodos
   onLogin(){
+    this.router.navigate(['/inicio'])
     //way 1
     // if(this.loginObj.userName == 'user123' && this.loginObj.password =='user@123') {
     //   localStorage.setItem('role','user');
