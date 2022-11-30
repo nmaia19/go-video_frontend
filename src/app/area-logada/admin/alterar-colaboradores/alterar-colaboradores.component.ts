@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsuarioService } from 'src/app/core/services/usuario.service';
+import { UsuarioService } from 'src/app/core/services/usuario/usuario.service';
 
 @Component({
   selector: 'app-alterar-colaboradores',

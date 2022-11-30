@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsuarioService } from '../../../core/services/usuario.service';
+import { UsuarioService } from '../../../core/services/usuario/usuario.service';
 
 
 @Component({
