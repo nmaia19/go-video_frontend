@@ -1,37 +1,40 @@
-.container_termos_condicoes{
-  margin: 23.8rem auto 0 auto;
-  padding: 0 6rem;
-  width: 1146px;
-  height: auto;
+.termos__container{
+  margin-top: 21rem;
+  margin-inline: auto;
+  width: 90%;
+  margin-bottom: 7rem;
 }
 
-ol .lista_com_numero{
-  list-style: circle   ;
-}
-
-ul .lista_sem_numero{
-  list-style: none;
-}
-
-.container_termos_condicoes h1{
+.termos__container h1{
   font-weight: 700;
-  font-size: 48px;
-  line-height: 60px;
+  font-size: var(--font-size-xl);
   letter-spacing: 0.05em;
   font-family: inherit;
   text-align: center;
+  margin-bottom: 5rem;
 }
 
-.container_termos_condicoes p, .container_termos_condicoes h3, .container_termos_condicoes ol li, .container_termos_condicoes ul li {
+.termos__container__texto{
   font-family: inherit;
-  padding: 0.5rem;
+  font-size: var(--font-size-sm);
   text-align: justify;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 30px;
+  font-weight: 400;
+  line-height: 3rem;
   letter-spacing: 0.05em;
 }
 
-.container_termos_condicoes h3{
+.termos__container__item{
+  margin-bottom: 3rem;
+}
+
+.termos__container__item h2{
+  font-size: var(--font-size-sm);
   font-weight: 700;
 }
+
+.termos__lista__disc{
+  list-style: disc;
+  padding-left: 3rem
+}
+
+
