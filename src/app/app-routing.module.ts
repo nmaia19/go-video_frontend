@@ -1,3 +1,4 @@
+import { AlterarSenhaComponent } from './area-logada/usuario/alterar-senha/alterar-senha.component';
 import { LoginComponent } from './area-deslogada/login/login.component';
 import { PerfilComponent } from './area-logada/usuario/perfil/perfil/perfil.component';
 import { HistoricoEmprestimosComponent } from './area-logada/admin/historico-emprestimos/historico-emprestimos.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'detalhar-equipamentos/:id', component: DetalharEquipamentosComponent },
   { path: 'gerenciar-colaboradores/:page', component: GerenciarColaboradoresComponent },
   { path: 'cadastrar-colaboradores', component: CadastrarColaboradoresComponent },
+  { path: 'alterar-senha', component: AlterarSenhaComponent },
   { path: 'alterar-colaboradores', component: AlterarColaboradoresComponent },
   { path: 'historico-emprestimos', component: HistoricoEmprestimosComponent},
   { path: 'historico-emprestimos/:page/:size', component: HistoricoEmprestimosComponent},
