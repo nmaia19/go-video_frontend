@@ -1,0 +1,22 @@
+<div class="card-geral">
+
+
+  <div class="card" style="max-width: 600px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ emprestimo.equipamento.urlFoto }}" alt="Imagem do equipamento" class="img-fluid rounded-start img">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <p class="card-text">{{ emprestimo.equipamento.marca }} - {{ emprestimo.equipamento.modelo }}</p>
+          <div>
+            <p class="card-text-tipo2 mb-0">DATA DA RETIRADA: {{ emprestimo.dataInicio | date: 'dd/MM/yyyy' }}</p>
+            <p class="card-text-tipo2">DATA DA DEVOLUÇÃO: {{ emprestimo.dataFim | date: 'dd/MM/yyyy' }}</p>
+          </div>
+          <p class="card-text-tipo3">FEITA POR: <a [routerLink]="['/perfil', emprestimo.usuario.id]" class="card-text-tipo4">{{ emprestimo.usuario.nome }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
