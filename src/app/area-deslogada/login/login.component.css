@@ -1,0 +1,120 @@
+#container {
+  background-image: url('../../../assets/login/login-bg-img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
+}
+.img-bg {
+  position: absolute;
+  z-index: 0;
+}
+
+#login-box {
+  position: relative;
+  z-index: 10;
+  transform: translateY(50%);
+}
+
+.login-wrap {
+  color: rgba(255, 255, 255, 0.9);
+}
+.login-wrap h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.05em;
+  font-family: inherit;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  background: transparent;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.08);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: 0.3s;
+
+  height: 5rem;
+  border-radius: 13px;
+  font-size:var(--font-size-sm);
+  margin-bottom: 3rem;
+
+  color: #fff;
+}
+
+.form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.form-control:-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.form-control:hover,
+.form-control:focus {
+  background: transparent;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.form-control:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+textarea.form-control {
+  height: inherit !important;
+}
+
+.btn {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  height: 5rem;
+  /* width: 16rem; */
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+.btn.btn-primary {
+  font-family: inherit;
+  background: var(--primary-dark-color);
+  color: var(--light-color);
+}
+.btn.btn-primary:hover {
+  /* border: 1px solid transparent; */
+  /* background: var(--secondary-dark-color); */
+  background: transparent;
+  color: var(--light-color-alt);
+}
+
+.btn.btn-primary.btn-outline-primary:hover {
+  border: 1px solid transparent;
+  background: var(--secondary-dark-color);
+  color: #fff;
+}
+
+.form-group.d-md-flex {
+  font-family: inherit;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#esqueceu-senha a {
+text-align: right;
+}
