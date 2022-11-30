@@ -73,7 +73,7 @@ import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenci
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

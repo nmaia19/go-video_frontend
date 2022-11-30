@@ -76,6 +76,7 @@
 .gerenciar__equipamento__paginacao{
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .gerenciar__equipamento__paginacao button{
