@@ -1,0 +1,85 @@
+/* .card-geral{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-geral:hover {
+  box-shadow: 4px 20px 40px hsl(0 4% 15% / 30%);
+  transition: 0.3s;
+} */
+
+.card {
+  border: none;
+  margin: 1.9rem auto;
+}
+
+.card:hover {
+  box-shadow: 4px 20px 40px hsl(0 4% 15% / 30%);
+  transition: 0.3s;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body{
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-title{
+  font-weight: 300;
+  font-size: var(--font-size-xsm);
+  color: var(--secondary-dark-color);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--margin-sm);
+}
+
+.card-text {
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary-dark-color);
+}
+
+.meu__emprestimo__card__a{
+  font-weight: 400;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.1em;
+  color: var(--primary-red);
+}
+
+.meu__emprestimo__card__a:hover{
+  text-decoration: underline;
+}
+
+.meu__emprestimo__card__acoes img{
+  height: 3.3rem;
+}
+
+.perfil__card__a{
+  font-weight: 400;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.1em;
+  color: var(--primary-red);
+}
+
+.perfil__card__a:hover{
+  text-decoration: underline;
+}
+
+
+@media screen and (min-width: 768px) {
+
+  .card-geral{
+    display: flex;
+    flex-direction: row;
+  }
+}

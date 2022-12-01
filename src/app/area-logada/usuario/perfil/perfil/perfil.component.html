@@ -4,15 +4,11 @@
     <h1>PERFIL</h1>
     <div class="email">
       <p>EMAIL:</p>
-      <p>lalaland@email.com</p>
+      <p>{{ usuario.email }}</p>
     </div>
     <div class="nome">
       <p>NOME:</p>
-      <p>lalaland</p>
-    </div>
-    <div class="senha">
-      <p>SENHA:</p>
-      <p>lalaland123</p>
+      <p>{{ usuario.nome }}</p>
     </div>
     <button class="alterar_btn">ALTERAR MINHA SENHA</button>
     <p class="aviso_perfil">(Caso precise alterar os dados, entre em contato com um administrador)</p>
@@ -21,7 +17,7 @@
   <div class="historico_emprestimos_box">
     <h1>HISTÓRICO DE EMPRÉSTIMOS</h1>
     <div class="meu__emprestimo__display" *ngFor="let emprestimo of emprestimos.content">
-      <app-card-meus-emprestimos [emprestimo]="emprestimo"></app-card-meus-emprestimos>
+      <app-card-perfil [emprestimo]="emprestimo"></app-card-perfil>
     </div>
   </div>
 </div>
