@@ -51,7 +51,7 @@
     </div>
 
     <div class="equipamento__cadastro__botoes">
-      <button class="equipamento__cadastro__limpar" type="reset">LIMPAR</button>
+      <button class="equipamento__cadastro__limpar" type="reset" (click)="limpar()">LIMPAR</button>
       <button class="equipamento__cadastro__cadastrar" type="submit" (click)="validate($event, f.value)">CADASTRAR</button>
     </div>
   </form>
