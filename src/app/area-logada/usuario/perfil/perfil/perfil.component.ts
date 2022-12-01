@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { TokenStorageService } from 'src/app/core/services/autenticacao/token.storage.service';
 import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.service';
@@ -13,7 +14,7 @@ export class PerfilComponent {
   usuario: any = []
   emprestimos: any = []
 
-  constructor(private emprestimoService: EmprestimoService, private usuarioService: UsuarioService, private tokenService: TokenStorageService) {
+  constructor(private emprestimoService: EmprestimoService, private usuarioService: UsuarioService, private tokenService: TokenStorageService, private router: Router) {
     const idUsuario = this.tokenService.getIdUsuario()
     this.consultarEmprestimosEncerradosPorUsuario(idUsuario)
     this.usuarioService.consultarPorId(idUsuario).subscribe(data => this.usuario = data)
@@ -23,4 +24,9 @@ export class PerfilComponent {
     this.emprestimoService.consultarEncerradosPorUsuario(idUsuario).subscribe(data => this.emprestimos = data)
     console.log(this.emprestimos)
   }
+
+  alterarSenha(){
+    this.router.navigate(['alterar-senha'])
+  }
+
 }
