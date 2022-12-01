@@ -22,7 +22,6 @@ export class PerfilComponent {
 
   consultarEmprestimosEncerradosPorUsuario(idUsuario: number) {
     this.emprestimoService.consultarEncerradosPorUsuario(idUsuario).subscribe(data => this.emprestimos = data)
-    console.log(this.emprestimos)
   }
 
   alterarSenha(){
