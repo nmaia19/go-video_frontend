@@ -17,6 +17,10 @@ export class EmprestimoService {
     this.authorization = new HttpHeaders({ 'Authorization': 'Bearer ' + tokenService.getToken()})
   }
 
+  criar(idEquipamento: number) {
+    return this.http.post(`${url}/${idEquipamento}`, null, {headers: this.authorization})
+  }
+
   consultar(page: number, size: number) {
     return this.http.get(`${url}?page=${page}?size=${size}`, {headers: this.authorization})
   }
@@ -25,8 +29,15 @@ export class EmprestimoService {
     return this.http.get(`${url}/vigentes/usuario/${id}`, {headers: this.authorization})
   }
 
-  devolver(id: number) {
-    return this.http.put(`${url}/encerrar/${id}`,{}, {headers: this.authorization})
+  consultarPorUsuario(id: number) {
+    return this.http.get(`${url}/usuario/${id}`, {headers: this.authorization})
   }
 
+  devolver(id: number) {
+    return this.http.put(`${url}/encerrar/${id}`, {}, {headers: this.authorization})
+  }
+
+  consultarEncerradosPorUsuario(id: number) {
+    return this.http.get(`${url}/encerrados/usuario/${id}`, {headers: this.authorization})
+  }
 }

@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'cadastrar-equipamentos', component: CadastrarEquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'equipamentos', component: EquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'equipamentos/:page/:size', component: EquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'meus-emprestimos', component: MeusEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'detalhar-equipamentos/:id', component: DetalharEquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'gerenciar-colaboradores/:page', component: GerenciarColaboradoresComponent, canActivate: [AuthGuard] },

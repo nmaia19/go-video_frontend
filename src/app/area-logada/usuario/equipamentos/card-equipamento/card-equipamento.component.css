@@ -9,6 +9,12 @@
   transition: 0.3s;
 }
 
+.container-link:hover{
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+}
+
 .item__img {
   width: 26.4rem;
   height: 26.4rem;
@@ -44,6 +50,10 @@
   color: var(--primary-red);
 }
 
+.status-equipamento-indisponivel{
+  color: var(--secondary-dark-color);
+}
+
 .descricao-equipamento {
   font-family: inherit;
   font-weight: 300;
@@ -52,3 +62,5 @@
   text-align: center;
 
 }
+
+

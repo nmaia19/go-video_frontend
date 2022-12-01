@@ -38,6 +38,8 @@ import { CardMeusEmprestimosComponent } from './area-logada/usuario/meus-emprest
 import { CardHistoricoEmprestimosComponent } from './area-logada/admin/historico-emprestimos/card-historico-emprestimos/card-historico-emprestimos.component';
 import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenciar-colaboradores/card-gerenciar-colaboradores/card-gerenciar-colaboradores.component';
 import { ModalConfirmarDevolucaoComponent } from './area-logada/modal-confirmar-devolucao/modal-confirmar-devolucao.component';
+import { PerfilComponent } from './area-logada/usuario/perfil/perfil/perfil.component';
+import { CardPerfilComponent } from './area-logada/usuario/perfil/perfil/card-perfil/card-perfil.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
@@ -68,6 +70,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     CardHistoricoEmprestimosComponent,
     CardGerenciarColaboradoresComponent,
     ModalConfirmarDevolucaoComponent,
+    PerfilComponent,
+    CardPerfilComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
+import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.service';
 import { EquipamentoService } from '../../core/services/equipamento/equipamento.service';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from 'src/app/core/services/autenticacao/token.storage.service';
 
 @Component({
   selector: 'app-detalhar-equipamentos',
@@ -9,9 +11,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetalharEquipamentosComponent {
   equipamento: any = []
-  constructor(private service: EquipamentoService, private route: ActivatedRoute) {
+  id: any = 0
+  isAdmin: boolean = false
+
+  constructor(private service: EquipamentoService, private emprestimoService: EmprestimoService, private route: ActivatedRoute, private tokenStorage: TokenStorageService, private router: Router) {
     var routeParams = this.route.snapshot.paramMap
-    let id = parseInt(routeParams.get('id') || '')
-    this.service.consultarPorId(id).subscribe(data => this.equipamento = data)
+    this.id = parseInt(routeParams.get('id') || '')
+    this.service.consultarPorId(this.id).subscribe(data => this.equipamento = data)
+    this.isAdmin = this.tokenStorage.isAdministrador()
+  }
+
+  reservar() {
+    this.emprestimoService.criar(this.id).subscribe()
+    this.router.navigate(['/meus-emprestimos'])
   }
 }

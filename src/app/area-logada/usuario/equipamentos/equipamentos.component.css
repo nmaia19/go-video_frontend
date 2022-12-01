@@ -79,3 +79,18 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
   gap: 5rem;
 }
+
+.equipamento__paginacao{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.equipamento__paginacao button{
+  margin-block: 0;
+}
+
+.equipamento__paginacao__p{
+  margin-inline: var(--margin-sm);
+  margin-bottom: 0;
+}
