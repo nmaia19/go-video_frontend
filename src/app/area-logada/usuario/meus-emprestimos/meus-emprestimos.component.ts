@@ -1,3 +1,5 @@
+import { UsuarioService } from './../../../core/services/usuario/usuario.service';
+import { TokenStorageService } from './../../../core/services/autenticacao/token.storage.service';
 import { Component } from '@angular/core';
 import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.service';
 
@@ -9,11 +11,12 @@ import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.s
 export class MeusEmprestimosComponent {
   emprestimos: any = []
 
-  constructor(private service: EmprestimoService) {
-    this.consultarVigentePorUsuario()
+  constructor(private service: EmprestimoService, private tokenService: TokenStorageService) {
+    const idUsuario = this.tokenService.getIdUsuario()
+    this.consultarVigentePorUsuario(idUsuario)
   }
 
-  consultarVigentePorUsuario() {
-    this.service.consultarVigentePorUsuario(1).subscribe(data => this.emprestimos = data)
+  consultarVigentePorUsuario(idUsuario: number) {
+    this.service.consultarVigentePorUsuario(idUsuario).subscribe(data => this.emprestimos = data)
   }
 }

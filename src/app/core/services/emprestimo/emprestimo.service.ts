@@ -1,9 +1,9 @@
+import { TokenStorageService } from './../autenticacao/token.storage.service';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/enviroments/environment';
 
 const url = environment.apiUrl + "emprestimos"
-
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +11,22 @@ const url = environment.apiUrl + "emprestimos"
 
 export class EmprestimoService {
 
-  constructor(private http:HttpClient) { }
+  authorization: any = ''
+
+  constructor(private http: HttpClient, private tokenService: TokenStorageService) {
+    this.authorization = new HttpHeaders({ 'Authorization': 'Bearer ' + tokenService.getToken()})
+  }
 
   consultar(page: number, size: number) {
-    return this.http.get(`${url}?page=${page}?size=${size}`)
+    return this.http.get(`${url}?page=${page}?size=${size}`, {headers: this.authorization})
   }
 
   consultarVigentePorUsuario(id: number) {
-    return this.http.get(`${url}/vigentes/usuario/${id}`)
+    return this.http.get(`${url}/vigentes/usuario/${id}`, {headers: this.authorization})
   }
 
   devolver(id: number) {
-    return this.http.put(`${url}/encerrar/${id}`,{})
+    return this.http.put(`${url}/encerrar/${id}`,{}, {headers: this.authorization})
   }
 
 }
