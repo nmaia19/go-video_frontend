@@ -1,0 +1,38 @@
+#perfil_container{
+  display: flex;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
+}
+
+.informacoes_gerais_box{
+  display: flex;
+}
+
+.informacoes_gerais_box h1{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0.05em;
+}
+
+.informacoes_gerais_box .email p, .informacoes_gerais_box .nome p, .informacoes_gerais_box .senha p{
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+}
+
+.informacoes_gerais_box .alterar_btn {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  color: white;
+  height: 5rem;
+  width: 16rem;
+  background-color: var(--primary-red);
+}
+
+.informacoes_gerais_box .alterar_btn:hover {
+  color: black;
+  background-color: var(--secondary-red);
+}
+
