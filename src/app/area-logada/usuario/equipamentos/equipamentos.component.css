@@ -6,8 +6,12 @@
 
 .container {
   margin: 21rem auto;
-  max-width: 100%;
+  max-width: 70%;
   min-height: calc(100vh - 12.9rem);
+}
+
+.equipamentos {
+
 }
 
 .equipamentos__title {
