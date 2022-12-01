@@ -10,10 +10,6 @@
   min-height: calc(100vh - 12.9rem);
 }
 
-.equipamentos {
-
-}
-
 .equipamentos__title {
   font-family: inherit;
   font-size: var(--font-size-xl);
