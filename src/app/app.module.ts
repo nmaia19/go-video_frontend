@@ -40,6 +40,7 @@ import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenci
 import { ModalConfirmarDevolucaoComponent } from './area-logada/modal-confirmar-devolucao/modal-confirmar-devolucao.component';
 import { PerfilComponent } from './area-logada/usuario/perfil/perfil/perfil.component';
 import { CardPerfilComponent } from './area-logada/usuario/perfil/perfil/card-perfil/card-perfil.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ import { CardPerfilComponent } from './area-logada/usuario/perfil/perfil/card-pe
     CardGerenciarColaboradoresComponent,
     ModalConfirmarDevolucaoComponent,
     PerfilComponent,
-    CardPerfilComponent
+    CardPerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +81,7 @@ import { CardPerfilComponent } from './area-logada/usuario/perfil/perfil/card-pe
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

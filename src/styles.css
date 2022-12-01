@@ -99,3 +99,8 @@ i {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Snack-bar */
+.mdc-snackbar__surface{
+  background-color: var(--primary-red) !important;
+}

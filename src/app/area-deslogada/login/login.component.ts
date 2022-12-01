@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { LoginService } from '../../core/services/autenticacao/login.service';
 import { TokenStorageService } from '../../core/services/autenticacao/token.storage.service';
@@ -7,7 +8,7 @@ import { TokenStorageService } from '../../core/services/autenticacao/token.stor
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit{
 
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit{
   loginFalhou = false;
   msgErro = '';
 
-  constructor(private router: Router, private service: LoginService, private tokenStorage: TokenStorageService) { }
+  constructor(private router: Router, private service: LoginService, private tokenStorage: TokenStorageService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -34,8 +35,16 @@ export class LoginComponent implements OnInit{
     if(podeLogar) {
       this.router.navigate(['/inicio'])
     } else {
-      alert("deu nao miga")
+      this.abrirMsgErro()
     }
 
   }
+
+  abrirMsgErro(){
+    this.snackBar.open("Credenciais inválidas", undefined, {
+      duration: 3000,
+      verticalPosition: 'top',
+     });
+  }
+
 }
