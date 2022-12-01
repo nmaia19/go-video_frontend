@@ -39,6 +39,7 @@ import { CardHistoricoEmprestimosComponent } from './area-logada/admin/historico
 import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenciar-colaboradores/card-gerenciar-colaboradores/card-gerenciar-colaboradores.component';
 import { ModalConfirmarDevolucaoComponent } from './area-logada/modal-confirmar-devolucao/modal-confirmar-devolucao.component';
 import { PerfilComponent } from './area-logada/usuario/perfil/perfil/perfil.component';
+import { CardPerfilComponent } from './area-logada/usuario/perfil/perfil/card-perfil/card-perfil.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { PerfilComponent } from './area-logada/usuario/perfil/perfil/perfil.comp
     CardHistoricoEmprestimosComponent,
     CardGerenciarColaboradoresComponent,
     ModalConfirmarDevolucaoComponent,
-    PerfilComponent
+    PerfilComponent,
+    CardPerfilComponent
   ],
   imports: [
     BrowserModule,
