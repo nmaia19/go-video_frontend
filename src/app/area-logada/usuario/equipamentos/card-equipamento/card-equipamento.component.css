@@ -9,6 +9,9 @@
   transition: 0.3s;
 }
 
+a.container-link {
+  width: 26.4rem;
+}
 .container-link:hover{
   text-decoration: none;
   color: var(--black);
