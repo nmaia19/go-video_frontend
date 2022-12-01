@@ -50,6 +50,10 @@
   color: var(--primary-red);
 }
 
+.status-equipamento-indisponivel{
+  color: var(--secondary-dark-color);
+}
+
 .descricao-equipamento {
   font-family: inherit;
   font-weight: 300;
@@ -58,3 +62,5 @@
   text-align: center;
 
 }
+
+
