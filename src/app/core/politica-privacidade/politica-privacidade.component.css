@@ -1,21 +1,27 @@
 .politica__container{
-  margin-top: 21rem;
-  margin-inline: auto;
-  margin-bottom: 7rem;
+  margin: 0 auto;
   max-width: 100%;
   min-height: calc(100vh - 12.9rem);
+  padding: 21rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .politica__container h1{
-  font-weight: 700;
-  font-size: var(--font-size-xl);
-  letter-spacing: 0.05em;
   font-family: inherit;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 6rem;
   text-align: center;
-  margin-bottom: 5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
 }
 
-.politica__container__texto{
+.politica__container__texto-2{
+  width: 70%;
   font-family: inherit;
   font-size: var(--font-size-sm);
   text-align: justify;
