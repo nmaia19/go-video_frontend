@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit{
 
   abrirMsgErro(){
     this.snackBar.open("Credenciais inválidas", undefined, {
-      duration: 1000,
+      duration: 3000,
       verticalPosition: 'top',
      });
   }
