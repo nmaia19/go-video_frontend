@@ -38,6 +38,7 @@ import { CardMeusEmprestimosComponent } from './area-logada/usuario/meus-emprest
 import { CardHistoricoEmprestimosComponent } from './area-logada/admin/historico-emprestimos/card-historico-emprestimos/card-historico-emprestimos.component';
 import { CardGerenciarColaboradoresComponent } from './area-logada/admin/gerenciar-colaboradores/card-gerenciar-colaboradores/card-gerenciar-colaboradores.component';
 import { ModalConfirmarDevolucaoComponent } from './area-logada/modal-confirmar-devolucao/modal-confirmar-devolucao.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { ModalConfirmarDevolucaoComponent } from './area-logada/modal-confirmar-
     CardMeusEmprestimosComponent,
     CardHistoricoEmprestimosComponent,
     CardGerenciarColaboradoresComponent,
-    ModalConfirmarDevolucaoComponent
+    ModalConfirmarDevolucaoComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +77,7 @@ import { ModalConfirmarDevolucaoComponent } from './area-logada/modal-confirmar-
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
