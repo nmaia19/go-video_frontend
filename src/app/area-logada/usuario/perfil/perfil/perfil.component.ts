@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TokenStorageService } from 'src/app/core/services/autenticacao/token.storage.service';
+import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.service';
 
 @Component({
   selector: 'app-perfil',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
+
+  emprestimos: any = []
+
+  constructor(private service: EmprestimoService, private tokenService: TokenStorageService) {
+    const idUsuario = this.tokenService.getIdUsuario()
+    this.consultarPorUsuario(idUsuario)
+  }
+
+  consultarPorUsuario(idUsuario: number) {
+    this.service.consultarPorUsuario(idUsuario).subscribe(data => this.emprestimos = data)
+  }
 
 }

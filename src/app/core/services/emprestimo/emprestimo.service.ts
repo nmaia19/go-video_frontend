@@ -29,8 +29,14 @@ export class EmprestimoService {
     return this.http.get(`${url}/vigentes/usuario/${id}`, {headers: this.authorization})
   }
 
+  consultarPorUsuario(id: number) {
+    return this.http.get(`${url}/usuario/${id}`, {headers: this.authorization})
+  }
+
   devolver(id: number) {
     return this.http.put(`${url}/encerrar/${id}`, {}, {headers: this.authorization})
   }
+
+
 
 }
