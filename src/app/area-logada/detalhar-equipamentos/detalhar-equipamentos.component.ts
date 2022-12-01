@@ -23,6 +23,8 @@ export class DetalharEquipamentosComponent {
 
   reservar() {
     this.emprestimoService.criar(this.id).subscribe()
-    this.router.navigate(['/meus-emprestimos'])
+    this.router.navigate(['/meus-emprestimos']).then(() => {
+      window.location.reload();
+    })
   }
 }
