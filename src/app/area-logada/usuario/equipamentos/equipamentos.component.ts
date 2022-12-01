@@ -33,15 +33,14 @@ export class EquipamentosComponent {
   }
 
   consultar() {
-    this.service.consultar().subscribe(data => {
+    this.service.consultarPaginado(this.page, this.size).subscribe(data => {
       this.equipamentos = data
       this.categoriaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.categoria))
       this.marcaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.marca))
       this.statusFiltro = new Set(this.equipamentos.content.map((e:any)=>e.status))
     })
 
-    this.service.consultarPaginado(this.page, this.size).subscribe(data => {this.equipamentosOriginal = data;})
-
+    this.service.consultarPaginado(0,100).subscribe(data => {this.equipamentosOriginal = data;})
   }
 
   buscar(value: any){
@@ -104,10 +103,10 @@ export class EquipamentosComponent {
 
   }
   irParaProximaPagina(){
-    this.router.navigate(['/equipamentos', this.page+1, 9])
+    this.router.navigate(['/equipamentos', this.page+1, 12])
   }
 
   irParaPaginaAnterior(){
-    this.router.navigate(['/equipamentos', this.page-1, 9])
+    this.router.navigate(['/equipamentos', this.page-1, 12])
   }
 }
