@@ -35,4 +35,9 @@ export class CadastrarEquipamentosComponent{
     form.classList.add('was-validated');
 
   }
+
+  limpar(){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    form.classList.remove('was-validated');
+  }
 }
