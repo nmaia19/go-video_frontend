@@ -1,25 +1,28 @@
 .container__alterar__senha {
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
+  padding: 21rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 21rem;
-  margin-bottom: 7.2rem;
-  max-width: 100%;
-  min-height: calc(100vh - 12.9rem);
 }
 
 /* Título da página */
 
 .alterar-senha__titulo {
-  text-align: center;
-  font-weight: 700;
-  font-size: var(--font-size-xl);
-  letter-spacing: 0.05em;
   font-family: inherit;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
 }
 
 .altera__senha__form {
-  margin-top: 10rem;
   width: 70%;
   font-size: var(--font-size-sm);
   font-weight: 500;

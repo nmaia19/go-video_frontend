@@ -27,19 +27,10 @@
   margin-left: 4rem;
 }
 
-.card-title{
-  font-weight: 300;
-  font-size: var(--font-size-xsm);
-  color: var(--secondary-dark-color);
-  letter-spacing: 0.05em;
-  margin-bottom: var(--margin-sm);
-}
-
 .card-text {
   font-weight: 700;
   font-size: var(--font-size-sm);
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: var(--primary-dark-color);
 }
 
@@ -47,7 +38,6 @@
   font-weight: 300;
   font-size: var(--font-size-sm);
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: var(--primary-dark-color);
 }
 
@@ -55,7 +45,6 @@
   font-weight: 500;
   font-size: var(--font-size-sm);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--primary-dark-color);
 }
 
@@ -63,7 +52,6 @@
   font-weight: 500;
   font-size: var(--font-size-sm);
   letter-spacing: 0.1em;
-  text-transform: capitalize;
   color: var(--primary-red);
 }
 

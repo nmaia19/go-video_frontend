@@ -1,7 +1,8 @@
 .gerenciar__equipamento__container {
-  margin: 21rem auto;
+  margin: 0 auto;
   max-width: 100%;
   min-height: calc(100vh - 12.9rem);
+  padding: 21rem;
 }
 
 .gerenciar__equipamentos__title {
@@ -12,6 +13,7 @@
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin-bottom: 5.2rem;
 }
 
 .gerenciar__equipamentos__busca {
@@ -62,6 +64,7 @@
   height: 4.6rem;
   border-radius: 1.3rem;
   font-size: var(--font-size-sm);
+  text-transform: uppercase;
 }
 
 .gerenciar__equipamento__display{
