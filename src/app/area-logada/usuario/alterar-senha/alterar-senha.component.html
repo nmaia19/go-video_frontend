@@ -2,7 +2,7 @@
 <div class="container container__alterar__senha">
   <h1>ALTERAR SENHA</h1>
   <div class="altera__senha__form">
-    <form #f="ngForm" (ngSubmit)="alterarSenha(1, f.value)">   <!-- Pegar ID do usuario logado -->
+    <form #f="ngForm" (ngSubmit)="alterarSenha(f.value)">
       <div>
         <label class="form-label" for="senha-anterior">SENHA ANTERIOR</label>
         <input class="form-control bg-light altera__senha__input" type="password" id="senha-anterior" ngModel name="senhaAntiga"/>
