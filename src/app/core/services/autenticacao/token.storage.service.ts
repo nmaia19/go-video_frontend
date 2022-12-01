@@ -27,19 +27,14 @@ export class TokenStorageService {
     return sessionStorage.getItem(TOKEN_KEY)
   }
 
-  public salvarUsuario(id: string, perfil: string): void {
-    window.sessionStorage.removeItem(USUARIO_KEY_PERFIL)
-    window.sessionStorage.removeItem(USUARIO_KEY_ID)
-    window.sessionStorage.setItem(USUARIO_KEY_PERFIL, perfil)
-    window.sessionStorage.setItem(USUARIO_KEY_ID, id)
-  }
-
   public getPerfilUsuario(): any {
-    return sessionStorage.getItem(USUARIO_KEY_PERFIL)
+    const token: any = jwt(this.getToken())
+    return token.perfis[0].perfil
   }
 
   public getIdUsuario(): any {
-    return sessionStorage.getItem(USUARIO_KEY_ID)
+    const token: any = jwt(this.getToken())
+    return token.sub
   }
 
   // public getExpiracaoToken(): number | undefined{
@@ -47,3 +42,7 @@ export class TokenStorageService {
   // }
 
 }
+function jwt(TOKEN_KEY: string): string {
+  throw new Error('Function not implemented.');
+}
+

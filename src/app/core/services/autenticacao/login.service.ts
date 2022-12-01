@@ -18,20 +18,20 @@ export class LoginService {
 
   public logar(email: string, senha: string): Promise<boolean> {
     return new Promise<boolean> (
-      (executor, reject) => {
+      (executor) => {
         this.authService.login(email, senha).subscribe(
+
           (data:any) => {
             const token:any = jwt(data.token)
             console.log(token);
             this.tokenStorage.salvarToken(data.token, token.exp)
-            this.tokenStorage.salvarUsuario(token.sub, token.perfis[0].perfil)
             executor(true)
           },
           (error: any) => {
-            reject(error)
+            executor(false)
           }
         );
-      },
+        },
     );
   }
 }
