@@ -7,7 +7,7 @@ import { TokenStorageService } from './token.storage.service';
 const url = environment.apiUrl + 'login';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
