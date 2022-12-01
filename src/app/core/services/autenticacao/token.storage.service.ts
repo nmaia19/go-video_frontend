@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
+import jwt from 'jwt-decode';
 
 const TOKEN_KEY = 'auth-token';
-const USUARIO_KEY_PERFIL = 'auth-user-perfil'
-const USUARIO_KEY_ID = 'auth-user-id'
 const TOKEN_EXPIRACAO = 'auth-token-expiracao'
 
 @Injectable({
@@ -14,6 +13,7 @@ export class TokenStorageService {
 
   public deslogar(): void {
     window.sessionStorage.clear()
+    window.location.reload()
   }
 
   public salvarToken(token: string, expiracao: string): void {
@@ -27,7 +27,7 @@ export class TokenStorageService {
     return sessionStorage.getItem(TOKEN_KEY)
   }
 
-  public getPerfilUsuario(): any {
+  private getPerfilUsuario(): any {
     const token: any = jwt(this.getToken())
     return token.perfis[0].perfil
   }
@@ -37,12 +37,17 @@ export class TokenStorageService {
     return token.sub
   }
 
+  public isAdministrador(): boolean {
+    if(this.getPerfilUsuario() == "ROLE_ADMINISTRADOR"){
+      return true
+    }
+    return false
+  }
+
   // public getExpiracaoToken(): number | undefined{
   //   return parseInt(window.sessionStorage.getItem(TOKEN_EXPIRACAO))
   // }
 
 }
-function jwt(TOKEN_KEY: string): string {
-  throw new Error('Function not implemented.');
-}
+
 

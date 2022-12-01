@@ -1,3 +1,7 @@
+a {
+  cursor: pointer;
+}
+
 .place-items-center {
   display: flex;
   align-items: center;

@@ -9,15 +9,16 @@ import { TokenStorageService } from '../services/autenticacao/token.storage.serv
 })
 export class HeaderBrancoComponent {
 
-  constructor(private tokenStorage: TokenStorageService) { }
+  isAdmin: boolean = false
+  id: any = 0
 
-  perfilAdmnistrativo() : boolean{
-    var perfilUsuarioLogado: string = this.tokenStorage.getPerfilUsuario()
-
-    if(perfilUsuarioLogado == "admin@email.com"){
-      return true
-    }else{
-      return false
-    }
+  constructor(private tokenStorage: TokenStorageService) {
+    this.isAdmin = this.tokenStorage.isAdministrador()
+    this.id = this.tokenStorage.getIdUsuario()
   }
+
+  deslogar() {
+    this.tokenStorage.deslogar()
+  }
+
 }

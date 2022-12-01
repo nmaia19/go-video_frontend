@@ -14,16 +14,14 @@ export class LoginService {
     private authService: AuthService,
     private tokenStorage: TokenStorageService,
     private usuarioService: UsuarioService
-  ) {}
+  ) { }
 
   public logar(email: string, senha: string): Promise<boolean> {
-    return new Promise<boolean> (
+    return new Promise<boolean>(
       (executor) => {
         this.authService.login(email, senha).subscribe(
-
-          (data:any) => {
-            const token:any = jwt(data.token)
-            console.log(token);
+          (data: any) => {
+            const token: any = jwt(data.token)
             this.tokenStorage.salvarToken(data.token, token.exp)
             executor(true)
           },
@@ -31,7 +29,7 @@ export class LoginService {
             executor(false)
           }
         );
-        },
+      },
     );
   }
 }

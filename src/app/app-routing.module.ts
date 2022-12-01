@@ -16,29 +16,33 @@ import { GerenciarEquipamentosComponent } from './area-logada/admin/gerenciar-eq
 import { GerenciarColaboradoresComponent } from './area-logada/admin/gerenciar-colaboradores/gerenciar-colaboradores.component';
 import { CadastrarColaboradoresComponent } from './area-logada/admin/cadastrar-colaboradores/cadastrar-colaboradores.component';
 import { AlterarColaboradoresComponent } from './area-logada/admin/alterar-colaboradores/alterar-colaboradores.component';
+import { AuthGuard } from './core/services/auth-guard/auth.guard';
+import { MeusEmprestimosComponent } from './area-logada/usuario/meus-emprestimos/meus-emprestimos.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'inicio', component: HomeComponent },
-  { path: 'termos-condicoes', component: TermosCondicoesComponent },
-  { path: 'politica-privacidade', component: PoliticaPrivacidadeComponent },
-  { path: 'gerenciar-equipamentos', component: GerenciarEquipamentosComponent },
-  { path: 'gerenciar-equipamentos/:page/:size', component: GerenciarEquipamentosComponent },
-  { path: 'cadastrar-equipamentos', component: CadastrarEquipamentosComponent },
-  { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent },
-  { path: 'equipamentos', component: EquipamentosComponent },
-  { path: 'detalhar-equipamentos/:id', component: DetalharEquipamentosComponent },
-  { path: 'gerenciar-colaboradores/:page', component: GerenciarColaboradoresComponent },
-  { path: 'cadastrar-colaboradores', component: CadastrarColaboradoresComponent },
-  { path: 'alterar-senha', component: AlterarSenhaComponent },
-  { path: 'alterar-colaboradores', component: AlterarColaboradoresComponent },
-  { path: 'historico-emprestimos', component: HistoricoEmprestimosComponent},
-  { path: 'historico-emprestimos/:page/:size', component: HistoricoEmprestimosComponent},
-  { path: 'perfil/:id', component: PerfilComponent},
+  { path: 'inicio', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'termos-condicoes', component: TermosCondicoesComponent, canActivate: [AuthGuard] },
+  { path: 'politica-privacidade', component: PoliticaPrivacidadeComponent, canActivate: [AuthGuard] },
+  { path: 'gerenciar-equipamentos', component: GerenciarEquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'gerenciar-equipamentos/:page/:size', component: GerenciarEquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'cadastrar-equipamentos', component: CadastrarEquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'equipamentos', component: EquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'meus-emprestimos', component: MeusEmprestimosComponent, canActivate: [AuthGuard] },
+  { path: 'detalhar-equipamentos/:id', component: DetalharEquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'gerenciar-colaboradores/:page', component: GerenciarColaboradoresComponent, canActivate: [AuthGuard] },
+  { path: 'cadastrar-colaboradores', component: CadastrarColaboradoresComponent, canActivate: [AuthGuard] },
+  { path: 'alterar-senha', component: AlterarSenhaComponent, canActivate: [AuthGuard] },
+  { path: 'alterar-colaboradores', component: AlterarColaboradoresComponent, canActivate: [AuthGuard] },
+  { path: 'historico-emprestimos', component: HistoricoEmprestimosComponent, canActivate: [AuthGuard] },
+  { path: 'historico-emprestimos/:page/:size', component: HistoricoEmprestimosComponent, canActivate: [AuthGuard] },
+  { path: 'perfil/:id', component: PerfilComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
