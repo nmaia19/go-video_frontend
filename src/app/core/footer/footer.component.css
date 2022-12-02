@@ -20,6 +20,11 @@
   align-items: center;
 }
 
+.link__Footer a:hover{
+  color: var(--light-color);
+  text-decoration: underline;
+}
+
 .vertical-line {
   border-left: 1px solid white;
   height: 27px;
