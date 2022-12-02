@@ -19,6 +19,8 @@ export class HistoricoEmprestimosComponent {
   status: string = ''
   modelo: string = ''
   usuario: string = ''
+  estaVazio: boolean = true
+  mensagem: string = "empréstimo"
 
   constructor(private service: EmprestimoService, private route: ActivatedRoute, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -37,6 +39,11 @@ export class HistoricoEmprestimosComponent {
       this.emprestimos = data;
       this.modeloFiltro = new Set(this.emprestimos.content.map((e:any)=>e.equipamento.modelo))
       this.usuarioFiltro = new Set(this.emprestimos.content.map((e:any)=>e.usuario.nome))
+      if(this.emprestimos.content){
+        this.estaVazio = true
+        this.paginado = false
+      }
+
     })
     this.service.consultar(this.page, this.size).subscribe(data => {this.emprestimosOriginal = data;})
   }
