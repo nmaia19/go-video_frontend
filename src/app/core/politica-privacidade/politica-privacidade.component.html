@@ -1,4 +1,16 @@
-<app-header></app-header>
+<div *ngIf="estaLogado">
+  <app-header></app-header>
+</div>
+
+<header *ngIf="!estaLogado" class="header__deslogado">
+  <div class="logo" routerLink="">
+    <img
+      src="../../../assets/img-header/Logo Branco.png"
+      alt="Logotipo escrito Go Video"
+    />
+  </div>
+</header>
+
 <div class="politica__container">
   <h1>POLÍTICA E PRIVACIDADE</h1>
 
