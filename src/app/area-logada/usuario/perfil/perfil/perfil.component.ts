@@ -16,8 +16,8 @@ export class PerfilComponent {
 
   constructor(private emprestimoService: EmprestimoService, private usuarioService: UsuarioService, private tokenService: TokenStorageService, private router: Router) {
     const idUsuario = this.tokenService.getIdUsuario()
-    this.consultarEmprestimosEncerradosPorUsuario(idUsuario)
     this.usuarioService.consultarPorId(idUsuario).subscribe(data => this.usuario = data)
+    this.consultarEmprestimosEncerradosPorUsuario(idUsuario)
   }
 
   consultarEmprestimosEncerradosPorUsuario(idUsuario: number) {

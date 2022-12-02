@@ -7,9 +7,9 @@
     <div class="col-md-8">
       <div class="card-body">
         <p class="card-text">{{ emprestimo.equipamento.marca }} - {{ emprestimo.equipamento.modelo }}</p>
-        <h5 class="card-date"><span>DATA DE RETIRADA: {{ emprestimo.dataInicio | date: "dd/MM/yyyy" }}</span></h5>
-        <h5 class="card-date"><span>DATA DE DEVOLUÇÃO: {{ emprestimo.dataFim | date: "dd/MM/yyyy" }}</span></h5>
-        <a class="perfil__card__a" [routerLink]="['/detalhar-equipamentos', emprestimo.equipamento.id]">Ver mais informações</a>
+        <h5 class="card-date"><span>Data de retirada: {{ emprestimo.dataInicio | date: "dd/MM/yyyy" }}</span></h5>
+        <h5 class="card-date"><span>Data de devolução: {{ emprestimo.dataFim | date: "dd/MM/yyyy" }}</span></h5>
+        <a class="perfil__card__a" [routerLink]="['/detalhar-equipamentos', emprestimo.equipamento.id]">Detalhar equipamento</a>
       </div>
     </div>
   </div>

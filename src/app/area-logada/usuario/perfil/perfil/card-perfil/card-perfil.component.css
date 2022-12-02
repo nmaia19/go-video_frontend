@@ -26,14 +26,15 @@
   align-items: center;
 }
 
-.card-body{
+.card-body {
   font-family: inherit;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-.card-title{
+.card-title {
   font-weight: 300;
   font-size: var(--font-size-xsm);
   color: var(--secondary-dark-color);
@@ -49,37 +50,36 @@
   color: var(--primary-dark-color);
 }
 
-.meu__emprestimo__card__a{
+.meu__emprestimo__card__a {
   font-weight: 400;
   font-size: var(--font-size-sm);
   letter-spacing: 0.1em;
   color: var(--primary-red);
 }
 
-.meu__emprestimo__card__a:hover{
+.meu__emprestimo__card__a:hover {
   text-decoration: underline;
 }
 
-.meu__emprestimo__card__acoes img{
+.meu__emprestimo__card__acoes img {
   height: 3.3rem;
 }
 
-.perfil__card__a{
+.perfil__card__a {
   font-weight: 400;
   font-size: var(--font-size-sm);
   letter-spacing: 0.1em;
   color: var(--primary-red);
 }
 
-.perfil__card__a:hover{
+.perfil__card__a:hover {
   text-decoration: underline;
 }
 
-
 @media screen and (min-width: 768px) {
-
-  .card-geral{
+  .card-geral {
     display: flex;
     flex-direction: row;
   }
+
 }
