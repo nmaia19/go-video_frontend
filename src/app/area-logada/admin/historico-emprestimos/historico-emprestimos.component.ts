@@ -18,7 +18,7 @@ export class HistoricoEmprestimosComponent {
   status: string = ''
   modelo: string = ''
   usuario: string = ''
-  estaVazio: boolean = true
+  estaVazio: boolean = false
   mensagem: string = "empréstimo"
 
   constructor(private service: EmprestimoService, private route: ActivatedRoute, private router: Router) {
@@ -38,9 +38,9 @@ export class HistoricoEmprestimosComponent {
       this.emprestimos = data;
       this.modeloFiltro = new Set(this.emprestimos.content.map((e:any)=>e.equipamento.modelo))
       this.usuarioFiltro = new Set(this.emprestimos.content.map((e:any)=>e.usuario.nome))
-      if(this.emprestimos.content){
-        this.estaVazio = false
-        this.paginado = true
+      if(this.emprestimos.content.length==0){
+        this.estaVazio = true
+        this.paginado = false
       }
 
     })

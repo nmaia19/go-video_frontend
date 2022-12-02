@@ -11,11 +11,11 @@ import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.s
 })
 export class MeusEmprestimosComponent {
   emprestimos: any = []
-  estaVazio: boolean = true
+  estaVazio: boolean = false
   mensagem: string = "empréstimo ativo"
   page: number = 0
   size: number = 5
-  paginado: boolean = true
+  paginado: boolean = false
 
   constructor(private service: EmprestimoService, private route: ActivatedRoute, private tokenService: TokenStorageService, private router: Router) {
     const idUsuario = this.tokenService.getIdUsuario()
@@ -33,9 +33,9 @@ export class MeusEmprestimosComponent {
   consultarVigentePorUsuario(idUsuario: number) {
     this.service.consultarVigentePorUsuario(idUsuario, this.page, this.size).subscribe(data => {
       this.emprestimos = data
-      if(this.emprestimos.content){
-        this.estaVazio = false
-        this.paginado = true
+      if(this.emprestimos.content.length==0){
+        this.estaVazio = true
+        this.paginado = false
       }
     })
   }
