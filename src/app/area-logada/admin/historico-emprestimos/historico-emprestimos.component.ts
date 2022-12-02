@@ -39,8 +39,8 @@ export class HistoricoEmprestimosComponent {
       this.modeloFiltro = new Set(this.emprestimos.content.map((e:any)=>e.equipamento.modelo))
       this.usuarioFiltro = new Set(this.emprestimos.content.map((e:any)=>e.usuario.nome))
       if(this.emprestimos.content){
-        this.estaVazio = true
-        this.paginado = false
+        this.estaVazio = false
+        this.paginado = true
       }
 
     })

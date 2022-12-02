@@ -42,8 +42,8 @@ export class GerenciarEquipamentosComponent {
       this.marcaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.marca))
       this.statusFiltro = new Set(this.equipamentos.content.map((e:any)=>e.status))
       if(this.equipamentos.content){
-        this.estaVazio = true
-        this.paginado = false
+        this.estaVazio = false
+        this.paginado = true
       }
     })
     this.service.consultarPaginado(0, 100).subscribe(data => {this.equipamentosOriginal = data})

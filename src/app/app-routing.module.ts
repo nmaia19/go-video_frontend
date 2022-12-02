@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'equipamentos', component: EquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'equipamentos/:page/:size', component: EquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'meus-emprestimos', component: MeusEmprestimosComponent, canActivate: [AuthGuard] },
+  { path: 'meus-emprestimos/:page/:size', component: MeusEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'detalhar-equipamentos/:id', component: DetalharEquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'gerenciar-colaboradores', component: GerenciarColaboradoresComponent, canActivate: [AuthGuard] },
   { path: 'gerenciar-colaboradores/:page/:size', component: GerenciarColaboradoresComponent, canActivate: [AuthGuard] },

@@ -41,8 +41,8 @@ export class EquipamentosComponent {
       this.marcaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.marca))
       this.statusFiltro = new Set(this.equipamentos.content.map((e:any)=>e.status))
       if(this.equipamentos.content){
-        this.estaVazio = true
-        this.paginado = false
+        this.estaVazio = false
+        this.paginado = true
       }
     })
 
