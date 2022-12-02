@@ -13,7 +13,7 @@ export class UsuarioService {
   authorization: any = ''
 
   constructor(private http:HttpClient, private tokenService: TokenStorageService) {
-    this.authorization = new HttpHeaders({ 'Authorization': 'Bearer ' + tokenService.getToken()})
+    //this.authorization = new HttpHeaders({ 'Authorization': 'Bearer ' + tokenService.getToken()})
   }
 
   consultar() {
@@ -21,7 +21,7 @@ export class UsuarioService {
   }
 
   consultarPorId(id: number) {
-    return this.http.get(`${url}/${id}`, {headers: this.authorization})
+    return this.http.get(`${url}/${id}`)
   }
 
   cadastrar(data: any) {
