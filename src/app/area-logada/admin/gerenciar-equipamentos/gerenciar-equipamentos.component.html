@@ -2,28 +2,35 @@
 
 <section class="gerenciar__equipamento__container">
   <h1 class="gerenciar__equipamentos__title">Gerenciar Equipamentos</h1>
-  <form class="gerenciar__equipamentos__busca" #f="ngForm">
-    <input class="form-control bg-light gerenciar__equipamentos__input" type="text" placeholder="Digite sua busca" ngModel name="busca">
-    <button class="btn-buscar" (click)="buscar(f.value)">Buscar</button>
-  </form>
 
-  <div class="select-group">
-    <select class="select form-select" name="categorias" (change)="filtrarCategoria($event)">
-      <option value="">Todas as Categorias</option>
-      <option *ngFor="let categoria of categoriaFiltro" [value]="categoria">{{ categoria }}</option>
-    </select>
-    <select class="select form-select" name="marcas" (change)="filtrarMarca($event)">
-      <option value="">Todas as Marcas</option>
-      <option *ngFor="let marca of marcaFiltro" [value]="marca">{{ marca }}</option>
-    </select>
-    <select class="select form-select" name="status" (change)="filtrarStatus($event)">
-      <option value="">Todos os Status</option>
-      <option *ngFor="let status of statusFiltro" [value]="status">{{ status }}</option>
-    </select>
+  <div *ngIf="estaVazio" class="lista__vazia">
+    <app-lista-vazia [mensagem] = "mensagem"></app-lista-vazia>
   </div>
 
-  <div class="gerenciar__equipamento__display" *ngFor="let equipamento of equipamentos.content">
-    <app-card-gerenciar-equipamentos [equipamento]="equipamento"></app-card-gerenciar-equipamentos>
+  <div *ngIf="!estaVazio">
+    <form class="gerenciar__equipamentos__busca" #f="ngForm">
+      <input class="form-control bg-light gerenciar__equipamentos__input" type="text" placeholder="Digite sua busca" ngModel name="busca">
+      <button class="btn-buscar" (click)="buscar(f.value)">Buscar</button>
+    </form>
+
+    <div class="select-group">
+      <select class="select form-select" name="categorias" (change)="filtrarCategoria($event)">
+        <option value="">Todas as Categorias</option>
+        <option *ngFor="let categoria of categoriaFiltro" [value]="categoria">{{ categoria }}</option>
+      </select>
+      <select class="select form-select" name="marcas" (change)="filtrarMarca($event)">
+        <option value="">Todas as Marcas</option>
+        <option *ngFor="let marca of marcaFiltro" [value]="marca">{{ marca }}</option>
+      </select>
+      <select class="select form-select" name="status" (change)="filtrarStatus($event)">
+        <option value="">Todos os Status</option>
+        <option *ngFor="let status of statusFiltro" [value]="status">{{ status }}</option>
+      </select>
+    </div>
+
+    <div class="gerenciar__equipamento__display" *ngFor="let equipamento of equipamentos.content">
+      <app-card-gerenciar-equipamentos [equipamento]="equipamento"></app-card-gerenciar-equipamentos>
+    </div>
   </div>
 
   <div class="gerenciar__equipamento__paginacao" *ngIf="paginado">

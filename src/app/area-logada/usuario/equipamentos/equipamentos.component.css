@@ -11,6 +11,10 @@
   padding: 21rem;
 }
 
+.lista__vazia{
+  text-align: center;
+}
+
 .equipamentos__title {
   font-family: inherit;
   font-size: var(--font-size-xl);

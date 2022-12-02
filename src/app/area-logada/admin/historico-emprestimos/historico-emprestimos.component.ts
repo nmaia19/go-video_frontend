@@ -1,7 +1,6 @@
 import { EmprestimoService } from './../../../core/services/emprestimo/emprestimo.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-historico-emprestimos',
@@ -19,6 +18,8 @@ export class HistoricoEmprestimosComponent {
   status: string = ''
   modelo: string = ''
   usuario: string = ''
+  estaVazio: boolean = false
+  mensagem: string = "empréstimo"
 
   constructor(private service: EmprestimoService, private route: ActivatedRoute, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -37,6 +38,11 @@ export class HistoricoEmprestimosComponent {
       this.emprestimos = data;
       this.modeloFiltro = new Set(this.emprestimos.content.map((e:any)=>e.equipamento.modelo))
       this.usuarioFiltro = new Set(this.emprestimos.content.map((e:any)=>e.usuario.nome))
+      if(this.emprestimos.content.length==0){
+        this.estaVazio = true
+        this.paginado = false
+      }
+
     })
     this.service.consultar(this.page, this.size).subscribe(data => {this.emprestimosOriginal = data;})
   }

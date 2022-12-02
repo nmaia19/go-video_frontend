@@ -3,8 +3,20 @@
 <section class="meu__emprestimo__container">
   <h1 class="meus__emprestimos__title">MEUS EMPRÉSTIMOS</h1>
 
-  <div class="meu__emprestimo__display" *ngFor="let emprestimo of emprestimos.content">
-    <app-card-meus-emprestimos [emprestimo]="emprestimo"></app-card-meus-emprestimos>
+  <div *ngIf="estaVazio" class="lista__vazia">
+    <app-lista-vazia [mensagem] = "mensagem"></app-lista-vazia>
+  </div>
+
+  <div *ngIf="!estaVazio">
+    <div class="meu__emprestimo__display" *ngFor="let emprestimo of emprestimos.content">
+      <app-card-meus-emprestimos [emprestimo]="emprestimo"></app-card-meus-emprestimos>
+    </div>
+  </div>
+
+  <div class="meus-emprestimos__paginacao" *ngIf="paginado">
+    <button (click)="irParaPaginaAnterior()" [disabled]="page==0"><</button>
+    <p class="meus-emprestimos__paginacao__p">Página <span>{{ page + 1 }}</span> de <span>{{ emprestimos.totalPages }}</span></p>
+    <button (click)="irParaProximaPagina()" [disabled]="page+1==emprestimos.totalPages">></button>
   </div>
 
 </section>
