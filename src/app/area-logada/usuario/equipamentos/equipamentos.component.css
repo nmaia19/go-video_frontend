@@ -51,6 +51,7 @@
   width: 16rem;
   background-color: var(--primary-dark-color);
   margin-left: 3rem;
+  text-transform: uppercase;
 }
 
 .btn-buscar:hover {
@@ -70,6 +71,7 @@
   height: 4.6rem;
   border-radius: 1.3rem;
   font-size: var(--font-size-sm);
+  text-transform: uppercase;
 }
 
 .display-equipamentos {

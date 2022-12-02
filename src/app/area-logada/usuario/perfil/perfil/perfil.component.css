@@ -1,12 +1,12 @@
 #perfil_container{
-  display: flex;
-  flex-direction: column;
-  margin: 21rem auto;
-  margin-bottom: 10rem;
+  margin: 0 auto;
   max-width: 100%;
   min-height: calc(100vh - 12.9rem);
+  padding: 21rem;
+
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 
 .informacoes_gerais_box{
@@ -15,13 +15,14 @@
 }
 
 .informacoes_gerais_box h1{
+  font-family: inherit;
+  font-size: var(--font-size-xl);
   font-weight: 700;
-  font-size: 48px;
-  line-height: 60px;
+  line-height: 6rem;
+  text-align: center;
   letter-spacing: 0.05em;
-  color: #000;
-  margin-bottom: 6.4rem;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
 }
 
 .informacoes_gerais_box .email, .informacoes_gerais_box .nome, .informacoes_gerais_box .senha {
@@ -32,29 +33,30 @@
 
 .informacoes_gerais_box .email p, .informacoes_gerais_box .nome p, .informacoes_gerais_box .senha p{
   font-weight: 500;
-  font-size: 28px;
-  line-height: 35px;
+  font-size: var(--font-size-md);
+  line-height: 3.5rem;
   letter-spacing: 0.05em;
   margin-bottom: 2rem;
 }
 
 .informacoes_gerais_box .alterar_btn {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
+  border-radius: 40px;
   color: white;
-  width: 34.6rem;
-  height: 8.2rem;
+  width: 30rem;
+  height: 6rem;
   background-color: var(--primary-red);
   margin: 5.5rem auto 2.7rem auto;
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--font-size-sm);
   line-height: 30px;
   letter-spacing: 0.05em;
 }
 
 .informacoes_gerais_box .alterar_btn:hover {
-  color: black;
+  color: white;
   background-color: var(--secondary-red);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 .historico_emprestimos_box{
@@ -64,15 +66,18 @@
 .informacoes_gerais_box .aviso_perfil{
   margin-bottom: 8.5rem;
   font-weight: 500;
-  font-size: 20px;
+  font-size: var(--font-size-sm);
   line-height: 25px;
   letter-spacing: 0.05em;
 }
 
 .historico_emprestimos_box h1{
+  font-family: inherit;
+  font-size: var(--font-size-xl);
   font-weight: 700;
-  font-size: 48px;
-  line-height: 60px;
+  line-height: 6rem;
+  text-align: center;
   letter-spacing: 0.05em;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
 }
