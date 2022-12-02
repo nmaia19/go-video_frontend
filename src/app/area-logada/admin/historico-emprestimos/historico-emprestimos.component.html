@@ -6,6 +6,7 @@
   <div *ngIf="estaVazio">
     <app-lista-vazia [mensagem] = "mensagem"></app-lista-vazia>
   </div>
+
   <div *ngIf="!estaVazio">
     <div class="select-group">
       <select class="select form-select" name="status" (change)="filtrarPorStatus($event)">

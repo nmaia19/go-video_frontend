@@ -1,7 +1,6 @@
 import { EmprestimoService } from './../../../core/services/emprestimo/emprestimo.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-historico-emprestimos',
