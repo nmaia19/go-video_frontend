@@ -41,6 +41,7 @@ import { ModalConfirmarDevolucaoComponent } from './area-logada/modal-confirmar-
 import { PerfilComponent } from './area-logada/usuario/perfil/perfil/perfil.component';
 import { CardPerfilComponent } from './area-logada/usuario/perfil/perfil/card-perfil/card-perfil.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ListaVaziaComponent } from './core/lista-vazia/lista-vazia.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ModalConfirmarDevolucaoComponent,
     PerfilComponent,
     CardPerfilComponent,
+    ListaVaziaComponent,
   ],
   imports: [
     BrowserModule,

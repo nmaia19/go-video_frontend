@@ -3,24 +3,30 @@
 <section class="historico__emprestimos_container">
   <h1 class="historico__emprestimos__title">Histórico de empréstimos</h1>
 
-  <div class="select-group">
-    <select class="select form-select" name="status" (change)="filtrarPorStatus($event)">
-      <option value="">Todos os status</option>
-      <option value="Em Andamento">Em andamento</option>
-      <option value="Finalizado">Finalizado</option>
-    </select>
-    <select class="select form-select" name="modelos" (change)="filtrarPorModelo($event)">
-      <option value="">Todos os modelos</option>
-      <option *ngFor="let modelo of modeloFiltro" >{{ modelo }}</option>
-    </select>
-    <select class="select form-select" name="usuarios" (change)="filtrarPorUsuario($event)">
-      <option value="">Todas os usuários</option>
-      <option *ngFor="let usuario of usuarioFiltro">{{ usuario }}</option>
-    </select>
+  <div *ngIf="estaVazio">
+    <app-lista-vazia [mensagem] = "mensagem"></app-lista-vazia>
   </div>
 
-  <div class="historico__emprestimos__display" *ngFor="let emprestimo of emprestimos.content">
-    <app-card-historico-emprestimos [emprestimo]="emprestimo"></app-card-historico-emprestimos>
+  <div *ngIf="!estaVazio">
+    <div class="select-group">
+      <select class="select form-select" name="status" (change)="filtrarPorStatus($event)">
+        <option value="">Todos os status</option>
+        <option value="Em Andamento">Em andamento</option>
+        <option value="Finalizado">Finalizado</option>
+      </select>
+      <select class="select form-select" name="modelos" (change)="filtrarPorModelo($event)">
+        <option value="">Todos os modelos</option>
+        <option *ngFor="let modelo of modeloFiltro" >{{ modelo }}</option>
+      </select>
+      <select class="select form-select" name="usuarios" (change)="filtrarPorUsuario($event)">
+        <option value="">Todas os usuários</option>
+        <option *ngFor="let usuario of usuarioFiltro">{{ usuario }}</option>
+      </select>
+    </div>
+
+    <div class="historico__emprestimos__display" *ngFor="let emprestimo of emprestimos.content">
+      <app-card-historico-emprestimos [emprestimo]="emprestimo"></app-card-historico-emprestimos>
+    </div>
   </div>
 
   <div class="historico__emprestimos__paginacao" *ngIf="paginado">

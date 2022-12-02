@@ -19,6 +19,8 @@ export class EquipamentosComponent {
   categoria: string = ''
   marca: string = ''
   status: string = ''
+  estaVazio: boolean = false
+  mensagem: string = "equipamentos"
 
   constructor(private service: EquipamentoService, private route: ActivatedRoute, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -38,6 +40,10 @@ export class EquipamentosComponent {
       this.categoriaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.categoria))
       this.marcaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.marca))
       this.statusFiltro = new Set(this.equipamentos.content.map((e:any)=>e.status))
+      if(this.equipamentos.content.length==0){
+        this.estaVazio = true
+        this.paginado = false
+      }
     })
 
     this.service.consultarPaginado(0,100).subscribe(data => {this.equipamentosOriginal = data;})
