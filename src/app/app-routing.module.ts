@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'inicio', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'termos-condicoes', component: TermosCondicoesComponent},
   { path: 'politica-privacidade', component: PoliticaPrivacidadeComponent},
-  { path: 'gerenciar-equipamentos', component: GerenciarEquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'gerenciar-equipamentos', component: GerenciarEquipamentosComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"} },
   { path: 'gerenciar-equipamentos/:page/:size', component: GerenciarEquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'cadastrar-equipamentos', component: CadastrarEquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent, canActivate: [AuthGuard] },
