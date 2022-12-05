@@ -34,6 +34,10 @@
       </div>
     </div>
 
+    <div *ngIf="naoEncontrado" class="lista__vazia">
+      <p>Nenhum equipamento encontrado 🙁</p>
+    </div>
+
     <div class="equipamento__paginacao" *ngIf="paginado">
       <button (click)="irParaPaginaAnterior()" [disabled]="page==0"><</button>
       <p class="equipamento__paginacao__p">Página <span>{{ page + 1 }}</span> de <span>{{ equipamentos.totalPages }}</span></p>
