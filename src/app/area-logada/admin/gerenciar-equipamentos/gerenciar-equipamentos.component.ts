@@ -120,8 +120,8 @@ export class GerenciarEquipamentosComponent {
 
       this.equipamentos.content = listaEncontrada
     }
-
   }
+
   irParaProximaPagina(){
     this.router.navigate(['/gerenciar-equipamentos', this.page+1, 5])
   }

@@ -9,6 +9,7 @@ import { ModalConfirmarExclusaoComponent } from 'src/app/area-logada/modal-confi
   styleUrls: ['./card-gerenciar-equipamentos.component.css']
 })
 export class CardGerenciarEquipamentosComponent {
+
   @Input() equipamento: any
 
   constructor(private service: EquipamentoService, public dialog: MatDialog) {}

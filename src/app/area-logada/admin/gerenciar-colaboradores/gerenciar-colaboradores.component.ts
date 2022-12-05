@@ -9,24 +9,77 @@ import { Component } from '@angular/core';
 })
 export class GerenciarColaboradoresComponent {
   usuarios: any = []
+  usuariosOriginal: any = []
+  statusFiltro: Set<string> = new Set<string>()
   page: number = 0
+  size: number = 10
+  paginado: boolean = true
+  status: string = ''
+  estaVazio: boolean = false
+  mensagem: string = "usuários"
 
-  constructor(private service: UsuarioService, private route: ActivatedRoute, private router: Router){    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  constructor(private service: UsuarioService, private route: ActivatedRoute, private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     var routeParams = this.route.snapshot.paramMap
-    this.page = parseInt(routeParams.get('page') || '')
-    this.consultar(this.page)
+    if (routeParams.get('page') != null) {
+      this.page = parseInt(routeParams.get('page') || '')
+    }
+    if (routeParams.get('size') != null) {
+      this.size = parseInt(routeParams.get('size') || '')
+    }
+    this.consultar()
   }
 
-  consultar(page: number) {
-    // this.service.consultar(page).subscribe(data => this.emprestimos = data)
+  consultar() {
+    this.service.consultar(this.page, this.size).subscribe(data => {
+      this.usuarios = data;
+      this.statusFiltro = new Set(this.usuarios.content.map((u: any) => u.status))
+
+      if (this.usuarios.content.length == 0) {
+        this.estaVazio = true
+        this.paginado = false
+      }
+    })
+    this.service.consultar(0, 100).subscribe(data => { this.usuariosOriginal = data })
   }
 
-  irParaProximaPagina(){
-    this.router.navigate(['/gerenciar-colaboradores', this.page+1])
+  irParaProximaPagina() {
+    this.router.navigate(['/gerenciar-colaboradores', this.page + 1, this.size])
   }
 
-  irParaPaginaAnterior(){
-    this.router.navigate(['/gerenciar-colaboradores', this.page-1])
+  irParaPaginaAnterior() {
+    this.router.navigate(['/gerenciar-colaboradores', this.page - 1, this.size])
+  }
+
+  buscar(value: any) {
+    console.log(value)
+    const busca = value.busca
+    this.usuarios.content = this.usuariosOriginal.content.filter((u: any) => {
+      return u.nome.toLowerCase().includes(busca.toLowerCase())
+    })
+    this.paginado = false
+
+    if (busca == '') {
+      window.location.reload()
+    }
+  }
+
+  filtrarStatus(event: any) {
+    this.status = event.target.value
+    this.filtrar()
+  }
+
+  filtrar() {
+    if (this.status == '') {
+      window.location.reload()
+    }
+    else {
+      this.paginado = false
+      if (this.status != '') {
+        this.usuarios.content = this.usuariosOriginal.content.filter((u: any) =>
+          u.status == this.status)
+      }
+    }
   }
 
 }
