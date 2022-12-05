@@ -15,7 +15,7 @@ export class MeusEmprestimosComponent {
   mensagem: string = "empréstimo ativo"
   page: number = 0
   size: number = 5
-  paginado: boolean = false
+  paginado: boolean = true
 
   constructor(private service: EmprestimoService, private route: ActivatedRoute, private tokenService: TokenStorageService, private router: Router) {
     const idUsuario = this.tokenService.getIdUsuario()
