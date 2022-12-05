@@ -27,7 +27,7 @@ export class TokenStorageService {
     return sessionStorage.getItem(TOKEN_KEY)
   }
 
-  private getPerfilUsuario(): any {
+  public getPerfilUsuario(): any {
     const token: any = jwt(this.getToken())
     return token.perfis[0].perfil
   }
