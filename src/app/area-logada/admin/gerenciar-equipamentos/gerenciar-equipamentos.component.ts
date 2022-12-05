@@ -50,7 +50,6 @@ export class GerenciarEquipamentosComponent {
   }
 
   buscar(value: any){
-    console.log(value)
     const busca = value.busca
     this.equipamentos.content = this.equipamentosOriginal.content.filter((e: any)=>{return e.modelo.toLowerCase().includes(busca.toLowerCase())})
     this.paginado = false
@@ -106,8 +105,8 @@ export class GerenciarEquipamentosComponent {
         }
       })
     }
-
   }
+
   irParaProximaPagina(){
     this.router.navigate(['/gerenciar-equipamentos', this.page+1, 5])
   }

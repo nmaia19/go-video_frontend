@@ -13,11 +13,10 @@ export class UsuarioService {
   authorization: any = ''
 
   constructor(private http:HttpClient, private tokenService: TokenStorageService) {
-    //this.authorization = new HttpHeaders({ 'Authorization': 'Bearer ' + tokenService.getToken()})
   }
 
-  consultar() {
-    return this.http.get(url, {headers: this.authorization})
+  consultar(page:number, size: number) {
+    return this.http.get(`${url}?page=${page}&size=${size}`)
   }
 
   consultarPorId(id: number) {
@@ -25,15 +24,19 @@ export class UsuarioService {
   }
 
   cadastrar(data: any) {
-    return this.http.post(`${url}`, data, {headers: this.authorization})
+    return this.http.post(`${url}`, data)
   }
 
   alterarNome(id: number, data: any) {
-    return this.http.put(`${url}/alterarNome/${id}`, data, {headers: this.authorization})
+    return this.http.put(`${url}/alterarNome/${id}`, data)
   }
 
   alterarSenha(id: number, data: any) {
-    return this.http.put(`${url}/alterarSenha/${id}`, data, {headers: this.authorization})
+    return this.http.put(`${url}/alterarSenha/${id}`, data)
+  }
+
+  excluir(id: number) {
+    return this.http.delete(`${url}/${id}`)
   }
 
 }
