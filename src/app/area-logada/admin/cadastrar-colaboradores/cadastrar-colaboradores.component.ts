@@ -9,8 +9,7 @@ import { UsuarioService } from 'src/app/core/services/usuario/usuario.service';
 export class CadastrarColaboradoresComponent {
   constructor(private service: UsuarioService) { }
 
-  cadastrarColaborador(id:number, dados: any) {
-    // this.service.cadastrar(dados).subscribe()
-    console.log(dados)
+  cadastrarColaborador(dados: any) {
+    this.service.cadastrar(dados).subscribe()
   }
 }

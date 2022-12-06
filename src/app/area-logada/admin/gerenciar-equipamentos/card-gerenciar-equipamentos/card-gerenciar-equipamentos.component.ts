@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./card-gerenciar-equipamentos.component.css']
 })
 export class CardGerenciarEquipamentosComponent {
+
   @Input() equipamento: any
 
 

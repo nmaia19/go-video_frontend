@@ -20,8 +20,10 @@ export class GerenciarEquipamentosComponent {
   categoria: string = ''
   marca: string = ''
   status: string = ''
+  busca: string = ''
   estaVazio: boolean = false
   mensagem: string = "equipamentos"
+  naoEncontrado: boolean = false
 
   constructor(private service: EquipamentoService, private route: ActivatedRoute, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -50,14 +52,8 @@ export class GerenciarEquipamentosComponent {
   }
 
   buscar(value: any){
-    console.log(value)
-    const busca = value.busca
-    this.equipamentos.content = this.equipamentosOriginal.content.filter((e: any)=>{return e.modelo.toLowerCase().includes(busca.toLowerCase())})
-    this.paginado = false
-
-    if(busca == ''){
-      window.location.reload()
-    }
+    this.busca = value.busca
+    this.filtrar()
   }
 
   filtrarCategoria(event: any){
@@ -79,8 +75,12 @@ export class GerenciarEquipamentosComponent {
     let listaCategoriaFiltrada = []
     let listaMarcaFiltrada: any[] = []
     let listaStatusFiltrado: any[] = []
+    let listaBusca: any[] = []
+    let encontrado: boolean = true
+    let listaEncontrada: any[]=[]
 
-    if(this.marca == '' && this.categoria == '' && this.status == ''){
+    this.naoEncontrado = false
+    if(this.marca == '' && this.categoria == '' && this.status == '' && this.busca == ''){
       window.location.reload()
     }
     else{
@@ -97,17 +97,31 @@ export class GerenciarEquipamentosComponent {
       if(this.status!=''){
         listaStatusFiltrado = this.equipamentosOriginal.content.filter((e: any)=>e.status==this.status)
       }
+      if(this.busca!=''){
+        listaBusca = this.equipamentosOriginal.content.filter((e: any)=>{return e.descricao.toLowerCase().includes(this.busca.toLowerCase())})
+        if(listaBusca.length==0){
+          encontrado = false
+        }
+      }
 
-      this.equipamentos.content = listaCategoriaFiltrada.filter((e:any)=>{
+      listaEncontrada = listaCategoriaFiltrada.filter((e:any)=>{
         if(listaMarcaFiltrada.length==0 || listaMarcaFiltrada.includes(e)){
           if(listaStatusFiltrado.length==0 || listaStatusFiltrado.includes(e)){
-            return e;
+            if((listaBusca.length==0 && encontrado==true) || listaStatusFiltrado.includes(e)){
+              return e;
+            }
           }
         }
       })
-    }
 
+      if(listaEncontrada.length==0){
+        this.naoEncontrado=true
+      }
+
+      this.equipamentos.content = listaEncontrada
+    }
   }
+
   irParaProximaPagina(){
     this.router.navigate(['/gerenciar-equipamentos', this.page+1, 5])
   }

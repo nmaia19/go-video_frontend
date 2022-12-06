@@ -54,3 +54,7 @@
   margin-inline: var(--margin-sm);
   margin-bottom: 0;
 }
+
+.lista__vazia{
+  text-align: center;
+}

@@ -3,24 +3,39 @@
 <section class="gerenciar__colaboradores_container">
   <h1 class="gerenciar__colaboradores__title">Gerenciar Membros</h1>
 
-  <div class="gerenciar__colaboradores__busca">
-    <input class="form-control bg-light gerenciar__colaboradores__input" type="text" placeholder="Digite sua busca">
-    <button class="btn-buscar">Buscar</button>
-  </div>
-  <div class="select-group">
-    <select class="select form-select" name="categorias">
-      <option value="">Todos os status</option>
-      <option value="Em Andamento">Em andamento</option>
-      <option value="Finalizado">Finalizado</option>
-    </select>
-  </div>
-  <div class="gerenciar__colaboradores__display" >
-    <app-card-gerenciar-colaboradores *ngFor="let _ of [].constructor( 10 ); let i = index"></app-card-gerenciar-colaboradores>
+  <div *ngIf="estaVazio" class="lista__vazia">
+    <app-lista-vazia [mensagem]="mensagem"></app-lista-vazia>
   </div>
 
-  <div class="gerenciar__colaboradores__paginacao">
-    <button (click)="irParaPaginaAnterior()" [disabled]="page==0"><</button>
-    <p class="gerenciar__colaboradores__paginacao__p">Página <span>{{ page + 1 }}</span> de <span>2</span></p>
-    <button (click)="irParaProximaPagina()">></button>
+  <div *ngIf="!estaVazio">
+
+    <form class="gerenciar__colaboradores__busca" #f="ngForm">
+      <input class="form-control bg-light gerenciar__colaboradores__input" type="text" placeholder="Digite sua busca"
+        ngModel name="busca">
+      <button class="btn-buscar" (click)="buscar(f.value)">Buscar</button>
+    </form>
+
+    <div class="select-group">
+      <select class="select form-select" name="status" (change)="filtrarStatus($event)">
+        <option value="">Todos os Status</option>
+        <option *ngFor="let status of statusFiltro" [value]="status">{{ status }}</option>
+      </select>
+    </div>
+
+    <div class="gerenciar__colaboradores__display">
+      <app-card-gerenciar-colaboradores *ngFor="let usuario of usuarios.content" [usuario]="usuario">
+      </app-card-gerenciar-colaboradores>
+    </div>
+
+    <div *ngIf="naoEncontrado" class="lista__vazia mt-5">
+      <p>Nenhum usuário encontrado 🙁</p>
+    </div>
   </div>
+
+  <div class="gerenciar__colaboradores__paginacao" *ngIf="paginado">
+    <button (click)="irParaPaginaAnterior()" [disabled]="page==0"><</button>
+    <p class="gerenciar__colaboradores__paginacao__p">Página <span>{{ page + 1 }}</span> de <span>{{ usuarios.totalPages }}</span></p>
+    <button (click)="irParaProximaPagina()" [disabled]="page+1==usuarios.totalPages">></button>
+  </div>
+
 </section>
