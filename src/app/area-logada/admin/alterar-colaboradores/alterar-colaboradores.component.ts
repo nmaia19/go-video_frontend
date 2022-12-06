@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/core/services/usuario/usuario.service';
 
 @Component({
@@ -7,23 +8,35 @@ import { UsuarioService } from 'src/app/core/services/usuario/usuario.service';
   styleUrls: ['./alterar-colaboradores.component.css']
 })
 export class AlterarColaboradoresComponent {
-  constructor(private service: UsuarioService) {
-    // this.consultar()
-  }
+  usuarios: any = []
 
-  // consultar() {
-  //   this.service.consultarPaginado(this.page, this.size).subscribe(data => {
-  //     this.equipamentos = data;
-  //     this.categoriaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.categoria))
-  //     this.marcaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.marca))
-  //     this.statusFiltro = new Set(this.equipamentos.content.map((e:any)=>e.status))
-  //   })
-  //   this.service.consultarPaginado(0, 100).subscribe(data => {this.equipamentosOriginal = data})
-  // }
+  constructor(private service: UsuarioService, private route: ActivatedRoute, private router: Router) {
+    var routeParams = this.route.snapshot.paramMap
+    let id = parseInt(routeParams.get('id') || '')
+    this.service.consultarPorId(id).subscribe(data => this.usuarios = data)
+   }
 
   alterarNomeColaborador(id:number, dados: any) {
-    // this.service.alterarNome(dados).subscribe()
-    console.log(dados)
+    this.service.alterarNome(id, dados).subscribe()
+    this.router.navigate(['/gerenciar-colaboradores'])
+  }
+
+  resetarSenha(id:number) {
+    this.service.resetarSenha(id).subscribe()
+    this.router.navigate(['/gerenciar-colaboradores'])
+  }
+
+  validate(event:Event, id: number, dados: any){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      form.classList.add('was-validated');
+    }
+    else{
+      this.alterarNomeColaborador(id,dados)
+      form.classList.remove('was-validated');
+    }
   }
 
 }

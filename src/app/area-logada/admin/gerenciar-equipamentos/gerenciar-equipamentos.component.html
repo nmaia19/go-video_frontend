@@ -31,6 +31,12 @@
     <div class="gerenciar__equipamento__display" *ngFor="let equipamento of equipamentos.content">
       <app-card-gerenciar-equipamentos [equipamento]="equipamento"></app-card-gerenciar-equipamentos>
     </div>
+
+
+    <div *ngIf="naoEncontrado" class="lista__vazia mt-5">
+      <p>Nenhum equipamento encontrado 🙁</p>
+    </div>
+
   </div>
 
   <div class="gerenciar__equipamento__paginacao" *ngIf="paginado">

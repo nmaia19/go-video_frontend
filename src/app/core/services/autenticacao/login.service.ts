@@ -17,7 +17,7 @@ export class LoginService {
   ) { }
 
   public logar(email: string, senha: string): Promise<boolean> {
-    return new Promise<boolean>(
+    return new Promise<any>(
       (executor) => {
         this.authService.login(email, senha).subscribe(
           (data: any) => {
@@ -26,7 +26,7 @@ export class LoginService {
             executor(true)
           },
           (error: any) => {
-            executor(false)
+            executor(error)
           }
         );
       },

@@ -26,6 +26,10 @@
       <app-card-gerenciar-colaboradores *ngFor="let usuario of usuarios.content" [usuario]="usuario">
       </app-card-gerenciar-colaboradores>
     </div>
+
+    <div *ngIf="naoEncontrado" class="lista__vazia mt-5">
+      <p>Nenhum usuário encontrado 🙁</p>
+    </div>
   </div>
 
   <div class="gerenciar__colaboradores__paginacao" *ngIf="paginado">

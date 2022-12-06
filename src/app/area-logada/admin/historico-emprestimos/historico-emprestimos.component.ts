@@ -20,6 +20,7 @@ export class HistoricoEmprestimosComponent {
   usuario: string = ''
   estaVazio: boolean = false
   mensagem: string = "empréstimo"
+  naoEncontrado: boolean = false
 
   constructor(private service: EmprestimoService, private route: ActivatedRoute, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -66,6 +67,7 @@ export class HistoricoEmprestimosComponent {
     let listaModeloFiltrado = []
     let listaUsuario: any[] = []
     let listaStatusFiltrado: any[] = []
+    let listaEncontrada: any[] = []
 
     if(this.modelo == '' && this.usuario == '' && this.status == ''){
       window.location.reload()
@@ -86,17 +88,22 @@ export class HistoricoEmprestimosComponent {
           listaStatusFiltrado = this.emprestimosOriginal.content.filter((e: any)=>e.dataFim==null)
         }
         else if(this.status=="Finalizado"){
-          listaStatusFiltrado = this.emprestimosOriginal.content.filter((e: any)=>e.dataFim!=null)
+          listaStatusFiltrado = this.emprestimosOriginal.content.filter((e: any)=>{e.dataFim!=null;})
         }
       }
 
-      this.emprestimos.content = listaModeloFiltrado.filter((e:any)=>{
+      listaEncontrada = listaModeloFiltrado.filter((e:any)=>{
         if(listaUsuario.length==0 || listaUsuario.includes(e)){
-          if(listaStatusFiltrado.length==0 || listaStatusFiltrado.includes(e)){
+          if((listaStatusFiltrado.length==0&&this.status=='') || listaStatusFiltrado.includes(e)){
             return e;
           }
         }
       })
+
+      if(listaEncontrada.length==0){
+        this.naoEncontrado=true
+      }
+      this.emprestimos.content = listaEncontrada
 
     }
   }

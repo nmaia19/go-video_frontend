@@ -27,6 +27,10 @@
     <div class="historico__emprestimos__display" *ngFor="let emprestimo of emprestimos.content">
       <app-card-historico-emprestimos [emprestimo]="emprestimo"></app-card-historico-emprestimos>
     </div>
+
+    <div *ngIf="naoEncontrado" class="lista__vazia mt-5">
+      <p>Nenhum empréstimo encontrado 🙁</p>
+    </div>
   </div>
 
   <div class="historico__emprestimos__paginacao" *ngIf="paginado">
