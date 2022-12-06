@@ -43,16 +43,16 @@
 
 .status-equipamento {
   font-family: inherit;
-  font-weight: 300;
+  font-weight: 600;
   font-size: var(--font-size-xsm);
   /* line-height: 1.8rem; */
   letter-spacing: 0.05em;
 
-  color: var(--primary-red);
+  color: rgb(0, 133, 0);
 }
 
 .status-equipamento-indisponivel{
-  color: var(--secondary-dark-color);
+  color: var(--primary-red);
 }
 
 .descricao-equipamento {
