@@ -17,9 +17,9 @@
   </div>
 
   <div class="gerenciar__equipamento__card__acoes">
-    <a [routerLink]="['/alterar-equipamentos', equipamento.id]"><img
+    <a [routerLink]="['/alterar-equipamentos', equipamento.id]" *ngIf="equipamento.status == 'DISPONÍVEL'"><img
         src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar Equipamento"></a>
-    <button (click)="abrirModalExclusao()"><img src="../../../../../assets/icones-gerenciamento/excluir.png"
+    <button (click)="abrirModalExclusao()" *ngIf="equipamento.status == 'DISPONÍVEL'"><img src="../../../../../assets/icones-gerenciamento/excluir.png"
         alt="Excluir Equipamento"></button>
   </div>
 

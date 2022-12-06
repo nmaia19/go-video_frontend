@@ -45,11 +45,11 @@
   letter-spacing: 0.05em;
 }
 
-.btn_reserva{
+.btn_reserva, .indisponivel{
   margin-block: 6.1rem;
 }
 
-.btn_reserva button{
+.btn_reserva button {
   box-shadow:0px 4px 4px rgba(0,0, 0, 0.25);
   border-radius:30px;
   color: white;
@@ -62,6 +62,21 @@
   line-height: 2.5rem;
   letter-spacing: 0.05em;
 }
+
+.indisponivel button {
+  box-shadow:0px 4px 4px rgba(0,0, 0, 0.25);
+  border-radius:30px;
+  color: white;
+  height:5rem;
+  width:16rem;
+  font-family: inherit;
+  background-color:var(--stoke-gray) ;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
 
 .btn_reserva button:hover{
   background-color: var(--secondary-red);

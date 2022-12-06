@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { EquipamentoService } from 'src/app/core/services/equipamento/equipamento.service';
 
 @Component({
@@ -12,13 +13,14 @@ export class AlterarEquipamentosComponent {
 
   categorias: string[] = ["Câmeras", "Filmadoras", "Lentes", "Iluminação", "Acessórios"]
 
-  constructor(private service: EquipamentoService, private route: ActivatedRoute, private router: Router) {
+  constructor(private service: EquipamentoService, private route: ActivatedRoute, private router: Router, private toastr: ToastrService) {
     var routeParams = this.route.snapshot.paramMap
     let id = parseInt(routeParams.get('id') || '')
     this.service.consultarPorId(id).subscribe(data => this.equipamento = data)
   }
 
   alterar(id: number, dados: any) {
+    this.toastr.success("Os dados do equipamento foram alterados", "Sucesso!")
     this.service.alterar(id, dados).subscribe()
     this.router.navigate(['/detalhar-equipamentos/', id])
   }
