@@ -30,6 +30,7 @@ export class CadastrarEquipamentosComponent{
       if(dados.urlFoto==""){
         dados.urlFoto = "https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image"
       }
+      dados.descricao=`${dados.categoria} ${dados.modelo} - ${dados.marca}`
       this.cadastrar(dados)
     }
     form.classList.add('was-validated');
