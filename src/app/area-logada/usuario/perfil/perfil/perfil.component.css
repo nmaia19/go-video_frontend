@@ -82,6 +82,10 @@
   margin-bottom: 5.2rem;
 }
 
+.lista__vazia{
+  text-align: center;
+}
+
 .perfil__paginacao{
   display: flex;
   justify-content: center;

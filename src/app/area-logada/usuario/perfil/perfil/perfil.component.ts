@@ -15,10 +15,11 @@ export class PerfilComponent {
   emprestimos: any = []
   idUsuario: any = []
   isAdmin: boolean = false
-  mensagem: string = "empréstimo ativo"
+  mensagem: string = "empréstimo encerrado"
   page: number = 0
   size: number = 5
   paginado: boolean = true
+  estaVazio = false
 
   constructor(private emprestimoService: EmprestimoService, private usuarioService: UsuarioService, private tokenService: TokenStorageService, private router: Router, private route: ActivatedRoute) {
     if(!this.tokenService.isAdministrador){
@@ -43,7 +44,13 @@ export class PerfilComponent {
   }
 
   consultarEmprestimosEncerradosPorUsuario(idUsuario: number) {
-    this.emprestimoService.consultarEncerradosPorUsuario(idUsuario, this.page, this.size).subscribe(data => this.emprestimos = data)
+    this.emprestimoService.consultarEncerradosPorUsuario(idUsuario, this.page, this.size).subscribe(data => {
+      this.emprestimos = data;
+      if(this.emprestimos.content.length==0){
+        this.estaVazio = true
+        this.paginado = false
+      }
+    })
   }
 
   alterarSenha(){

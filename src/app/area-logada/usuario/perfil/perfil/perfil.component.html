@@ -19,6 +19,10 @@
     <div class="meu__emprestimo__display" *ngFor="let emprestimo of emprestimos.content">
       <app-card-perfil [emprestimo]="emprestimo"></app-card-perfil>
     </div>
+
+    <div *ngIf="estaVazio" class="lista__vazia">
+      <app-lista-vazia [mensagem] = "mensagem"></app-lista-vazia>
+    </div>
   </div>
 
   <div class="perfil__paginacao" *ngIf="paginado">
