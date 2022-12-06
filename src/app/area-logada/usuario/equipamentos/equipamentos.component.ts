@@ -78,6 +78,7 @@ export class EquipamentosComponent {
     let listaBusca: any[] = []
     let listaEncontrada: any[] = []
 
+    this.naoEncontrado=false
     if(this.marca == '' && this.categoria == '' && this.status == '' && this.busca ==''){
       window.location.reload()
     }

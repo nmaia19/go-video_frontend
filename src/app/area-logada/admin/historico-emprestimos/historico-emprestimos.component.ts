@@ -68,6 +68,7 @@ export class HistoricoEmprestimosComponent {
     let listaUsuario: any[] = []
     let listaStatusFiltrado: any[] = []
     let listaEncontrada: any[] = []
+    this.naoEncontrado=false
 
     if(this.modelo == '' && this.usuario == '' && this.status == ''){
       window.location.reload()
@@ -88,7 +89,7 @@ export class HistoricoEmprestimosComponent {
           listaStatusFiltrado = this.emprestimosOriginal.content.filter((e: any)=>e.dataFim==null)
         }
         else if(this.status=="Finalizado"){
-          listaStatusFiltrado = this.emprestimosOriginal.content.filter((e: any)=>{e.dataFim!=null;})
+          listaStatusFiltrado = this.emprestimosOriginal.content.filter((e: any)=>e.dataFim!=null)
         }
       }
 
