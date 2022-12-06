@@ -41,6 +41,7 @@ const routes: Routes = [
   { path: 'historico-emprestimos', component: HistoricoEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'historico-emprestimos/:page/:size', component: HistoricoEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'perfil/:id', component: PerfilComponent, canActivate: [AuthGuard] },
+  { path: 'perfil/:id/:page/:size', component: PerfilComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
