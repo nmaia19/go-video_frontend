@@ -1,9 +1,9 @@
-.card-geral{
+.card-geral {
+  padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 40rem;
 }
 
 .card-geral:hover {
@@ -13,68 +13,74 @@
 
 .card {
   border: none;
-  margin-inline: 3rem;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body {
   font-family: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.card-title{
-  font-weight: 700;
-  font-size: var(--font-size-sm);
+.card-title {
+  font-weight: 300;
+  font-size: var(--font-size-xsm);
+  color: var(--secondary-dark-color);
   letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--primary-dark-color);
+  margin-bottom: var(--margin-sm);
 }
 
 .card-text {
-  font-weight: 400;
+  font-weight: 500;
   font-size: var(--font-size-sm);
-  letter-spacing: 0.05em;
-  text-transform: lowercase;
   color: var(--primary-dark-color);
+  margin-top: -1rem;
 }
 
-.gerenciar__colaboradores__card__a{
+.gerenciar__colaborador__card__a {
   font-weight: 400;
   font-size: var(--font-size-sm);
   letter-spacing: 0.1em;
   color: var(--primary-red);
 }
 
-.gerenciar__colaboradores__card__a:hover{
+.gerenciar__colaborador__card__a:hover {
   text-decoration: underline;
-  cursor: pointer;
 }
 
-.gerenciar__colaboradores__card__acoes{
-  margin: 3rem;
+.gerenciar__equipamento__card__acoes {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5.6rem;
+  gap: 2rem;
 }
 
-.gerenciar__colaboradores__card__acoes img{
-  height: 3.3rem;
+.gerenciar__equipamento__card__acoes button img{
+  height: 4.3rem;
+  width: 4.3rem;
 }
 
 
 @media screen and (min-width: 768px) {
-  .card-geral{
+  .card-geral {
+    padding: 2rem;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .gerenciar__colaboradores__card__acoes{
-    max-height: 20rem;
-    margin-right: 3rem;
-    width: 3.3rem;
+  .gerenciar__equipamento__card__acoes {
+    margin-right: 1rem;
+    width: 4.3rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    gap: 5.6rem;
+    gap: 2rem;
   }
-
 }

@@ -1,8 +1,8 @@
 .gerenciar__colaboradores_container {
-  margin: 21rem auto;
-  margin-bottom: 10rem;
+  margin: 0 auto;
   max-width: 100%;
   min-height: calc(100vh - 12.9rem);
+  padding: 21rem;
 }
 
 .gerenciar__colaboradores__title {
@@ -13,6 +13,7 @@
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin-bottom: 5.2rem;
 }
 
 /* Busca */
@@ -65,13 +66,14 @@
   height: 4.6rem;
   border-radius: 1.3rem;
   font-size: var(--font-size-sm);
+  text-transform: uppercase;
 }
 
 /* Display */
 .gerenciar__colaboradores__display{
-  margin-top: 5.2rem;
+  margin: 5.2rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, auto));
+  grid-template-columns: repeat(auto-fit, minmax(40rem, auto));
   gap: 5rem;
 }
 

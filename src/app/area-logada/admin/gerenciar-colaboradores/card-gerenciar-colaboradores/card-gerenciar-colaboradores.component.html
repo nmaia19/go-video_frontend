@@ -1,27 +1,13 @@
 <div class="card-geral">
 
-  <!-- <div class="card">
-    <h5 class="card-title"><span>Nome</span></h5>
-    <p class="card-text">email</p>
-    <a class="gerenciar__colaboradores__card__a">Ver Perfil</a>
-  </div>
-
-  <div class="gerenciar__colaboradores__card__acoes">
-    <a ><img
-        src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar colaborador"></a>
-    <button ><img src="../../../../../assets/icones-gerenciamento/excluir.png"
-        alt="Excluir colaborador"></button>
-  </div> -->
-
-
-  <div class="card" style="max-width: 600px;">
+  <div class="card" style="max-width: 500px;">
     <div class="row g-0">
-      <div class="col-md-8">
+      <div class="col-md-13">
         <div class="card-body">
-          <p class="card-text status">{{ usuario.status }}</p>
-          <h5 class="card-title"><span>{{ usuario.nome }}</span></h5>
+          <h5 class="card-title"><span>{{ usuario.status }}</span></h5>
+          <p class="card-text">{{ usuario.nome }}</p>
           <p class="card-text">{{ usuario.email }}</p>
-          <a class="gerenciar__equipamento__card__a" [routerLink]="['/perfil', usuario.id]">Ver Perfil</a>
+          <a class="gerenciar__colaborador__card__a" [routerLink]="['/perfil', usuario.id]">Ver Perfil</a>
         </div>
       </div>
     </div>
@@ -30,7 +16,7 @@
   <div class="gerenciar__equipamento__card__acoes">
     <a [routerLink]="['/alterar-colaboradores', usuario.id]"><img
         src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar Usuário"></a>
-    <button (click)="abrirModalExclusao()"><img src="../../../../../assets/icones-gerenciamento/excluir.png"
+    <button (click)="abrirModalExclusao()"><img src="../../../../../assets/icones-gerenciamento/remover-pessoa.png"
         alt="Excluir Usuário"></button>
   </div>
 
