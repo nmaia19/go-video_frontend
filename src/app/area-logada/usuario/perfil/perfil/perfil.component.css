@@ -81,3 +81,18 @@
   text-transform: uppercase;
   margin-bottom: 5.2rem;
 }
+
+.perfil__paginacao{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.perfil__paginacao button{
+  margin-block: 0;
+}
+
+.perfil__paginacao__p{
+  margin-inline: var(--margin-sm);
+  margin-bottom: 0;
+}

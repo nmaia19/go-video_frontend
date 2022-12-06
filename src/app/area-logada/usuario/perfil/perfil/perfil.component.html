@@ -20,4 +20,10 @@
       <app-card-perfil [emprestimo]="emprestimo"></app-card-perfil>
     </div>
   </div>
+
+  <div class="perfil__paginacao" *ngIf="paginado">
+    <button (click)="irParaPaginaAnterior()" [disabled]="page==0"><</button>
+    <p class="perfil__paginacao__p">Página <span>{{ page + 1 }}</span> de <span>{{ emprestimos.totalPages }}</span></p>
+    <button (click)="irParaProximaPagina()" [disabled]="page+1==emprestimos.totalPages">></button>
+  </div>
 </div>

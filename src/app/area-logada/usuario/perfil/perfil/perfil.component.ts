@@ -15,6 +15,10 @@ export class PerfilComponent {
   emprestimos: any = []
   idUsuario: any = []
   isAdmin: boolean = false
+  mensagem: string = "empréstimo ativo"
+  page: number = 0
+  size: number = 5
+  paginado: boolean = true
 
   constructor(private emprestimoService: EmprestimoService, private usuarioService: UsuarioService, private tokenService: TokenStorageService, private router: Router, private route: ActivatedRoute) {
     if(!this.tokenService.isAdministrador){
@@ -26,15 +30,31 @@ export class PerfilComponent {
       this.idUsuario = parseInt(routeParams.get('id') || '')
     }
     this.usuarioService.consultarPorId(this.idUsuario).subscribe(data => this.usuario = data)
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    var routeParams = this.route.snapshot.paramMap
+    if(routeParams.get('page')!=null){
+      this.page = parseInt(routeParams.get('page') || '')
+    }
+    if(routeParams.get('size')!=null){
+      this.size = parseInt(routeParams.get('size') || '')
+    }
     this.consultarEmprestimosEncerradosPorUsuario(this.idUsuario)
   }
 
   consultarEmprestimosEncerradosPorUsuario(idUsuario: number) {
-    this.emprestimoService.consultarEncerradosPorUsuario(idUsuario).subscribe(data => this.emprestimos = data)
+    this.emprestimoService.consultarEncerradosPorUsuario(idUsuario, this.page, this.size).subscribe(data => this.emprestimos = data)
   }
 
   alterarSenha(){
     this.router.navigate(['alterar-senha'])
   }
 
+  irParaProximaPagina(){
+    this.router.navigate(['/perfil', this.idUsuario, this.page+1, this.size])
+  }
+
+  irParaPaginaAnterior(){
+    this.router.navigate(['/perfil', this.idUsuario, this.page-1, this.size])
+  }
 }

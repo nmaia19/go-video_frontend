@@ -37,7 +37,7 @@ export class EmprestimoService {
     return this.http.put(`${url}/encerrar/${id}`, {}, {headers: this.authorization})
   }
 
-  consultarEncerradosPorUsuario(id: number) {
-    return this.http.get(`${url}/encerrados/usuario/${id}`, {headers: this.authorization})
+  consultarEncerradosPorUsuario(id: number, page: number, size: number) {
+    return this.http.get(`${url}/encerrados/usuario/${id}?page=${page}&size=${size}`, {headers: this.authorization})
   }
 }
