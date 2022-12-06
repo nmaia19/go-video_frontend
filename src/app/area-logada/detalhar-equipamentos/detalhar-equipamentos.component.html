@@ -15,8 +15,12 @@
     <button [routerLink]="['/alterar-equipamentos', equipamento.id]">Alterar</button>
   </div>
 
-  <div *ngIf="!isAdmin" class="btn_reserva">
+  <div *ngIf="!isAdmin && isFree" class="btn_reserva">
     <button (click)="reservar()">Reservar</button>
+  </div>
+
+  <div *ngIf="!isAdmin && !isFree" class="indisponivel">
+    <button disabled>Indisponível</button>
   </div>
 
   <div class="ficha_tecnica container">
@@ -36,6 +40,5 @@
       <p>{{ equipamento.categoria }}</p>
     </div>
   </div>
-
 
 </div>

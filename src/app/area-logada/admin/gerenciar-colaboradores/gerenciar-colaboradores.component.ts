@@ -67,6 +67,7 @@ export class GerenciarColaboradoresComponent {
     let listaStatusFiltrado: any[] = []
     let listaBusca: any[] = []
     let listaEncontrada: any[]=[]
+    this.naoEncontrado=false
 
     if (this.status == '' && this.busca == '') {
       window.location.reload()

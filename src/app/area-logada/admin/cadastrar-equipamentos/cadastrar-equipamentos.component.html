@@ -7,22 +7,14 @@
     <div>
       <label for="equipamento-cadastro-categoria" class="form-label">CATEGORIA <span class="equipamento__cadastro__input__obrigatorio">*</span></label>
       <select id="equipamento-cadastro-categoria" class="form-select  equipamento__cadastro__select bg-light" ngModel name="categoria" required>
-        <option value="Câmeras">Câmeras</option>
-        <option value="Filmadoras">Filmadoras</option>
-        <option value="Lentes">Lentes</option>
+        <option value="Câmera">Câmera</option>
+        <option value="Filmadora">Filmadora</option>
+        <option value="Lente">Lente</option>
         <option value="Iluminação">Iluminação</option>
-        <option value="Acessórios">Acessórios</option>
+        <option value="Microfone">Microfone</option>
       </select>
       <div class="invalid-feedback equipamento__cadastro__erro">
         <p>Categoria obrigatória</p>
-      </div>
-    </div>
-
-    <div>
-      <label class="form-label" for="equipamento-cadastro-descricao">DESCRIÇÃO DO EQUIPAMENTO <span class="equipamento__cadastro__input__obrigatorio">*</span></label>
-      <input class="form-control bg-light equipamento__cadastro__input" type="text" id="equipamento-cadastro-descricao" ngModel name="descricao" required/>
-      <div class="invalid-feedback equipamento__cadastro__erro">
-        <p>Descrição obrigatória</p>
       </div>
     </div>
 
@@ -52,7 +44,7 @@
 
     <div class="equipamento__cadastro__botoes">
       <button class="equipamento__cadastro__limpar" type="reset" (click)="limpar()">LIMPAR</button>
-      <button class="equipamento__cadastro__cadastrar" type="submit" (click)="validate($event, f.value)">CADASTRAR</button>
+      <button class="equipamento__cadastro__cadastrar" type="reset" (click)="validate($event, f.value)">CADASTRAR</button>
     </div>
   </form>
 </section>

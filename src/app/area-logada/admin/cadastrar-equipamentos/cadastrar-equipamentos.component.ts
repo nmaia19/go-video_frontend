@@ -1,5 +1,7 @@
 import { EquipamentoService } from '../../../core/services/equipamento/equipamento.service';
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-equipamentos',
@@ -8,15 +10,16 @@ import { Component } from '@angular/core';
 })
 
 export class CadastrarEquipamentosComponent{
-  constructor(private service: EquipamentoService) {
+  constructor(private service: EquipamentoService, private router: Router, private toastr: ToastrService) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   dados: any = []
 
-
   cadastrar(dados: any) {
+    this.toastr.success("Equipamento cadastrado")
     this.service.cadastrar(dados).subscribe()
-    window.location.reload()
+    this.router.navigate(['/cadastrar-equipamentos'])
   }
 
 
@@ -25,14 +28,15 @@ export class CadastrarEquipamentosComponent{
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+      form.classList.add('was-validated');
     }
     else{
       if(dados.urlFoto==""){
         dados.urlFoto = "https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image"
       }
+      dados.descricao=`${dados.categoria} ${dados.modelo} - ${dados.marca}`
       this.cadastrar(dados)
     }
-    form.classList.add('was-validated');
 
   }
 
