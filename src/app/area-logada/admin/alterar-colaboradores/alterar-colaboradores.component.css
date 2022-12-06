@@ -6,8 +6,18 @@
   margin-bottom: 7.2rem
 }
 
+.altera__colaborador__titulo {
+  font-family: inherit;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
+}
+
 .altera__colaborador__form {
-  margin-top: 10rem;
   width: 70%;
   font-size: var(--font-size-sm);
   font-weight: 500;
@@ -53,4 +63,11 @@
 
 .btn__reset__senha:hover{
   background-color: var(--secondary-red);
+}
+
+/* Erros */
+.alterar__senha__erro{
+  color: var(--primary-red);
+  margin-bottom: 3rem;
+  margin-top: -2.8rem;
 }

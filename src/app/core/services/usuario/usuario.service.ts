@@ -35,6 +35,10 @@ export class UsuarioService {
     return this.http.put(`${url}/alterarSenha/${id}`, data)
   }
 
+  resetarSenha(id: number) {
+    return this.http.put(`${url}/resetarSenha/${id}`, {})
+  }
+
   excluir(id: number) {
     return this.http.delete(`${url}/${id}`)
   }
