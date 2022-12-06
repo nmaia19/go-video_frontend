@@ -2,7 +2,7 @@
 <div class="container container__alterar__senha">
   <h1 class="alterar-senha__titulo">ALTERAR SENHA</h1>
   <div class="altera__senha__form">
-    <form #f="ngForm" class="needs-validation"  #form novalidate (ngSubmit)="alterarSenha(f.value)">
+    <form #f="ngForm" class="needs-validation"  #form novalidate>
       <div>
         <label class="form-label" for="senha-anterior">SENHA ANTERIOR <span class="alterar__senha__erro">*</span></label>
         <input class="form-control bg-light altera__senha__input" type="password" id="senha-anterior" required ngModel name="senhaAntiga"/>

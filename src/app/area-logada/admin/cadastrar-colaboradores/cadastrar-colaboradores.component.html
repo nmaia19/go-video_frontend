@@ -2,7 +2,7 @@
 <div class="container container__cadastro">
   <h1 class="cadastrar__titulo">CADASTRAR COLABORADOR</h1>
   <div class="cadastra__colaborador__form">
-    <form #f="ngForm" (ngSubmit)="cadastrarColaborador(f.value)">   <!-- Pegar ID do usuario logado -->
+    <form class="needs-validation" #f="ngForm" #form novalidate>
       <div>
         <label class="form-label" for="nome">NOME*</label>
         <input class="form-control bg-light cadastra__nome__input" type="text" id="nome" ngModel name="nome"/>
@@ -19,7 +19,7 @@
       </div>
 
       <div class="cadastra__colaborador__botoes">
-        <button class="btn__cadastrar" type="submit">CADASTRAR</button>
+        <button class="btn__cadastrar" type="reset" (click)="validate($event, f.value)">CADASTRAR</button>
       </div>
     </form>
   </div>

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ModalConfirmarDevolucaoComponent } from 'src/app/area-logada/modal-confirmar-devolucao/modal-confirmar-devolucao.component';
 import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.service';
 
@@ -11,13 +13,15 @@ import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.s
 export class CardMeusEmprestimosComponent {
   @Input() emprestimo: any
 
-//   constructor(private service: EmprestimoService, public dialog: MatDialog){}
-constructor(private service: EmprestimoService, public dialog: MatDialog) {}
+constructor(private service: EmprestimoService, public dialog: MatDialog, private toastr: ToastrService) {}
 
 devolver(id: number) {
   this.service.devolver(id).subscribe()
-  window.location.reload()
+  this.toastr.success("Empréstimo encerrado, equipamento disponível para nova locação", "", {
+    timeOut: 3000,
+  }).onHidden.subscribe(() => window.location.reload())
 }
+
 
 abrirModalDevolucao(): void {
   const dialogRef = this.dialog.open(ModalConfirmarDevolucaoComponent, {
@@ -25,7 +29,7 @@ abrirModalDevolucao(): void {
   });
 
   dialogRef.afterClosed().subscribe(result => {
-    if(`${result}`){
+    if(`${result}`) {
       this.devolver(this.emprestimo.id);
     }
   });

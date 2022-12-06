@@ -43,6 +43,9 @@ import { CardPerfilComponent } from './area-logada/usuario/perfil/perfil/card-pe
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ListaVaziaComponent } from './core/lista-vazia/lista-vazia.component';
 import { authInterceptorProviders } from './core/helpers/auth.intercept';
+import { CommonModule } from '@angular/common';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -85,6 +88,9 @@ import { authInterceptorProviders } from './core/helpers/auth.intercept';
     BrowserAnimationsModule,
     MatDialogModule,
     MatSnackBarModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

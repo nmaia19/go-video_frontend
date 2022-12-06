@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { UsuarioService } from '../../../core/services/usuario/usuario.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-alterar-senha',
@@ -10,19 +11,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./alterar-senha.component.css']
 })
 export class AlterarSenhaComponent {
-  constructor(private service: UsuarioService, private tokenService: TokenStorageService, private router: Router, private snackBar: MatSnackBar) { }
+  constructor(private service: UsuarioService, private tokenService: TokenStorageService, private router: Router, private toastr: ToastrService) { }
 
   alterarSenha(dados: any) {
-
     this.service.alterarSenha(this.tokenService.getIdUsuario(), dados).subscribe(
       (data:any) => {
         this.router.navigate([`/perfil/${this.tokenService.getIdUsuario()}`])
+        this.toastr.success("Sua senha foi alterada!")
       },
       (err: any) => {
-        this.abrirMsgErro(err.error.message)
+        this.toastr.error(err.error.message)
       }
     )
-
   }
 
   validate(event:Event, dados: any){
@@ -38,10 +38,4 @@ export class AlterarSenhaComponent {
     }
   }
 
-  abrirMsgErro(message: string){
-    this.snackBar.open(message, undefined, {
-      duration: 3000,
-      verticalPosition: 'top',
-     });
-  }
 }

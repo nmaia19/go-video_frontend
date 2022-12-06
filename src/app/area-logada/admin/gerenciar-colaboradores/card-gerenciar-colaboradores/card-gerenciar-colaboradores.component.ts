@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 import {
   ModalConfirmarExclusaoComponent,
 } from 'src/app/area-logada/modal-confirmar-exclusao/modal-confirmar-exclusao.component';
@@ -16,11 +17,18 @@ export class CardGerenciarColaboradoresComponent {
 
   @Input() usuario: any
 
-  constructor(private userService: UsuarioService, public dialog: MatDialog){
+  constructor(private userService: UsuarioService, public dialog: MatDialog,  private toastr: ToastrService){
   }
 
   excluir(id: number) {
-    this.userService.excluir(id).subscribe()
+    this.userService.excluir(id).subscribe(
+      (data:any) => {
+        this.toastr.success(data.mensagem)
+      },
+      (err: any) => {
+        this.toastr.error(err.error.message)
+      }
+    )
   }
 
   abrirModalExclusao(): void {
