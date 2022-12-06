@@ -15,8 +15,10 @@ export class GerenciarColaboradoresComponent {
   size: number = 10
   paginado: boolean = true
   status: string = ''
+  busca: string = ''
   estaVazio: boolean = false
   mensagem: string = "usuários"
+  naoEncontrado: boolean = false
 
   constructor(private service: UsuarioService, private route: ActivatedRoute, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -52,16 +54,8 @@ export class GerenciarColaboradoresComponent {
   }
 
   buscar(value: any) {
-    console.log(value)
-    const busca = value.busca
-    this.usuarios.content = this.usuariosOriginal.content.filter((u: any) => {
-      return u.nome.toLowerCase().includes(busca.toLowerCase())
-    })
-    this.paginado = false
-
-    if (busca == '') {
-      window.location.reload()
-    }
+    this.busca = value.busca
+    this.filtrar()
   }
 
   filtrarStatus(event: any) {
@@ -70,16 +64,39 @@ export class GerenciarColaboradoresComponent {
   }
 
   filtrar() {
-    if (this.status == '') {
+    let listaStatusFiltrado: any[] = []
+    let listaBusca: any[] = []
+    let listaEncontrada: any[]=[]
+
+    if (this.status == '' && this.busca == '') {
       window.location.reload()
     }
     else {
       this.paginado = false
       if (this.status != '') {
-        this.usuarios.content = this.usuariosOriginal.content.filter((u: any) =>
+        listaStatusFiltrado = this.usuariosOriginal.content.filter((u: any) =>
           u.status == this.status)
       }
+      else{
+        listaStatusFiltrado = this.usuariosOriginal.content
+      }
+      if (this.busca != '') {
+        listaBusca = this.usuariosOriginal.content.filter((u: any) => {
+          return u.nome.toLowerCase().includes(this.busca.toLowerCase())
+        })
+      }
     }
-  }
 
+    listaEncontrada = listaStatusFiltrado.filter((e:any)=>{
+      if((listaBusca.length==0 && this.busca=='') || listaBusca.includes(e)){
+        return e;
+      }
+    })
+
+    if(listaEncontrada.length==0){
+      this.naoEncontrado=true
+    }
+
+    this.usuarios.content = listaEncontrada
+  }
 }

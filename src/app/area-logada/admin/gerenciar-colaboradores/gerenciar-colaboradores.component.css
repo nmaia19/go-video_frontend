@@ -90,3 +90,8 @@
   margin-inline: var(--margin-sm);
   margin-bottom: 0;
 }
+
+/*Lista vazia*/
+.lista__vazia{
+  text-align: center;
+}
