@@ -10,7 +10,7 @@ import { EquipamentoService } from 'src/app/core/services/equipamento/equipament
 export class AlterarEquipamentosComponent {
   equipamento: any = []
 
-  categorias: string[] = ["Câmeras", "Filmadoras", "Lentes", "Iluminação", "Acessórios"]
+  categorias: string[] = ["Câmeras", "Filmadoras", "Lentes", "Iluminação", "Microfone"]
 
   constructor(private service: EquipamentoService, private route: ActivatedRoute, private router: Router) {
     var routeParams = this.route.snapshot.paramMap
