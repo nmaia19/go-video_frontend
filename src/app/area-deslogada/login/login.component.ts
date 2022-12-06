@@ -30,18 +30,27 @@ export class LoginComponent implements OnInit{
   }
   async onLogin(input:any){
 
-    const podeLogar = await this.service.logar(input.email, input.senha)
+    const podeLogar: any = await this.service.logar(input.email, input.senha)
 
-    if(podeLogar) {
+    if(podeLogar === true) {
       this.router.navigate(['/inicio'])
     } else {
-      this.abrirMsgErro()
+      if(podeLogar.status ==400){
+        this.msgErro = `O campo ${ podeLogar.error[0].campo } ${podeLogar.error[0].erro}`
+        if(podeLogar.error[0].erro=="deve ser um endereço de e-mail bem formado"){
+          this.msgErro="Insira um e-mail válido"
+        }
+      }
+      else{
+        this.msgErro = podeLogar.error.message
+      }
+      this.abrirMsgErro(this.msgErro)
     }
 
   }
 
-  abrirMsgErro(){
-    this.snackBar.open("Credenciais inválidas", undefined, {
+  abrirMsgErro(msgErro: string){
+    this.snackBar.open(msgErro, undefined, {
       duration: 3000,
       verticalPosition: 'top',
      });
