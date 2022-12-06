@@ -25,7 +25,7 @@ export class DetalharEquipamentosComponent {
 
   reservar() {
     this.emprestimoService.criar(this.id).subscribe()
-    this.toastr.success("Empréstimo realizado", "Sucesso!")
+    this.toastr.success("Empréstimo realizado")
     this.router.navigate(['/meus-emprestimos'])
   }
 

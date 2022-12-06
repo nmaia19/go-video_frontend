@@ -13,12 +13,12 @@ import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.s
 export class CardMeusEmprestimosComponent {
   @Input() emprestimo: any
 
-constructor(private service: EmprestimoService, public dialog: MatDialog, private router: Router, private toastr: ToastrService) {}
+constructor(private service: EmprestimoService, public dialog: MatDialog, private toastr: ToastrService) {}
 
 devolver(id: number) {
   this.service.devolver(id).subscribe()
-  this.toastr.success("Empréstimo encerrado, equipamento disponível para nova locação", "Sucesso!", {
-    timeOut: 2000,
+  this.toastr.success("Empréstimo encerrado, equipamento disponível para nova locação", "", {
+    timeOut: 3000,
   }).onHidden.subscribe(() => window.location.reload())
 }
 

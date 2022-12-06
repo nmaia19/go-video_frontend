@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { LoginService } from '../../core/services/autenticacao/login.service';
 import { TokenStorageService } from '../../core/services/autenticacao/token.storage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit{
   loginFalhou = false;
   msgErro = '';
 
-  constructor(private router: Router, private service: LoginService, private tokenStorage: TokenStorageService, private snackBar: MatSnackBar) { }
+  constructor(private router: Router, private service: LoginService, private tokenStorage: TokenStorageService, private snackBar: MatSnackBar, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -50,10 +51,7 @@ export class LoginComponent implements OnInit{
   }
 
   abrirMsgErro(msgErro: string){
-    this.snackBar.open(msgErro, undefined, {
-      duration: 3000,
-      verticalPosition: 'top',
-     });
+    this.toastr.error(msgErro)
   }
 
 }

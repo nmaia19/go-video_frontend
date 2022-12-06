@@ -25,7 +25,7 @@ export class AlterarEquipamentosComponent {
   }
 
   alterar(id: number, dados: any) {
-    this.toastr.success("Os dados do equipamento foram alterados", "Sucesso!")
+    this.toastr.success("Os dados do equipamento foram alterados")
     this.service.alterar(id, dados).subscribe()
     this.router.navigate(['/detalhar-equipamentos/', id])
   }

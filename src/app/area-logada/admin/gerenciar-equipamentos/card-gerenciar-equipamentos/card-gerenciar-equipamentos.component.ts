@@ -20,13 +20,13 @@ export class CardGerenciarEquipamentosComponent {
   excluir(id: number) {
     this.service.excluir(id).subscribe(
       (data: any) => {
-        this.toastr.success(data.mensagem, "Sucesso!", {
+        this.toastr.success(data.mensagem, "", {
           timeOut: 4000,
         }).onHidden.subscribe(() => window.location.reload())
       },
       (err: any) => {
         console.log(err.error.message)
-        this.toastr.warning(err.error.message, "Erro:", {
+        this.toastr.warning(err.error.message, "", {
           timeOut: 4500,
         })
       }

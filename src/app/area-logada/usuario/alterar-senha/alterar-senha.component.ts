@@ -17,10 +17,10 @@ export class AlterarSenhaComponent {
     this.service.alterarSenha(this.tokenService.getIdUsuario(), dados).subscribe(
       (data:any) => {
         this.router.navigate([`/perfil/${this.tokenService.getIdUsuario()}`])
-        this.toastr.success("Sua senha foi alterada!", "Sucesso!")
+        this.toastr.success("Sua senha foi alterada!")
       },
       (err: any) => {
-        this.toastr.error(err.error.message, 'Erro:')
+        this.toastr.error(err.error.message)
       }
     )
   }

@@ -16,9 +16,8 @@ export class CadastrarEquipamentosComponent{
 
   dados: any = []
 
-// TOASTR NÃO DEU CERTO POR CONTA DO RELOAD
   cadastrar(dados: any) {
-    this.toastr.success("Equipamento cadastrado", "Sucesso!")
+    this.toastr.success("Equipamento cadastrado")
     this.service.cadastrar(dados).subscribe()
     this.router.navigate(['/cadastrar-equipamentos'])
   }
