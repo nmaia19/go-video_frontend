@@ -97,7 +97,7 @@ export class EquipamentosComponent {
         listaStatusFiltrado = this.equipamentosOriginal.content.filter((e: any)=>e.status==this.status)
       }
       if(this.busca!=''){
-        listaBusca = this.equipamentosOriginal.content.filter((e: any)=>{return e.modelo.toLowerCase().includes(this.busca.toLowerCase())})
+        listaBusca = this.equipamentosOriginal.content.filter((e: any)=>{return e.descricao.toLowerCase().includes(this.busca.toLowerCase())})
       }
 
       listaEncontrada = listaCategoriaFiltrada.filter((e:any)=>{
