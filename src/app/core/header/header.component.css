@@ -31,10 +31,16 @@ a {
 
 .div__menu {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
 }
 
 .menu__item {
   margin-right: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 .submenu__item {
@@ -76,6 +82,8 @@ a {
   .div__menu {
     height: 9.4rem;
     margin: 0;
+    display: flex;
+    align-items: flex-end;
   }
 
   .menu__perfil {

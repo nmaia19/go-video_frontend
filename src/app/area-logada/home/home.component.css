@@ -41,28 +41,33 @@
   background-image: url('src/assets/img-home/home-1.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
 }
 
 .home__sessao-2 {
   background-image: url('src/assets/img-home/home-2.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
 }
 
 .home__sessao-3 {
   background-image: url('src/assets/img-home/home-3.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
 }
 
 .home__sessao-4 {
   background-image: url('src/assets/img-home/home-4.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
 }
 
 .home__sessao-5 {
   background-image: url('src/assets/img-home/home-5.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
 }
