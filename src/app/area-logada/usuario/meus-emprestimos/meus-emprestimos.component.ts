@@ -1,5 +1,4 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { UsuarioService } from './../../../core/services/usuario/usuario.service';
 import { TokenStorageService } from './../../../core/services/autenticacao/token.storage.service';
 import { Component } from '@angular/core';
 import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.service';
@@ -16,9 +15,10 @@ export class MeusEmprestimosComponent {
   page: number = 0
   size: number = 5
   paginado: boolean = true
+  idUsuario: any = 0
 
   constructor(private service: EmprestimoService, private route: ActivatedRoute, private tokenService: TokenStorageService, private router: Router) {
-    const idUsuario = this.tokenService.getIdUsuario()
+    this.idUsuario = this.tokenService.getIdUsuario()
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     var routeParams = this.route.snapshot.paramMap
     if(routeParams.get('page')!=null){
@@ -27,7 +27,7 @@ export class MeusEmprestimosComponent {
     if(routeParams.get('size')!=null){
       this.size = parseInt(routeParams.get('size') || '')
     }
-    this.consultarVigentePorUsuario(idUsuario)
+    this.consultarVigentePorUsuario(this.idUsuario)
   }
 
   consultarVigentePorUsuario(idUsuario: number) {
@@ -38,6 +38,10 @@ export class MeusEmprestimosComponent {
         this.paginado = false
       }
     })
+  }
+
+  atualizarPagina(data: any){
+    this.consultarVigentePorUsuario(this.idUsuario);
   }
 
   irParaProximaPagina(){

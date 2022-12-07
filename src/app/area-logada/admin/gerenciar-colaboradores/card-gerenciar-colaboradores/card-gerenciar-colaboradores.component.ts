@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import {
@@ -17,6 +17,7 @@ export class CardGerenciarColaboradoresComponent {
   indisponivelClass: string = ''
 
   @Input() usuario: any
+  @Output() atualizarPagina = new EventEmitter<any>();
 
   constructor(private userService: UsuarioService, public dialog: MatDialog,  private toastr: ToastrService){
   }
@@ -25,6 +26,7 @@ export class CardGerenciarColaboradoresComponent {
     this.userService.excluir(id).subscribe(
       (data:any) => {
         this.toastr.success(data.mensagem)
+        this.atualizarPagina.emit(null);
       },
       (err: any) => {
         this.toastr.error(err.error.message)

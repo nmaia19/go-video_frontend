@@ -29,7 +29,7 @@
     </div>
 
     <div class="gerenciar__equipamento__display" *ngFor="let equipamento of equipamentos.content">
-      <app-card-gerenciar-equipamentos [equipamento]="equipamento"></app-card-gerenciar-equipamentos>
+      <app-card-gerenciar-equipamentos [equipamento]="equipamento" (atualizarPagina)="atualizarPagina($event)"></app-card-gerenciar-equipamentos>
     </div>
 
 
