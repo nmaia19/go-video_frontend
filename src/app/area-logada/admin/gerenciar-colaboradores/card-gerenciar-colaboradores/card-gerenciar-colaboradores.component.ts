@@ -14,6 +14,7 @@ import { UsuarioService } from '../../../../core/services/usuario/usuario.servic
   styleUrls: ['./card-gerenciar-colaboradores.component.css']
 })
 export class CardGerenciarColaboradoresComponent {
+  indisponivelClass: string = ''
 
   @Input() usuario: any
 
@@ -41,5 +42,11 @@ export class CardGerenciarColaboradoresComponent {
         this.excluir(this.usuario.id);
       }
     });
+  }
+
+  ngOnInit(): void {
+    if(this.usuario.status == "INATIVO"){
+      this.indisponivelClass = "status-colaborador-inativo"
+    }
   }
 }

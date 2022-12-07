@@ -4,7 +4,7 @@
     <div class="row g-0">
       <div class="col-md-13">
         <div class="card-body">
-          <h5 class="card-title"><span>{{ usuario.status }}</span></h5>
+          <h5 class="status-colaborador" [class]="indisponivelClass"><span>{{ usuario.status }}</span></h5>
           <p class="card-text">{{ usuario.nome }}</p>
           <p class="card-text">{{ usuario.email }}</p>
           <a class="gerenciar__colaborador__card__a" [routerLink]="['/perfil', usuario.id]">Ver Perfil</a>

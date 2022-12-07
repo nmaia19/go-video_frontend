@@ -27,12 +27,26 @@
   justify-content: center;
 }
 
-.card-title{
+/* .card-title{
   font-weight: 300;
   font-size: var(--font-size-xsm);
   color: var(--secondary-dark-color);
   letter-spacing: 0.05em;
   margin-bottom: var(--margin-sm);
+} */
+
+.status-equipamento {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: var(--font-size-xsm);
+  /* line-height: 1.8rem; */
+  letter-spacing: 0.05em;
+
+  color: rgb(0, 133, 0);
+}
+
+.status-equipamento-indisponivel{
+  color: var(--primary-red);
 }
 
 .card-text {

@@ -15,6 +15,7 @@ export class DetalharEquipamentosComponent {
   id: any = 0
   isAdmin: boolean = false
   isFree: boolean = true
+  indisponivelClass: string = ''
 
   constructor(private service: EquipamentoService, private emprestimoService: EmprestimoService, private route: ActivatedRoute, private tokenStorage: TokenStorageService, private router: Router, private toastr: ToastrService) {
     var routeParams = this.route.snapshot.paramMap
@@ -31,6 +32,7 @@ export class DetalharEquipamentosComponent {
 
   verificaDisponibilidade() {
     if(this.equipamento.status != "DISPONÍVEL") {
+      this.indisponivelClass = "status-equipamento-indisponivel"
       return false
     }
     return true

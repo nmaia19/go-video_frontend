@@ -8,7 +8,7 @@
 
   <div class="nome_equipamento">
     <h2>{{ equipamento.modelo }}</h2>
-    <h5>Status: <span class="{{ equipamento.status }}">{{ equipamento.status }}</span></h5>
+    <h5>Status: <span [class]="indisponivelClass" class="{{ equipamento.status }}">{{ equipamento.status }}</span></h5>
   </div>
 
   <div *ngIf="isAdmin" class="btn_reserva">

@@ -40,9 +40,23 @@
 .nome_equipamento h5{
   font-family: inherit;
   font-weight: 300;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-xsm);
   line-height: 2rem;
   letter-spacing: 0.05em;
+}
+
+.nome_equipamento h5 span {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: var(--font-size-xsm);
+  /* line-height: 1.8rem; */
+  letter-spacing: 0.05em;
+
+  color: rgb(0, 133, 0);
+}
+
+.nome_equipamento h5 span.INDISPONÍVEL{
+  color: var(--primary-red);
 }
 
 .btn_reserva, .indisponivel{

@@ -1,5 +1,5 @@
 import { EquipamentoService } from 'src/app/core/services/equipamento/equipamento.service';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmarExclusaoComponent } from 'src/app/area-logada/modal-confirmar-exclusao/modal-confirmar-exclusao.component';
 import { ToastrService } from 'ngx-toastr';
@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
   templateUrl: './card-gerenciar-equipamentos.component.html',
   styleUrls: ['./card-gerenciar-equipamentos.component.css']
 })
-export class CardGerenciarEquipamentosComponent {
+export class CardGerenciarEquipamentosComponent implements OnInit {
+  indisponivelClass: string = ''
 
   @Input() equipamento: any
-
 
   constructor(private service: EquipamentoService, public dialog: MatDialog, private router: Router, private toastr: ToastrService) {}
 
@@ -43,5 +43,11 @@ export class CardGerenciarEquipamentosComponent {
         this.excluir(this.equipamento.id);
       }
     });
+  }
+
+  ngOnInit(): void {
+    if(this.equipamento.status == "INDISPONÍVEL"){
+      this.indisponivelClass = "status-equipamento-indisponivel"
+    }
   }
 }

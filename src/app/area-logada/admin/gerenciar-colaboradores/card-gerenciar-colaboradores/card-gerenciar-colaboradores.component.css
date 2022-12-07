@@ -27,12 +27,27 @@
   flex-direction: column;
 }
 
-.card-title {
+/* .card-title {
   font-weight: 300;
   font-size: var(--font-size-xsm);
   color: var(--secondary-dark-color);
   letter-spacing: 0.05em;
   margin-bottom: var(--margin-sm);
+} */
+
+.status-colaborador {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: var(--font-size-xsm);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--margin-sm);
+  letter-spacing: 0.05em;
+
+  color: rgb(0, 133, 0);
+}
+
+.status-colaborador-inativo{
+  color: var(--primary-red);
 }
 
 .card-text {
@@ -46,7 +61,6 @@
   font-weight: 400;
   font-size: var(--font-size-sm);
   letter-spacing: 0.1em;
-  color: var(--primary-red);
 }
 
 .gerenciar__colaborador__card__a:hover {
