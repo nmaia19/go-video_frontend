@@ -35,14 +35,16 @@ export class GerenciarColaboradoresComponent {
   consultar() {
     this.service.consultar(this.page, this.size).subscribe(data => {
       this.usuarios = data;
-      this.statusFiltro = new Set(this.usuarios.content.map((u: any) => u.status))
 
       if (this.usuarios.content.length == 0) {
         this.estaVazio = true
         this.paginado = false
       }
     })
-    this.service.consultar(0, 100).subscribe(data => { this.usuariosOriginal = data })
+    this.service.consultar(0, 100).subscribe(data => {
+      this.usuariosOriginal = data;
+      this.statusFiltro = new Set(this.usuariosOriginal.content.map((u: any) => u.status))
+    })
   }
 
   irParaProximaPagina() {

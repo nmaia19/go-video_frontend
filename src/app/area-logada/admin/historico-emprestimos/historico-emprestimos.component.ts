@@ -37,15 +37,17 @@ export class HistoricoEmprestimosComponent {
   consultar() {
     this.service.consultar(this.page, this.size).subscribe(data => {
       this.emprestimos = data;
-      this.modeloFiltro = new Set(this.emprestimos.content.map((e:any)=>e.equipamento.modelo))
-      this.usuarioFiltro = new Set(this.emprestimos.content.map((e:any)=>e.usuario.nome))
       if(this.emprestimos.content.length==0){
         this.estaVazio = true
         this.paginado = false
       }
 
     })
-    this.service.consultar(this.page, this.size).subscribe(data => {this.emprestimosOriginal = data;})
+    this.service.consultar(0, 100).subscribe(data => {
+      this.emprestimosOriginal = data;
+      this.modeloFiltro = new Set(this.emprestimosOriginal.content.map((e:any)=>e.equipamento.modelo))
+      this.usuarioFiltro = new Set(this.emprestimosOriginal.content.map((e:any)=>e.usuario.nome))
+    })
   }
 
   filtrarPorStatus(event:any){

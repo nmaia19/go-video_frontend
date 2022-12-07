@@ -39,16 +39,18 @@ export class EquipamentosComponent {
   consultar() {
     this.service.consultarPaginado(this.page, this.size).subscribe(data => {
       this.equipamentos = data
-      this.categoriaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.categoria))
-      this.marcaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.marca))
-      this.statusFiltro = new Set(this.equipamentos.content.map((e:any)=>e.status))
       if(this.equipamentos.content.length==0){
         this.estaVazio = true
         this.paginado = false
       }
     })
 
-    this.service.consultarPaginado(0,100).subscribe(data => {this.equipamentosOriginal = data;})
+    this.service.consultarPaginado(0,100).subscribe(data => {
+      this.equipamentosOriginal = data;
+      this.categoriaFiltro = new Set(this.equipamentosOriginal.content.map((e:any)=>e.categoria))
+      this.marcaFiltro = new Set(this.equipamentosOriginal.content.map((e:any)=>e.marca))
+      this.statusFiltro = new Set(this.equipamentosOriginal.content.map((e:any)=>e.status))
+    })
   }
 
   buscar(value: any){
