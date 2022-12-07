@@ -14,7 +14,7 @@
 
 .link__Footer {
   margin-top: 40px;
-  width: 50rem;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -46,4 +46,16 @@
   font-size: 16px;
   font-weight: 500;
   margin: 4px;
+}
+
+@media (max-width: 768px) {
+  .link__Footer {
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+
+  .vertical-line {
+    display: none;
+  }
 }

@@ -36,7 +36,7 @@ export class CardGerenciarColaboradoresComponent {
 
   abrirModalExclusao(): void {
     const dialogRef = this.dialog.open(ModalConfirmarExclusaoComponent, {
-      data: {nome: "usuario"},
+      data: {nome: "usuário"},
     });
 
     dialogRef.afterClosed().subscribe(result => {
