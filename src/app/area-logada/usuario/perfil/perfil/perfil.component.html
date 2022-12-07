@@ -11,10 +11,10 @@
       <p>{{ usuario.email }}</p>
     </div>
     <button class="alterar_btn" (click)="alterarSenha()" *ngIf="!isAdmin">ALTERAR MINHA SENHA</button>
-    <p class="aviso_perfil"  *ngIf="!isAdmin">(Caso precise alterar os dados, entre em contato com um administrador)</p>
+    <p class="aviso_perfil"  *ngIf="!isAdmin && !adminVendoAdmin">(Caso precise alterar os dados, entre em contato com um administrador)</p>
   </div>
 
-  <div class="historico_emprestimos_box">
+  <div class="historico_emprestimos_box" *ngIf="!adminVendoAdmin">
     <h1>HISTÓRICO DE EMPRÉSTIMOS</h1>
     <div class="meu__emprestimo__display" *ngFor="let emprestimo of emprestimos.content">
       <app-card-perfil [emprestimo]="emprestimo"></app-card-perfil>
