@@ -46,6 +46,7 @@ import { authInterceptorProviders } from './core/helpers/auth.intercept';
 import { CommonModule } from '@angular/common';
 
 import { ToastrModule } from 'ngx-toastr';
+import { AcessoNegadoComponent } from './core/acesso-negado/acesso-negado.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { ToastrModule } from 'ngx-toastr';
     PerfilComponent,
     CardPerfilComponent,
     ListaVaziaComponent,
+    AcessoNegadoComponent,
   ],
   imports: [
     BrowserModule,

@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
       if (isAuthenticated) {
         let role = this.tokenService.getPerfilUsuario()
         if(route.data['role'] && route.data['role'].indexOf(role) === -1){
-          this.router.navigate(['']);
+          this.router.navigate(['/erro']);
           return false;
         }
 
