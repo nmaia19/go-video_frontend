@@ -10,18 +10,15 @@ const url = environment.apiUrl + "equipamentos"
 })
 export class EquipamentoService {
 
-  authorization: any = ''
-
   constructor(private http:HttpClient, private tokenService: TokenStorageService) {
-    this.authorization = new HttpHeaders({ 'Authorization': 'Bearer ' + tokenService.getToken()})
   }
 
   consultar() {
-    return this.http.get(url, {headers: this.authorization})
+    return this.http.get(url)
   }
 
   consultarPaginado(page:number, size: number) {
-    return this.http.get(`${url}?page=${page}&size=${size}`, {headers: this.authorization})
+    return this.http.get(`${url}?page=${page}&size=${size}`)
   }
 
   consultarAtivos(page:number, size: number) {
@@ -29,18 +26,18 @@ export class EquipamentoService {
   }
 
   consultarPorId(id: number) {
-    return this.http.get(`${url}/${id}`, {headers: this.authorization})
+    return this.http.get(`${url}/${id}`)
   }
 
   cadastrar(data: any) {
-    return this.http.post(url, data, {headers: this.authorization})
+    return this.http.post(url, data)
   }
 
   alterar(id: number, data: any) {
-    return this.http.put(`${url}/${id}`, data, {headers: this.authorization})
+    return this.http.put(`${url}/${id}`, data)
   }
 
   excluir(id: number) {
-    return this.http.delete(`${url}/${id}`, {headers: this.authorization})
+    return this.http.delete(`${url}/${id}`)
   }
 }

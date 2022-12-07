@@ -10,8 +10,6 @@ const url = environment.apiUrl + "usuarios"
 })
 export class UsuarioService {
 
-  authorization: any = ''
-
   constructor(private http:HttpClient, private tokenService: TokenStorageService) {
   }
 
