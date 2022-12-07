@@ -35,6 +35,10 @@
   margin-top: 0.3rem;
 }
 
+.cadastro-colaboradores__input__obrigatorio{
+  color: var(--primary-red);
+}
+
 .cadastra__colaborador__botoes {
   display: flex;
   justify-content: flex-end;
