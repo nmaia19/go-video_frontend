@@ -25,9 +25,12 @@ export class DetalharEquipamentosComponent {
   }
 
   reservar() {
-    this.emprestimoService.criar(this.id).subscribe()
-    this.toastr.success("Empréstimo realizado")
-    this.router.navigate(['/meus-emprestimos'])
+    this.emprestimoService.criar(this.id).subscribe(
+      (data: any) => {
+        this.router.navigate(['/meus-emprestimos'])
+        this.toastr.success("Empréstimo realizado")
+      },
+    )
   }
 
   verificaDisponibilidade() {

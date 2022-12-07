@@ -23,7 +23,7 @@
     </div>
 
     <div class="gerenciar__colaboradores__display">
-      <app-card-gerenciar-colaboradores *ngFor="let usuario of usuarios.content" [usuario]="usuario">
+      <app-card-gerenciar-colaboradores *ngFor="let usuario of usuarios.content" [usuario]="usuario" (atualizarPagina)="atualizarPagina($event)">
       </app-card-gerenciar-colaboradores>
     </div>
 

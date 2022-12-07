@@ -53,6 +53,10 @@ export class GerenciarEquipamentosComponent {
     })
   }
 
+  atualizarPagina(data: any){
+    this.consultar();
+  }
+
   buscar(value: any){
     this.busca = value.busca
     this.filtrar()
