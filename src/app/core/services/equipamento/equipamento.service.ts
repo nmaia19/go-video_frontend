@@ -22,7 +22,7 @@ export class EquipamentoService {
   }
 
   consultarAtivos(page:number, size: number) {
-    return this.http.get(`${url}/ativos?page=${page}&size=${size}`, {headers: this.authorization})
+    return this.http.get(`${url}/ativos?page=${page}&size=${size}`)
   }
 
   consultarPorId(id: number) {
