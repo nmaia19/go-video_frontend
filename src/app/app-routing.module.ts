@@ -19,6 +19,7 @@ import { CadastrarColaboradoresComponent } from './area-logada/admin/cadastrar-c
 import { AlterarColaboradoresComponent } from './area-logada/admin/alterar-colaboradores/alterar-colaboradores.component';
 import { AuthGuard } from './core/services/auth-guard/auth.guard';
 import { MeusEmprestimosComponent } from './area-logada/usuario/meus-emprestimos/meus-emprestimos.component';
+import { NaoEncontradaComponent } from './core/nao-encontrada/nao-encontrada.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -26,24 +27,25 @@ const routes: Routes = [
   { path: 'termos-condicoes', component: TermosCondicoesComponent},
   { path: 'politica-privacidade', component: PoliticaPrivacidadeComponent},
   { path: 'gerenciar-equipamentos', component: GerenciarEquipamentosComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"} },
-  { path: 'gerenciar-equipamentos/:page/:size', component: GerenciarEquipamentosComponent, canActivate: [AuthGuard] },
-  { path: 'cadastrar-equipamentos', component: CadastrarEquipamentosComponent, canActivate: [AuthGuard] },
-  { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent, canActivate: [AuthGuard] },
+  { path: 'gerenciar-equipamentos/:page/:size', component: GerenciarEquipamentosComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"}  },
+  { path: 'cadastrar-equipamentos', component: CadastrarEquipamentosComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"}  },
+  { path: 'alterar-equipamentos/:id', component: AlterarEquipamentosComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"}  },
   { path: 'equipamentos', component: EquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'equipamentos/:page/:size', component: EquipamentosComponent, canActivate: [AuthGuard] },
   { path: 'meus-emprestimos', component: MeusEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'meus-emprestimos/:page/:size', component: MeusEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'detalhar-equipamentos/:id', component: DetalharEquipamentosComponent, canActivate: [AuthGuard] },
-  { path: 'gerenciar-colaboradores', component: GerenciarColaboradoresComponent, canActivate: [AuthGuard] },
-  { path: 'gerenciar-colaboradores/:page/:size', component: GerenciarColaboradoresComponent, canActivate: [AuthGuard] },
-  { path: 'cadastrar-colaboradores', component: CadastrarColaboradoresComponent, canActivate: [AuthGuard] },
+  { path: 'gerenciar-colaboradores', component: GerenciarColaboradoresComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"}  },
+  { path: 'gerenciar-colaboradores/:page/:size', component: GerenciarColaboradoresComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"}  },
+  { path: 'cadastrar-colaboradores', component: CadastrarColaboradoresComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"}  },
   { path: 'alterar-senha', component: AlterarSenhaComponent, canActivate: [AuthGuard] },
-  { path: 'alterar-colaboradores/:id', component: AlterarColaboradoresComponent, canActivate: [AuthGuard] },
+  { path: 'alterar-colaboradores/:id', component: AlterarColaboradoresComponent, canActivate: [AuthGuard], data: { role: "ROLE_ADMINISTRADOR"}  },
   { path: 'historico-emprestimos', component: HistoricoEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'historico-emprestimos/:page/:size', component: HistoricoEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'perfil/:id', component: PerfilComponent, canActivate: [AuthGuard] },
   { path: 'perfil/:id/:page/:size', component: PerfilComponent, canActivate: [AuthGuard] },
-  { path: 'erro', component: AcessoNegadoComponent, canActivate: [AuthGuard] },
+  { path: 'nao-autorizado', component: AcessoNegadoComponent, canActivate: [AuthGuard] },
+  { path: '**', component: NaoEncontradaComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

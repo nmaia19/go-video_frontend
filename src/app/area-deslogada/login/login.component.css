@@ -13,7 +13,13 @@
 #login-box {
   position: relative;
   z-index: 10;
-  transform: translateY(50%);
+  /* transform: translateY(50%); */
+  width: 100%;
+  height: calc(100vh - 12.9rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-wrap {
@@ -118,3 +124,10 @@ textarea.form-control {
 #esqueceu-senha a {
 text-align: right;
 }
+
+@media (max-width: 768px) {
+  #login-box {
+    padding: 5rem;
+  }
+}
+

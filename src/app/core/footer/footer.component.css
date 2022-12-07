@@ -9,7 +9,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .link__Footer {
@@ -20,7 +19,7 @@
   align-items: center;
 }
 
-.link__Footer a:hover{
+.link__Footer a:hover {
   color: var(--light-color);
   text-decoration: underline;
 }
@@ -41,11 +40,16 @@
   align-items: center;
 }
 
-.logo__footer p, img {
+.logo__footer p,
+img {
   color: white;
   font-size: 16px;
   font-weight: 500;
   margin: 4px;
+}
+
+.icone {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -57,5 +61,9 @@
 
   .vertical-line {
     display: none;
+  }
+
+  .icone {
+    display: block;
   }
 }

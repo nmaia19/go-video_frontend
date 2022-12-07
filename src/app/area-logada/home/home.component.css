@@ -59,10 +59,12 @@
   background-image: url('src/assets/img-home/home-4.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
 }
 
 .home__sessao-5 {
   background-image: url('src/assets/img-home/home-5.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
 }

@@ -47,6 +47,7 @@ import { CommonModule } from '@angular/common';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AcessoNegadoComponent } from './core/acesso-negado/acesso-negado.component';
+import { NaoEncontradaComponent } from './core/nao-encontrada/nao-encontrada.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { AcessoNegadoComponent } from './core/acesso-negado/acesso-negado.compon
     CardPerfilComponent,
     ListaVaziaComponent,
     AcessoNegadoComponent,
+    NaoEncontradaComponent,
   ],
   imports: [
     BrowserModule,
