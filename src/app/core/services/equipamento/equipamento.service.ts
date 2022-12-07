@@ -24,6 +24,10 @@ export class EquipamentoService {
     return this.http.get(`${url}?page=${page}&size=${size}`, {headers: this.authorization})
   }
 
+  consultarAtivos(page:number, size: number) {
+    return this.http.get(`${url}/ativos?page=${page}&size=${size}`, {headers: this.authorization})
+  }
+
   consultarPorId(id: number) {
     return this.http.get(`${url}/${id}`, {headers: this.authorization})
   }

@@ -49,6 +49,10 @@
   color: var(--primary-red);
 }
 
+.status-equipamento-inativo{
+  color: var(--stoke-gray);
+}
+
 .card-text {
   font-weight: 700;
   font-size: var(--font-size-sm);

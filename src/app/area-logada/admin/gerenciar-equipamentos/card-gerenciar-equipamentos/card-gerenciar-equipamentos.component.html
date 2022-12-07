@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="status-equipamento" [class]="indisponivelClass"><span>{{ equipamento.status }}</span></h5>
+          <h5 class="status-equipamento" [class]="indisponivelOuInativoClass"><span>{{ equipamento.status }}</span></h5>
           <p class="card-text">{{ equipamento.marca }} - {{ equipamento.modelo }}</p>
           <a class="gerenciar__equipamento__card__a" [routerLink]="['/detalhar-equipamentos', equipamento.id]">Ver mais
             informações</a>

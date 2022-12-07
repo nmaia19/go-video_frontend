@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./card-gerenciar-equipamentos.component.css']
 })
 export class CardGerenciarEquipamentosComponent implements OnInit {
-  indisponivelClass: string = ''
+  indisponivelOuInativoClass: string = ''
 
   @Input() equipamento: any
 
@@ -46,7 +46,10 @@ export class CardGerenciarEquipamentosComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.equipamento.status == "INDISPONÍVEL"){
-      this.indisponivelClass = "status-equipamento-indisponivel"
+      this.indisponivelOuInativoClass = "status-equipamento-indisponivel"
+    }
+    else if(this.equipamento.status =="INATIVO"){
+      this.indisponivelOuInativoClass = "status-equipamento-inativo"
     }
   }
 }

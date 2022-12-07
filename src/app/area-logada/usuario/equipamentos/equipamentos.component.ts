@@ -37,7 +37,7 @@ export class EquipamentosComponent {
   }
 
   consultar() {
-    this.service.consultarPaginado(this.page, this.size).subscribe(data => {
+    this.service.consultarAtivos(this.page, this.size).subscribe(data => {
       this.equipamentos = data
       if(this.equipamentos.content.length==0){
         this.estaVazio = true
@@ -45,7 +45,7 @@ export class EquipamentosComponent {
       }
     })
 
-    this.service.consultarPaginado(0,100).subscribe(data => {
+    this.service.consultarAtivos(0,100).subscribe(data => {
       this.equipamentosOriginal = data;
       this.categoriaFiltro = new Set(this.equipamentosOriginal.content.map((e:any)=>e.categoria))
       this.marcaFiltro = new Set(this.equipamentosOriginal.content.map((e:any)=>e.marca))
