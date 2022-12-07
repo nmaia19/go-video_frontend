@@ -42,6 +42,7 @@ export class AlterarEquipamentosComponent {
       }
       dados.descricao=`${dados.categoria} ${dados.modelo} - ${dados.marca}`
       this.alterar(id, dados)
+      form.classList.remove('was-validated');
     }
     form.classList.add('was-validated');
 
