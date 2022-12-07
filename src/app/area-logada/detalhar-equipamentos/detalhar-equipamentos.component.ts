@@ -28,14 +28,8 @@ export class DetalharEquipamentosComponent {
   reservar() {
     this.emprestimoService.criar(this.id).subscribe(
       (data: any) => {
-        this.disabled = true
-        this.isFree=false
-        this.equipamento.status="INDISPONÍVEL"
-        this.toastr.success("Empréstimo realizado", "", {
-          timeOut: 2000,
-        }).onHidden.subscribe(() => {
-          this.router.navigate(['/meus-emprestimos'])
-        })
+        this.router.navigate(['/meus-emprestimos'])
+        this.toastr.success("Empréstimo realizado")
       },
     )
   }
