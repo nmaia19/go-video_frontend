@@ -47,6 +47,10 @@ export class GerenciarColaboradoresComponent {
     })
   }
 
+  atualizarPagina(data: any){
+    this.consultar();
+  }
+  
   irParaProximaPagina() {
     this.router.navigate(['/gerenciar-colaboradores', this.page + 1, this.size])
   }
