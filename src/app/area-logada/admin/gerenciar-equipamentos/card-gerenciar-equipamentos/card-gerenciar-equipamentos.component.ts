@@ -25,7 +25,6 @@ export class CardGerenciarEquipamentosComponent {
         }).onHidden.subscribe(() => window.location.reload())
       },
       (err: any) => {
-        console.log(err.error.message)
         this.toastr.warning(err.error.message, "", {
           timeOut: 4500,
         })
