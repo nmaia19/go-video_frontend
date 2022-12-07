@@ -9,7 +9,7 @@
 
   <div *ngIf="!estaVazio">
     <div class="meu__emprestimo__display" *ngFor="let emprestimo of emprestimos.content">
-      <app-card-meus-emprestimos [emprestimo]="emprestimo"></app-card-meus-emprestimos>
+      <app-card-meus-emprestimos [emprestimo]="emprestimo" (atualizarPagina)="atualizarPagina($event)"></app-card-meus-emprestimos>
     </div>
   </div>
 

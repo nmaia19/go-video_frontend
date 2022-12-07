@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ModalConfirmarDevolucaoComponent } from 'src/app/area-logada/modal-confirmar-devolucao/modal-confirmar-devolucao.component';
 import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.service';
@@ -12,14 +11,19 @@ import { EmprestimoService } from 'src/app/core/services/emprestimo/emprestimo.s
 })
 export class CardMeusEmprestimosComponent {
   @Input() emprestimo: any
+  @Output() atualizarPagina = new EventEmitter<any>();
+
+hide: boolean = false
 
 constructor(private service: EmprestimoService, public dialog: MatDialog, private toastr: ToastrService) {}
 
 devolver(id: number) {
-  this.service.devolver(id).subscribe()
-  this.toastr.success("Empréstimo encerrado, equipamento disponível para nova locação", "", {
-    timeOut: 3000,
-  }).onHidden.subscribe(() => window.location.reload())
+  this.service.devolver(id).subscribe(
+    (data:any)=>{
+      this.atualizarPagina.emit(null);
+    }
+  )
+  this.toastr.success("Empréstimo encerrado, equipamento disponível para nova locação")
 }
 
 

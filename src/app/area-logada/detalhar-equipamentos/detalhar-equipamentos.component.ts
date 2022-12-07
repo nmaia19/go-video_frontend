@@ -16,6 +16,7 @@ export class DetalharEquipamentosComponent {
   isAdmin: boolean = false
   isFree: boolean = true
   indisponivelClass: string = ''
+  disabled: boolean = false
 
   constructor(private service: EquipamentoService, private emprestimoService: EmprestimoService, private route: ActivatedRoute, private tokenStorage: TokenStorageService, private router: Router, private toastr: ToastrService) {
     var routeParams = this.route.snapshot.paramMap
@@ -25,9 +26,18 @@ export class DetalharEquipamentosComponent {
   }
 
   reservar() {
-    this.emprestimoService.criar(this.id).subscribe()
-    this.toastr.success("Empréstimo realizado")
-    this.router.navigate(['/meus-emprestimos'])
+    this.emprestimoService.criar(this.id).subscribe(
+      (data: any) => {
+        this.disabled = true
+        this.isFree=false
+        this.equipamento.status="INDISPONÍVEL"
+        this.toastr.success("Empréstimo realizado", "", {
+          timeOut: 2000,
+        }).onHidden.subscribe(() => {
+          this.router.navigate(['/meus-emprestimos'])
+        })
+      },
+    )
   }
 
   verificaDisponibilidade() {

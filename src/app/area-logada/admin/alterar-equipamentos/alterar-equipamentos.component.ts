@@ -10,6 +10,7 @@ import { EquipamentoService } from 'src/app/core/services/equipamento/equipament
 })
 export class AlterarEquipamentosComponent {
   equipamento: any = []
+  disabled: boolean= false
 
   categorias: string[] = ["Câmera", "Filmadora", "Lente", "Iluminação", "Microfone"]
 
@@ -25,9 +26,18 @@ export class AlterarEquipamentosComponent {
   }
 
   alterar(id: number, dados: any) {
-    this.toastr.success("Os dados do equipamento foram alterados")
-    this.service.alterar(id, dados).subscribe()
-    this.router.navigate(['/detalhar-equipamentos/', id])
+    this.service.alterar(id, dados).subscribe(
+      (data: any) => {
+        this.disabled = true
+        this.toastr.success("Os dados do equipamento foram alterados", "", {
+          timeOut: 2000,
+        }).onHidden.subscribe(() => {
+          this.router.navigate(['/detalhar-equipamentos/', id]).then(() => {
+            window.location.reload();
+          })
+        })
+      },
+    )
   }
 
   validate(event:Event, id:number, dados: any){

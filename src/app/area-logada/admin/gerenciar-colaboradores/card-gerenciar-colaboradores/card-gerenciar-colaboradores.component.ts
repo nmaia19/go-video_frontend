@@ -24,7 +24,9 @@ export class CardGerenciarColaboradoresComponent {
   excluir(id: number) {
     this.userService.excluir(id).subscribe(
       (data:any) => {
-        this.toastr.success(data.mensagem)
+        this.toastr.success(data.mensagem, "", {
+          timeOut: 3000,
+        }).onHidden.subscribe(() => window.location.reload())
       },
       (err: any) => {
         this.toastr.error(err.error.message)
