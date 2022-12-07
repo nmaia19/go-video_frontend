@@ -1,3 +1,4 @@
+import { AcessoNegadoComponent } from './core/acesso-negado/acesso-negado.component';
 import { AlterarSenhaComponent } from './area-logada/usuario/alterar-senha/alterar-senha.component';
 import { LoginComponent } from './area-deslogada/login/login.component';
 import { PerfilComponent } from './area-logada/usuario/perfil/perfil/perfil.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'historico-emprestimos/:page/:size', component: HistoricoEmprestimosComponent, canActivate: [AuthGuard] },
   { path: 'perfil/:id', component: PerfilComponent, canActivate: [AuthGuard] },
   { path: 'perfil/:id/:page/:size', component: PerfilComponent, canActivate: [AuthGuard] },
+  { path: 'erro', component: AcessoNegadoComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

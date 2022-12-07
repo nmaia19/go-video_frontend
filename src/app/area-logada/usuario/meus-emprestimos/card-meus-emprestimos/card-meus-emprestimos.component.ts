@@ -27,7 +27,7 @@ devolver(id: number) {
 
 abrirModalDevolucao(): void {
   const dialogRef = this.dialog.open(ModalConfirmarDevolucaoComponent, {
-    data: {nome: "emprestimo"},
+    data: {nome: "equipamento"},
   });
 
   dialogRef.afterClosed().subscribe(result => {
