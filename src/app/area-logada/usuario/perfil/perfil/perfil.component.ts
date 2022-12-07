@@ -22,7 +22,7 @@ export class PerfilComponent {
   estaVazio = false
 
   constructor(private emprestimoService: EmprestimoService, private usuarioService: UsuarioService, private tokenService: TokenStorageService, private router: Router, private route: ActivatedRoute) {
-    if(!this.tokenService.isAdministrador){
+    if(!this.tokenService.isAdministrador()){
       this.idUsuario = this.tokenService.getIdUsuario()
     }
     else{
