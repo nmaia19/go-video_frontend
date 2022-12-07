@@ -6,7 +6,7 @@
   <form class="equipamento__alteracao__form needs-validation" #f="ngForm" #form novalidate>
     <div>
       <label for="equipamento-alteracao-categoria" class="form-label">CATEGORIA <span class="equipamento__alteracao__input__obrigatorio">*</span></label>
-      <select id="equipamento-alteracao-categoria" class="form-select equipamento__alteracao__select bg-light" [(ngModel)]="equipamento.categoria" required name="categoria" [disabled]="disabled">
+      <select id="equipamento-alteracao-categoria" class="form-select equipamento__alteracao__select bg-light" [(ngModel)]="equipamento.categoria" required name="categoria">
         <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
       </select>
       <div class="invalid-feedback equipamento__alteracao__erro">
@@ -16,7 +16,7 @@
 
     <div>
       <label class="form-label" for="equipamento-alteracao-marca">MARCA <span class="equipamento__alteracao__input__obrigatorio">*</span></label>
-      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-marca" required [(ngModel)]="equipamento.marca" name="marca" [disabled]="disabled"/>
+      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-marca" required [(ngModel)]="equipamento.marca" name="marca"/>
       <div class="invalid-feedback equipamento__alteracao__erro">
         <p>Marca obrigatória</p>
       </div>
@@ -24,7 +24,7 @@
 
     <div>
       <label class="form-label" for="equipamento-alteracao-modelo">MODELO <span class="equipamento__alteracao__input__obrigatorio">*</span></label>
-      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-modelo" required [(ngModel)]="equipamento.modelo" name="modelo" [disabled]="disabled"/>
+      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-modelo" required [(ngModel)]="equipamento.modelo" name="modelo"/>
       <div class="invalid-feedback equipamento__alteracao__erro">
         <p>Modelo obrigatório</p>
       </div>
@@ -32,7 +32,7 @@
 
     <div>
       <label class="form-label" for="equipamento-alteracao-url-imagem">URL DA IMAGEM</label>
-      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-url-imagem" [(ngModel)]="equipamento.urlFoto" name="urlFoto" maxlength="255" [disabled]="disabled"/>
+      <input class="form-control bg-light equipamento__alteracao__input" type="text" id="equipamento-alteracao-url-imagem" [(ngModel)]="equipamento.urlFoto" name="urlFoto" maxlength="255"/>
       <div class="invalid-feedback equipamento__alteracao__erro">
         <p>Esse link é muito comprido. Tente um outro</p>
       </div>

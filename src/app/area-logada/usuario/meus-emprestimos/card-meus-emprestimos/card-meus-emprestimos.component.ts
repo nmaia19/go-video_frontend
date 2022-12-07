@@ -13,8 +13,6 @@ export class CardMeusEmprestimosComponent {
   @Input() emprestimo: any
   @Output() atualizarPagina = new EventEmitter<any>();
 
-hide: boolean = false
-
 constructor(private service: EmprestimoService, public dialog: MatDialog, private toastr: ToastrService) {}
 
 devolver(id: number) {

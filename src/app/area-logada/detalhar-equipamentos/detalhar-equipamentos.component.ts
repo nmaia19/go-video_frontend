@@ -16,7 +16,6 @@ export class DetalharEquipamentosComponent {
   isAdmin: boolean = false
   isFree: boolean = true
   indisponivelClass: string = ''
-  disabled: boolean = false
 
   constructor(private service: EquipamentoService, private emprestimoService: EmprestimoService, private route: ActivatedRoute, private tokenStorage: TokenStorageService, private router: Router, private toastr: ToastrService) {
     var routeParams = this.route.snapshot.paramMap
