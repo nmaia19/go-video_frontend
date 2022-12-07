@@ -33,10 +33,7 @@ export class CadastrarColaboradoresComponent {
       form.classList.add('was-validated');
     }
     else{
-      if(dados.urlFoto==""){
-        dados.urlFoto = "https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image"
-      }
-      dados.descricao=`${dados.categoria} ${dados.modelo} - ${dados.marca}`
+      form.classList.remove('was-validated');
       this.cadastrarColaborador(dados)
     }
 

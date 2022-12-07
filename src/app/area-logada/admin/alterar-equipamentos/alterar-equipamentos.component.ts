@@ -18,7 +18,7 @@ export class AlterarEquipamentosComponent {
     let id = parseInt(routeParams.get('id') || '')
     this.service.consultarPorId(id).subscribe(data => {
       this.equipamento = data
-      if(this.equipamento.urlFoto = "https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image"){
+      if(this.equipamento.urlFoto == "https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image"){
         this.equipamento.urlFoto = ''
       }
     })
