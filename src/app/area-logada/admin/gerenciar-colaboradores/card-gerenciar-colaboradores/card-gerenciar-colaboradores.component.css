@@ -27,14 +27,6 @@
   flex-direction: column;
 }
 
-/* .card-title {
-  font-weight: 300;
-  font-size: var(--font-size-xsm);
-  color: var(--secondary-dark-color);
-  letter-spacing: 0.05em;
-  margin-bottom: var(--margin-sm);
-} */
-
 .status-colaborador {
   font-family: inherit;
   font-weight: 600;
@@ -75,9 +67,8 @@
   gap: 2rem;
 }
 
-.gerenciar__equipamento__card__acoes button img{
-  height: 4.3rem;
-  width: 4.3rem;
+.ri-edit-2-line {
+  font-size: 4rem;
 }
 
 
