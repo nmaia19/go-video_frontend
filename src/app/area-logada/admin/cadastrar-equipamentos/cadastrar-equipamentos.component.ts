@@ -36,6 +36,7 @@ export class CadastrarEquipamentosComponent{
       }
       dados.descricao=`${dados.categoria} ${dados.modelo} - ${dados.marca}`
       this.cadastrar(dados)
+      form.classList.remove('was-validated');
     }
 
   }
