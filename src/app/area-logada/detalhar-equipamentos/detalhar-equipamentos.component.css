@@ -59,6 +59,10 @@
   color: var(--primary-red);
 }
 
+.nome_equipamento h5 span.INATIVO{
+  color: var(--stoke-gray);
+}
+
 .btn_reserva, .indisponivel{
   margin-block: 6.1rem;
 }

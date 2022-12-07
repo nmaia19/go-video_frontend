@@ -14,9 +14,9 @@
   </div>
 
   <div class="gerenciar__equipamento__card__acoes">
-    <a [routerLink]="['/alterar-colaboradores', usuario.id]" *ngIf="usuario.status == 'ATIVO' && usuario.perfis[0].perfil!='ROLE_ADMINISTRADOR'"><img
+    <a [routerLink]="['/alterar-colaboradores', usuario.id]" *ngIf="usuario.status == 'ATIVO'"><img
         src="../../../../../assets/icones-gerenciamento/editar.png" alt="Editar Usuário"></a>
-    <button (click)="abrirModalExclusao()" *ngIf="usuario.status == 'ATIVO' && usuario.perfis[0].perfil!='ROLE_ADMINISTRADOR'"><img src="../../../../../assets/icones-gerenciamento/remover-pessoa.png"
+    <button (click)="abrirModalExclusao()" *ngIf="usuario.status == 'ATIVO'"><img src="../../../../../assets/icones-gerenciamento/remover-pessoa.png"
         alt="Excluir Usuário"></button>
   </div>
 </div>
