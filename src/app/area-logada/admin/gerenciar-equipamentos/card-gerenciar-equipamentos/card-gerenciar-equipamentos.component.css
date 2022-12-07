@@ -27,19 +27,10 @@
   justify-content: center;
 }
 
-/* .card-title{
-  font-weight: 300;
-  font-size: var(--font-size-xsm);
-  color: var(--secondary-dark-color);
-  letter-spacing: 0.05em;
-  margin-bottom: var(--margin-sm);
-} */
-
 .status-equipamento {
   font-family: inherit;
   font-weight: 600;
   font-size: var(--font-size-xsm);
-  /* line-height: 1.8rem; */
   letter-spacing: 0.05em;
 
   color: rgb(0, 133, 0);
@@ -65,7 +56,6 @@
   font-weight: 400;
   font-size: var(--font-size-sm);
   letter-spacing: 0.1em;
-  color: var(--primary-red);
 }
 
 .gerenciar__equipamento__card__a:hover{
@@ -73,17 +63,21 @@
 }
 
 .gerenciar__equipamento__card__acoes{
-  margin: 3rem;
+  margin: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5.6rem;
+  gap: 3rem;
 }
 
-.gerenciar__equipamento__card__acoes img{
-  height: 3.3rem;
+.ri-edit-2-line {
+  font-size: 4rem;
 }
 
+.ri-delete-bin-line {
+  font-size: 4rem;
+  color: var(--primary-red);
+}
 
 @media screen and (min-width: 768px) {
 
@@ -93,13 +87,12 @@
   }
 
   .gerenciar__equipamento__card__acoes{
-    max-height: 20rem;
     margin-right: 3rem;
-    width: 3.3rem;
+    width: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 5.6rem;
+    gap: 3rem;
   }
 
 }

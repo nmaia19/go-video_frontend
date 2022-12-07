@@ -64,9 +64,10 @@
 
 .equipamento__alteracao__botoes button {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
+  border-radius: 3rem;
   color: white;
   height: 5rem;
+  min-width: 8rem;
   width: 16rem;
 }
 

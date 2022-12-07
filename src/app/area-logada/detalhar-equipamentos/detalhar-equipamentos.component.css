@@ -1,4 +1,4 @@
-.container_equipamento_especifico{
+.container_equipamento_especifico {
   margin: 0 auto;
   max-width: 100%;
   min-height: calc(100vh - 12.9rem);
@@ -9,27 +9,28 @@
   align-items: center;
 }
 
-.img_equipamento{
+.img_equipamento {
   width: 100%;
   height: 48rem;
   background-color: #fafafa;
 }
 
-.img_equipamento img{
+.img_equipamento img {
   width: auto;
   height: 48rem;
   margin: 0 auto;
 }
 
-.nome_equipamento, .ficha_tecnica{
+.nome_equipamento,
+.ficha_tecnica {
   text-align: center;
 }
 
-.nome_equipamento{
+.nome_equipamento {
   margin-top: 6.1rem;
 }
 
-.nome_equipamento h2{
+.nome_equipamento h2 {
   font-family: inherit;
   font-weight: 700;
   font-size: var(--font-size-xl);
@@ -37,7 +38,7 @@
   letter-spacing: 0.05em;
 }
 
-.nome_equipamento h5{
+.nome_equipamento h5 {
   font-family: inherit;
   font-weight: 300;
   font-size: var(--font-size-xsm);
@@ -55,26 +56,28 @@
   color: rgb(0, 133, 0);
 }
 
-.nome_equipamento h5 span.INDISPONÍVEL{
+.nome_equipamento h5 span.INDISPONÍVEL {
   color: var(--primary-red);
 }
 
-.nome_equipamento h5 span.INATIVO{
+.nome_equipamento h5 span.INATIVO {
   color: var(--stoke-gray);
 }
 
-.btn_reserva, .indisponivel{
+.btn_reserva,
+.indisponivel {
   margin-block: 6.1rem;
 }
 
 .btn_reserva button {
-  box-shadow:0px 4px 4px rgba(0,0, 0, 0.25);
-  border-radius:30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
   color: white;
-  height:5rem;
-  width:16rem;
+  height: 5rem;
+  min-width: 8rem;
+  width: 16rem;
   font-family: inherit;
-  background-color:var(--primary-red);
+  background-color: var(--primary-red);
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.5rem;
@@ -82,37 +85,37 @@
 }
 
 .indisponivel button {
-  box-shadow:0px 4px 4px rgba(0,0, 0, 0.25);
-  border-radius:30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
   color: white;
-  height:5rem;
-  width:16rem;
+  height: 5rem;
+  min-width: 8rem;
+  width: 16rem;
   font-family: inherit;
-  background-color:var(--stoke-gray) ;
+  background-color: var(--stoke-gray);
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.5rem;
   letter-spacing: 0.05em;
 }
 
-
-.btn_reserva button:hover{
+.btn_reserva button:hover {
   background-color: var(--secondary-red);
 }
 
-.ficha_tecnica{
+.ficha_tecnica {
   margin-top: 1rem;
 }
 
-.box_ficha_tecnica{
-  background: #F6F6F6;
+.box_ficha_tecnica {
+  background: #f6f6f6;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: start;
   padding: 2.5rem 3rem;
   margin-bottom: 1.5rem;
 }
 
-.ficha_tecnica h3{
+.ficha_tecnica h3 {
   font-family: inherit;
   font-weight: 400;
   font-size: 2rem;
@@ -120,7 +123,7 @@
   letter-spacing: 0.05em;
 }
 
-.box_ficha_tecnica h5{
+.box_ficha_tecnica h5 {
   font-family: inherit;
   font-weight: 300;
   font-size: 1.4rem;
@@ -128,7 +131,7 @@
   letter-spacing: 0.05em;
 }
 
-.box_ficha_tecnica p{
+.box_ficha_tecnica p {
   font-family: inherit;
   font-weight: 400;
   font-size: 1.8rem;

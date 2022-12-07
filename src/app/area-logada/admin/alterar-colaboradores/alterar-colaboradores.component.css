@@ -1,9 +1,12 @@
 .container__cadastro {
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
+  padding: 21rem 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 21rem;
-  margin-bottom: 7.2rem
 }
 
 .altera__colaborador__titulo {
@@ -17,18 +20,18 @@
   margin-bottom: 5.2rem;
 }
 
-.altera__colaborador__form {
+.altera__colaborador__form{
   width: 70%;
   font-size: var(--font-size-sm);
   font-weight: 500;
-  font-family: sa;
+  font-family: inherit;
 }
 
 .altera__nome__input {
   height: 5rem;
   border: 1px solid var(--stoke-gray);
   border-radius: 13px;
-  font-size:var(--font-size-sm);
+  font-size: var(--font-size-sm);
   margin-bottom: 3rem;
   margin-top: 0.3rem;
 }
@@ -41,33 +44,51 @@
 
 .altera__colaborador__botoes button {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
+  border-radius: 3rem;
   color: white;
   height: 5rem;
+  min-width: 10rem;
   width: 16rem;
 }
 
 .btn__alterar {
   background-color: var(--primary-dark-color);
-  margin-left: 3rem;
 }
 
 .btn__alterar:hover {
   background-color: var(--stoke-gray);
 }
 
-
-.btn__reset__senha{
+.btn__reset__senha {
   background-color: var(--primary-red);
 }
 
-.btn__reset__senha:hover{
+.btn__reset__senha:hover {
   background-color: var(--secondary-red);
 }
 
 /* Erros */
-.alterar__senha__erro{
+.alterar__senha__erro {
   color: var(--primary-red);
   margin-bottom: 3rem;
   margin-top: -2.8rem;
+}
+
+@media screen and (min-width: 1000px) {
+
+  .container__cadastro {
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: calc(100vh - 12.9rem);
+    padding: 21rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn__alterar {
+    background-color: var(--primary-dark-color);
+    margin-left: 3rem;
+  }
 }
