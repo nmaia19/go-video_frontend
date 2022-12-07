@@ -31,6 +31,14 @@ a {
 
 .div__menu {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+}
+
+.navbar-toggler{
+  border: none;
 }
 
 .menu__item {
@@ -48,10 +56,6 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.menu__perfil {
-  display: flex;
 }
 
 .perfil {

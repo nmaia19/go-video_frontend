@@ -2,12 +2,6 @@ a {
   cursor: pointer;
 }
 
-.place-items-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .header {
   background-color: var(--secondary-dark-color);
   position: fixed;
@@ -31,6 +25,14 @@ a {
 
 .div__menu {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+}
+
+.navbar-toggler{
+  border: none;
 }
 
 .menu__item {
@@ -50,10 +52,6 @@ a {
   justify-content: center;
 }
 
-.menu__perfil {
-  display: flex;
-}
-
 .perfil {
   display: none;
 }
@@ -62,8 +60,7 @@ a {
   cursor: pointer;
 }
 
-
-@media(min-width:768px) {
+@media (min-width: 768px) {
   .header {
     display: flex;
     flex-direction: row;

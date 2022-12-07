@@ -2,39 +2,25 @@
 
 <header class="header h-auto d-flex" id="header">
   <div class="logo" routerLink="/inicio">
-    <img
-      src="../../../assets/img-header/Logo Branco.png"
-      alt="Logotipo escrito Go Video"
-    />
+    <img src="../../../assets/img-header/Logo Branco.png" alt="Logotipo escrito Go Video" />
   </div>
 
   <!-- NAV ADMIN -->
   <nav *ngIf="isAdmin" class="navbar navbar-expand-md navbar-dark">
     <div class="container-fluid div__menu">
-      <button
-        class="navbar-toggler btn"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul id="nav" class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item menu__item">
             <a class="nav-link active" aria-current="page" routerLink="/inicio">HOME</a>
           </li>
           <li class="nav-item dropdown menu__item">
-            <a
-              class="nav-link dropdown-toggle active"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               EQUIPAMENTOS
             </a>
             <ul class="dropdown-menu">
@@ -45,13 +31,8 @@
             </ul>
           </li>
           <li class="nav-item dropdown menu__item">
-            <a
-              class="nav-link dropdown-toggle active"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               COLABORADORES
             </a>
             <ul class="dropdown-menu">
@@ -65,13 +46,8 @@
             <a class="nav-link active" routerLink="/historico-emprestimos">EMPRÉSTIMOS</a>
           </li>
           <li class="nav-item dropdown menu__item menu__perfil">
-            <a
-              class="nav-link dropdown-toggle active"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               PERFIL
             </a>
             <ul class="dropdown-menu">
@@ -86,18 +62,12 @@
     </div>
   </nav>
 
-   <!-- NAV COLABORADOR -->
-   <nav *ngIf="!isAdmin" class="navbar navbar-expand-md navbar-dark">
+  <!-- NAV COLABORADOR -->
+  <nav *ngIf="!isAdmin" class="navbar navbar-expand-md navbar-dark">
     <div class="container-fluid div__menu">
-      <button
-        class="navbar-toggler btn"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -112,13 +82,8 @@
             <a class="nav-link active" aria-current="page" routerLink="/meus-emprestimos">MEUS EMPRÉSTIMOS</a>
           </li>
           <li class="nav-item dropdown menu__item menu__perfil">
-            <a
-              class="nav-link dropdown-toggle active"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               PERFIL
             </a>
             <ul class="dropdown-menu">
@@ -136,10 +101,8 @@
   <!-- PERFIL ADMIN -->
   <div *ngIf="isAdmin" class="perfil">
     <div class="nav-link" data-bs-toggle="dropdown">
-      <img
-        src="../../../assets/img-header/imagem-perfil.svg"
-        alt="Botão para abrir sub menu de alterar senha e deslogar"
-      />
+      <img src="../../../assets/img-header/imagem-perfil.svg"
+        alt="Botão para abrir sub menu de alterar senha e deslogar" />
     </div>
     <ul class="dropdown-menu">
       <li>
@@ -149,13 +112,10 @@
     </ul>
   </div>
 
-   <!-- PERFIL COLABORADOR -->
-   <div *ngIf="!isAdmin" class="perfil">
+  <!-- PERFIL COLABORADOR -->
+  <div *ngIf="!isAdmin" class="perfil">
     <div class="nav-link" data-bs-toggle="dropdown">
-      <img
-        src="../../../assets/img-header/imagem-perfil.svg"
-        alt="Botão para abrir sub menu de perfil e deslogar"
-      />
+      <img src="../../../assets/img-header/imagem-perfil.svg" alt="Botão para abrir sub menu de perfil e deslogar" />
     </div>
     <ul class="dropdown-menu">
       <li>
