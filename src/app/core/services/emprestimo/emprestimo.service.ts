@@ -11,33 +11,30 @@ const url = environment.apiUrl + "emprestimos"
 
 export class EmprestimoService {
 
-  authorization: any = ''
-
   constructor(private http: HttpClient, private tokenService: TokenStorageService) {
-    this.authorization = new HttpHeaders({ 'Authorization': 'Bearer ' + tokenService.getToken()})
   }
 
   criar(idEquipamento: number) {
-    return this.http.post(`${url}/${idEquipamento}`, null, {headers: this.authorization})
+    return this.http.post(`${url}/${idEquipamento}`, null)
   }
 
   consultar(page: number, size: number) {
-    return this.http.get(`${url}?page=${page}&size=${size}`, {headers: this.authorization})
+    return this.http.get(`${url}?page=${page}&size=${size}`)
   }
 
   consultarVigentePorUsuario(id: number, page: number, size: number) {
-    return this.http.get(`${url}/vigentes/usuario/${id}?page=${page}&size=${size}`, {headers: this.authorization})
+    return this.http.get(`${url}/vigentes/usuario/${id}?page=${page}&size=${size}`)
   }
 
   consultarPorUsuario(id: number) {
-    return this.http.get(`${url}/usuario/${id}`, {headers: this.authorization})
+    return this.http.get(`${url}/usuario/${id}`)
   }
 
   devolver(id: number) {
-    return this.http.put(`${url}/encerrar/${id}`, {}, {headers: this.authorization})
+    return this.http.put(`${url}/encerrar/${id}`, {})
   }
 
   consultarEncerradosPorUsuario(id: number, page: number, size: number) {
-    return this.http.get(`${url}/encerrados/usuario/${id}?page=${page}&size=${size}`, {headers: this.authorization})
+    return this.http.get(`${url}/encerrados/usuario/${id}?page=${page}&size=${size}`)
   }
 }
