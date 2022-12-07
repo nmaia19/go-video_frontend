@@ -20,6 +20,7 @@ export class PerfilComponent {
   size: number = 5
   paginado: boolean = true
   estaVazio = false
+  adminVendoAdmin: boolean = false
 
   constructor(private emprestimoService: EmprestimoService, private usuarioService: UsuarioService, private tokenService: TokenStorageService, private router: Router, private route: ActivatedRoute) {
     this.idUsuario = this.tokenService.getIdUsuario()
@@ -29,6 +30,9 @@ export class PerfilComponent {
       if(this.idUsuario!=parseInt(routeParams.get('id') || '')){
         this.idUsuario = parseInt(routeParams.get('id') || '')
         this.isAdmin = true
+      }
+      else{
+        this.adminVendoAdmin = true
       }
     }
     this.usuarioService.consultarPorId(this.idUsuario).subscribe(data => this.usuario = data)
