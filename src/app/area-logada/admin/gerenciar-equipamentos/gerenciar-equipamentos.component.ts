@@ -40,15 +40,17 @@ export class GerenciarEquipamentosComponent {
   consultar() {
     this.service.consultarPaginado(this.page, this.size).subscribe(data => {
       this.equipamentos = data;
-      this.categoriaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.categoria))
-      this.marcaFiltro = new Set(this.equipamentos.content.map((e:any)=>e.marca))
-      this.statusFiltro = new Set(this.equipamentos.content.map((e:any)=>e.status))
       if(this.equipamentos.content.length==0){
         this.estaVazio = true
         this.paginado = false
       }
     })
-    this.service.consultarPaginado(0, 100).subscribe(data => {this.equipamentosOriginal = data})
+    this.service.consultarPaginado(0, 100).subscribe(data => {
+      this.equipamentosOriginal = data
+      this.categoriaFiltro = new Set(this.equipamentosOriginal.content.map((e:any)=>e.categoria))
+      this.marcaFiltro = new Set(this.equipamentosOriginal.content.map((e:any)=>e.marca))
+      this.statusFiltro = new Set(this.equipamentosOriginal.content.map((e:any)=>e.status))
+    })
   }
 
   buscar(value: any){
@@ -76,7 +78,6 @@ export class GerenciarEquipamentosComponent {
     let listaMarcaFiltrada: any[] = []
     let listaStatusFiltrado: any[] = []
     let listaBusca: any[] = []
-    let encontrado: boolean = true
     let listaEncontrada: any[]=[]
 
     this.naoEncontrado = false
@@ -99,15 +100,12 @@ export class GerenciarEquipamentosComponent {
       }
       if(this.busca!=''){
         listaBusca = this.equipamentosOriginal.content.filter((e: any)=>{return e.descricao.toLowerCase().includes(this.busca.toLowerCase())})
-        if(listaBusca.length==0){
-          encontrado = false
-        }
       }
 
       listaEncontrada = listaCategoriaFiltrada.filter((e:any)=>{
         if(listaMarcaFiltrada.length==0 || listaMarcaFiltrada.includes(e)){
           if(listaStatusFiltrado.length==0 || listaStatusFiltrado.includes(e)){
-            if((listaBusca.length==0 && encontrado==true) || listaStatusFiltrado.includes(e)){
+            if((listaBusca.length==0 && this.busca=='') || listaBusca.includes(e)){
               return e;
             }
           }

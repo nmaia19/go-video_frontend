@@ -22,13 +22,14 @@ export class PerfilComponent {
   estaVazio = false
 
   constructor(private emprestimoService: EmprestimoService, private usuarioService: UsuarioService, private tokenService: TokenStorageService, private router: Router, private route: ActivatedRoute) {
-    if(!this.tokenService.isAdministrador){
-      this.idUsuario = this.tokenService.getIdUsuario()
-    }
-    else{
-      this.isAdmin = true
+    this.idUsuario = this.tokenService.getIdUsuario()
+
+    if(this.tokenService.isAdministrador()){
       var routeParams = this.route.snapshot.paramMap
-      this.idUsuario = parseInt(routeParams.get('id') || '')
+      if(this.idUsuario!=parseInt(routeParams.get('id') || '')){
+        this.idUsuario = parseInt(routeParams.get('id') || '')
+        this.isAdmin = true
+      }
     }
     this.usuarioService.consultarPorId(this.idUsuario).subscribe(data => this.usuario = data)
 
