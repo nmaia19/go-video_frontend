@@ -103,7 +103,7 @@ Será possível fazer as seguintes interações:
 
 - Acesso:
 
-Para consultar as funcionalidades da API implementadas, acesse a documentação Swagger. 
+Para consultar as funcionalidades da API implementadas, acesse a documentação Swagger.
 <br>
 	
 - Autenticação:
@@ -128,7 +128,7 @@ Credencial com permissão de administrador para testes:
  
   |![image](https://user-images.githubusercontent.com/102121711/206714241-f0ae817d-f6f4-4401-b07f-d6f565df77e7.png)|
   |:--:|
-  | <b>Autenticação Endpoint</b>|
+  | <b> Autenticação Endpoint </b>|
 </details>
 	
 <details>
@@ -136,7 +136,7 @@ Credencial com permissão de administrador para testes:
  
   |![image](https://user-images.githubusercontent.com/102121711/206714517-7fde2825-b157-44d4-bb27-ce133a62e730.png)|
   |:--:|
-  | <b>Equipamentos Endpoint</b>|
+  | <b> Equipamentos Endpoint </b>|
 </details>
 
 <details>
@@ -144,7 +144,7 @@ Credencial com permissão de administrador para testes:
  
   |![image](https://user-images.githubusercontent.com/102121711/206714356-7b3ee2c9-094b-48af-94a1-404a3a70a688.png)|
   |:--:|
-  | <b>Empréstimos Endpoint</b>|
+  | <b> Empréstimos Endpoint </b>|
 </details>
 	
 <details>
@@ -152,7 +152,7 @@ Credencial com permissão de administrador para testes:
  
   |![image](https://user-images.githubusercontent.com/102121711/206714139-85ea1ee0-5a7f-45f7-ae06-70328caa9f5a.png)|
   |:--:|
-  | <b>Usuários Endpoint</b>|
+  | <b> Usuários Endpoint </b>|
 </details>
 
 <br>
