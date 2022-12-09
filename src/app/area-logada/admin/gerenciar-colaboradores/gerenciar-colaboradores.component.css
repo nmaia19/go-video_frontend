@@ -98,6 +98,10 @@
   text-align: center;
 }
 
+.select-status {
+  width: 20rem;
+}
+
 
 @media screen and (min-width: 768px) {
 
@@ -113,5 +117,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40rem, auto));
     gap: 5rem;
+  }
+
+  .select-status {
+    width: 30rem;
   }
 }

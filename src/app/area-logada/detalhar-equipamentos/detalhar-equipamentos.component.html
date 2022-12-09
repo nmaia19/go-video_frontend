@@ -11,8 +11,12 @@
     <h5>Status: <span [class]="indisponivelClass" class="{{ equipamento.status }}">{{ equipamento.status }}</span></h5>
   </div>
 
-  <div *ngIf="isAdmin" class="btn_reserva">
+  <div *ngIf="isAdmin  && isFree" class="btn_reserva">
     <button [routerLink]="['/alterar-equipamentos', equipamento.id]">Alterar</button>
+  </div>
+
+   <div *ngIf="isAdmin  && !isFree" class="btn_reserva_disabled">
+    <button disabled>Indisponível</button>
   </div>
 
   <div *ngIf="!isAdmin && isFree" class="btn_reserva">
