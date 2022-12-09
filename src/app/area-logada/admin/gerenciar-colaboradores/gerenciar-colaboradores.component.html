@@ -16,7 +16,7 @@
     </form>
 
     <div class="select-group">
-      <select class="select form-select" name="status" (change)="filtrarStatus($event)">
+      <select class="select form-select select-status" name="status" (change)="filtrarStatus($event)">
         <option value="">Todos os Status</option>
         <option *ngFor="let status of statusFiltro" [value]="status">{{ status }}</option>
       </select>

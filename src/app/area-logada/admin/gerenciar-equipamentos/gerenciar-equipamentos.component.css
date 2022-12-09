@@ -1,13 +1,13 @@
 .gerenciar__equipamento__container {
-  margin: 0 auto;
+  margin: 10rem 0 auto;
   max-width: 100%;
   min-height: calc(100vh - 12.9rem);
-  padding: 21rem 0;
+  padding: 2rem 0;
 }
 
 .gerenciar__equipamentos__title {
   font-family: inherit;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 700;
   line-height: 6rem;
   text-align: center;
@@ -24,6 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1.5rem;
 }
 
 .gerenciar__equipamentos__input {
@@ -43,13 +44,15 @@
 
 .btn-buscar {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: var(--font-size-sm);
   border-radius: 30px;
   color: white;
   height: 5rem;
   min-width: 8rem;
   width: 16rem;
   background-color: var(--primary-dark-color);
-  margin-left: 3rem;
+  margin-left: 1rem;
+  min-width: 10rem;
 }
 
 .btn-buscar:hover {
@@ -59,9 +62,15 @@
 .select-group {
   margin-top: 2.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  margin: 1.5rem;
+}
+
+.select-group select {
+  width: 100%;
 }
 
 .select {
@@ -100,7 +109,22 @@
     margin: 0 auto;
     max-width: 100%;
     min-height: calc(100vh - 12.9rem);
-    padding: 21rem;
+    padding: 15rem;
   }
+
+  .select-group {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .select-group select {
+    width: 25rem;
+    margin: 0;
+  }
+
+  .gerenciar__equipamentos__title {
+    font-size: var(--font-size-xl);
+  }
+
 }
 

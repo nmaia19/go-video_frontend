@@ -68,3 +68,14 @@
   background-size: cover;
   background-position: 50%;
 }
+
+@media (max-width: 768px) {
+  .home__texto-h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .home__texto {
+    margin-left: 3rem;
+    font-family: inherit;
+  }
+}

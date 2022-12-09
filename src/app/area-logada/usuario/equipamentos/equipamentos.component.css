@@ -64,10 +64,11 @@
 
 .select-group {
   margin-top: 2.5rem;
+  gap: 1.5rem;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
 }
 
 .select {
@@ -102,4 +103,26 @@
 .equipamento__paginacao__p{
   margin-inline: var(--margin-sm);
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .btn-buscar {
+    font-size: var(--font-size-xsm);
+    min-width: 10rem;
+    margin-left: 1rem;
+  }
+
+  .select-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .select-group select {
+    width: 100%;
+  }
+
+  .container {
+    padding: 1rem;
+  }
 }

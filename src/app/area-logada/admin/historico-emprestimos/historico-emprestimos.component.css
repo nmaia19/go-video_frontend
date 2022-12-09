@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 12rem 0 10rem;
   max-width: 100%;
   min-height: calc(100vh - 12.9rem);
-  padding: 21rem;
+  padding: 0;
 }
 
 .historico__emprestimos__title {
@@ -21,6 +21,7 @@
 
 .select-group {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
@@ -58,4 +59,19 @@
 
 .lista__vazia{
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  .historico__emprestimos_container {
+    margin: 14rem 0 10rem 0;
+    max-width: 100%;
+    min-height: calc(100vh - 12.9rem);
+    padding: 1rem;
+  }
+
+  .select-group {
+    display: flex;
+    flex-direction: row;
+  }
 }
