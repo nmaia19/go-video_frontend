@@ -1,0 +1,125 @@
+.gerenciar__colaboradores_container {
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
+  padding: 21rem 5rem;
+}
+
+.gerenciar__colaboradores__title {
+  font-family: inherit;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
+}
+
+/* Busca */
+.gerenciar__colaboradores__busca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gerenciar__colaboradores__input {
+  padding: 2rem 2.6rem;
+  width: 73.3rem;
+  height: 5rem;
+
+  font-weight: 300;
+  font-size: var(--font-size-sm);
+  line-height: 2rem;
+  letter-spacing: 0.1em;
+
+  border-radius: 1.3rem;
+
+  color: #1b1b1b;
+}
+
+.btn-buscar {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  color: white;
+  height: 5rem;
+  min-width: 8rem;
+  width: 16rem;
+  background-color: var(--primary-dark-color);
+  margin-left: 3rem;
+}
+
+.btn-buscar:hover {
+  background-color: var(--stoke-gray);
+}
+
+/* Filtro Select */
+.select-group {
+  margin-block: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.select {
+  width: 30rem;
+  height: 4.6rem;
+  border-radius: 1.3rem;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+}
+
+/* Display */
+.gerenciar__colaboradores__display{
+  margin: 5.2rem auto;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, auto));
+  gap: 5rem;
+}
+
+/* Paginação */
+.gerenciar__colaboradores__paginacao{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.gerenciar__colaboradores__paginacao button{
+  margin-block: 0;
+}
+
+.gerenciar__colaboradores__paginacao__p{
+  margin-inline: var(--margin-sm);
+  margin-bottom: 0;
+}
+
+/*Lista vazia*/
+.lista__vazia{
+  text-align: center;
+}
+
+.select-status {
+  width: 20rem;
+}
+
+
+@media screen and (min-width: 768px) {
+
+  .gerenciar__colaboradores_container {
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: calc(100vh - 12.9rem);
+    padding: 21rem;
+  }
+
+  .gerenciar__colaboradores__display{
+    margin: 5.2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, auto));
+    gap: 5rem;
+  }
+
+  .select-status {
+    width: 30rem;
+  }
+}

@@ -1,0 +1,31 @@
+mat-dialog-actions{
+  justify-content: space-between;
+}
+
+.cancel_button_ge{
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 30px;
+  color: white;
+  height: 4rem;
+  width: 12.8rem;
+  background-color: var(--primary-dark-color);
+  margin: 0rem 1.7rem 1.5rem 1.7rem;
+}
+
+.cancel_button_ge:hover{
+  background-color: var(--stoke-gray);
+}
+
+.devolver_button_ge{
+  background-color: var(--primary-red);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 30px;
+  color: white;
+  height: 4rem;
+  width: 12.8rem;
+  margin: 0rem 1.7rem 1.5rem 1.7rem;
+}
+
+.devolver_button_ge:hover{
+  background-color: var(--secondary-red);
+}

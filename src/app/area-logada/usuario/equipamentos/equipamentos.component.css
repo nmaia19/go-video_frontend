@@ -1,0 +1,128 @@
+#display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  gap: 5rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
+  padding: 21rem;
+}
+
+.lista__vazia{
+  text-align: center;
+}
+
+.equipamentos__title {
+  font-family: inherit;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
+}
+
+.equipamentos__busca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.equipamentos__input {
+  padding: 2rem 2.6rem;
+  width: 73.3rem;
+  height: 5rem;
+
+  font-weight: 300;
+  font-size: var(--font-size-sm);
+  line-height: 2rem;
+  letter-spacing: 0.1em;
+
+  border-radius: 1.3rem;
+
+  color: #1b1b1b;
+}
+
+.btn-buscar {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  color: white;
+  height: 5rem;
+  width: 16rem;
+  background-color: var(--primary-dark-color);
+  margin-left: 3rem;
+  text-transform: uppercase;
+}
+
+.btn-buscar:hover {
+  background-color: var(--stoke-gray);
+}
+
+.select-group {
+  margin-top: 2.5rem;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.select {
+  width: 30rem;
+  height: 4.6rem;
+  border-radius: 1.3rem;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+}
+
+.display-equipamentos {
+  margin-top: 9rem;
+}
+
+.cards {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  gap: 5rem;
+}
+
+.equipamento__paginacao{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.equipamento__paginacao button{
+  margin-block: 0;
+}
+
+.equipamento__paginacao__p{
+  margin-inline: var(--margin-sm);
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .btn-buscar {
+    font-size: var(--font-size-xsm);
+    min-width: 10rem;
+    margin-left: 1rem;
+  }
+
+  .select-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .select-group select {
+    width: 100%;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}

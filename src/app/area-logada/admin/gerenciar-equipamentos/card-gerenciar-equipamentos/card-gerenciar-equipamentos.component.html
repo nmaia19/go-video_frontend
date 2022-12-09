@@ -1,0 +1,24 @@
+<div class="card-geral">
+
+  <div class="card" style="max-width: 600px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ equipamento.urlFoto }}" alt="Imagem do equipamento" class="img-fluid rounded-start img">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="status-equipamento" [class]="indisponivelOuInativoClass"><span>{{ equipamento.status }}</span></h5>
+          <p class="card-text">{{ equipamento.marca }} - {{ equipamento.modelo }}</p>
+          <a class="gerenciar__equipamento__card__a" [routerLink]="['/detalhar-equipamentos', equipamento.id]">Ver mais
+            informações</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gerenciar__equipamento__card__acoes">
+    <a [routerLink]="['/alterar-equipamentos', equipamento.id]" *ngIf="equipamento.status == 'DISPONÍVEL'"><i class="ri-edit-2-line"></i></a>
+    <button (click)="abrirModalExclusao()" *ngIf="equipamento.status == 'DISPONÍVEL'"><i class="ri-delete-bin-line"></i></button>
+  </div>
+
+</div>

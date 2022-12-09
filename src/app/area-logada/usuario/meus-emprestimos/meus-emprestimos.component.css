@@ -1,0 +1,51 @@
+.meu__emprestimo__container {
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
+  margin: 11rem 0;
+  padding: 21rem;
+}
+
+.lista__vazia{
+  text-align: center;
+}
+
+.meus__emprestimos__title {
+  font-family: inherit;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
+}
+
+.meu__emprestimo__display{
+  margin-top: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meus-emprestimos__paginacao{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.meus-emprestimos__paginacao button{
+  margin-block: 0;
+}
+
+.meus-emprestimos__paginacao__p{
+  margin-inline: var(--margin-sm);
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .meu__emprestimo__container {
+    padding: 1rem;
+  }
+}
