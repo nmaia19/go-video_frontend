@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container container__alterar__senha">
+  <h1 class="alterar-senha__titulo">ALTERAR SENHA</h1>
+  <div class="altera__senha__form">
+    <form #f="ngForm" class="needs-validation"  #form novalidate>
+      <div>
+        <label class="form-label" for="senha-anterior">SENHA ANTERIOR <span class="alterar__senha__erro">*</span></label>
+        <input class="form-control bg-light altera__senha__input" type="password" id="senha-anterior" required ngModel name="senhaAntiga"/>
+      </div>
+
+      <div>
+        <label class="form-label" for="nova-senha">NOVA SENHA <span class="alterar__senha__erro">*</span></label>
+        <input class="form-control bg-light altera__senha__input" type="password" id="nova-senha" required ngModel name="novaSenha" />
+      </div>
+
+      <div>
+        <label class="form-label" for="confirmar-nova-senha">CONFIRME A NOVA SENHA <span class="alterar__senha__erro">*</span></label>
+        <input class="form-control bg-light altera__senha__input" type="password" id="confirmar-nova-senha" required ngModel name="confirmaNovaSenha" />
+      </div>
+
+      <div class="alterar__senha__botoes">
+        <button class="alterar__senha__cadastrar" type="submit" (click)="validate($event, f.value)">ALTERAR</button>
+      </div>
+    </form>
+  </div>
+
+</div>

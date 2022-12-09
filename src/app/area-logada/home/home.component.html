@@ -1,0 +1,49 @@
+<app-header-branco></app-header-branco>
+
+ <!-- HOME ADMIN -->
+<div *ngIf="isAdmin" class="home__container">
+  <div class="home__sessao home__sessao-1">
+    <div class="home__texto">
+      <h2 class="home__texto-h2">EQUIPAMENTO</h2>
+      <a class="home__texto-a" routerLink="/gerenciar-equipamentos"><span>Gerencie os equipamentos</span> > </a>
+    </div>
+  </div>
+
+  <div *ngIf="isAdmin" class="home__sessao home__sessao-2">
+    <div class="home__texto">
+      <h2 class="home__texto-h2">COLABORADOR</h2>
+      <a class="home__texto-a" routerLink="/gerenciar-colaboradores"><span>Gerencie os colaboradores</span> > </a>
+    </div>
+  </div>
+
+  <div *ngIf="isAdmin" class="home__sessao home__sessao-3">
+    <div class="home__texto">
+      <h2 class="home__texto-h2">EMPRÉSTIMO</h2>
+      <a class="home__texto-a" routerLink="/historico-emprestimos"><span>Veja o histórico de empréstimos</span> > </a>
+    </div>
+  </div>
+</div>
+
+ <!-- HOME COLABORADOR -->
+ <div *ngIf="!isAdmin" class="home__container">
+  <div class="home__sessao home__sessao-4">
+    <div class="home__texto">
+      <h2 class="home__texto-h2">EQUIPAMENTO</h2>
+      <a class="home__texto-a" routerLink="/equipamentos"><span>Escolha seu equipamento</span> > </a>
+    </div>
+  </div>
+
+  <div *ngIf="!isAdmin" class="home__sessao home__sessao-5">
+    <div class="home__texto">
+      <h2 class="home__texto-h2">MEUS EMPRÉSTIMOS</h2>
+      <a class="home__texto-a" routerLink="/meus-emprestimos"><span>Confira tudo que está com você</span> > </a>
+    </div>
+  </div>
+
+  <div *ngIf="!isAdmin" class="home__sessao home__sessao-3">
+    <div class="home__texto">
+      <h2 class="home__texto-h2">PERFIL</h2>
+      <a class="home__texto-a" [routerLink]="['/perfil', id]"><span>Veja seu perfil e seu histórico de empréstimos</span> > </a>
+    </div>
+  </div>
+</div>

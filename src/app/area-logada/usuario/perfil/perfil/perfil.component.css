@@ -1,0 +1,116 @@
+#perfil_container{
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: calc(100vh - 12.9rem);
+  padding: 3rem;
+  margin: 10rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.informacoes_gerais_box{
+  display: flex;
+  flex-direction: column;
+}
+
+.informacoes_gerais_box h1{
+  font-family: inherit;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 5.2rem;
+}
+
+.informacoes_gerais_box .email, .informacoes_gerais_box .nome, .informacoes_gerais_box .senha {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.informacoes_gerais_box .email p, .informacoes_gerais_box .nome p, .informacoes_gerais_box .senha p{
+  font-size: var(--font-size-sm);
+}
+
+.informacoes_gerais_box .alterar_btn {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  color: white;
+  width: 30rem;
+  height: 6rem;
+  background-color: var(--primary-red);
+  margin: 5.5rem auto 2.7rem auto;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  line-height: 30px;
+  letter-spacing: 0.05em;
+}
+
+.informacoes_gerais_box .alterar_btn:hover {
+  color: white;
+  background-color: var(--secondary-red);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.historico_emprestimos_box{
+  display: flex;
+  flex-direction: column;
+}
+.informacoes_gerais_box .aviso_perfil{
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  line-height: 25px;
+  letter-spacing: 0.05em;
+}
+
+.historico_emprestimos_box h1 {
+  margin-top: 5.5rem;
+  font-size: var(--font-size-lg);
+  text-align: center;
+}
+
+.lista__vazia{
+  text-align: center;
+}
+
+.perfil__paginacao{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.perfil__paginacao button{
+  margin-block: 0;
+}
+
+.perfil__paginacao__p{
+  margin-inline: var(--margin-sm);
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+
+  .informacoes_gerais_box .email p, .informacoes_gerais_box .nome p, .informacoes_gerais_box .senha p{
+    font-weight: 500;
+    font-size: var(--font-size-md);
+    line-height: 3.5rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+  }
+
+  .historico_emprestimos_box h1{
+    margin-top: 8.5rem;
+    font-family: inherit;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    line-height: 6rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 5.2rem;
+  }
+}

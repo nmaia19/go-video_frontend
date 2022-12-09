@@ -1,0 +1,21 @@
+<div class="card-geral">
+
+  <div class="card" style="max-width: 600px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ emprestimo.equipamento.urlFoto }}" alt="Imagem do equipamento" class="img-fluid rounded-start img">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-date"><span>Data de retirada: {{ emprestimo.dataInicio | date: "dd/MM/yyyy" }} </span></h5>
+          <p class="card-text">{{ emprestimo.equipamento.marca }} - {{ emprestimo.equipamento.modelo }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gerenciar__equipamento__card__acoes">
+    <button class="btn-devolver" (click)="abrirModalDevolucao()">Devolver</button>
+  </div>
+
+</div>
