@@ -2,6 +2,7 @@
   margin: 0 auto;
   max-width: 100%;
   min-height: calc(100vh - 12.9rem);
+  margin: 11rem 0;
   padding: 21rem;
 }
 
@@ -40,4 +41,11 @@
 .meus-emprestimos__paginacao__p{
   margin-inline: var(--margin-sm);
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .meu__emprestimo__container {
+    padding: 1rem;
+  }
 }
