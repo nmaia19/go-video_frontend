@@ -5,7 +5,7 @@
 <samp>
   <h1 align="center"> Go Video </h1>
 <p align="center">
-Aplicação que tem proposta fazer a gestão de equipamentos para produtoras de vídeos. Nessa plataforma será possível gerenciar a utilização dos equipamentos empregados diariamente pelos colaboradores em projetos da produtora. 
+Aplicação que tem proposta fazer a gestão de equipamentos para produtoras de vídeos. Nessa plataforma será possível gerenciar a utilização dos equipamentos empregados diariamente pelos colaboradores em projetos da produtora.
 
 <br>
   
